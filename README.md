@@ -44,7 +44,7 @@ This platform provides a single solution for internship discovery, project colla
 
 ## Vision Statement
 
-To build an all-in-one collaborative ecosystem that bridges the gap between academia and industry—empowering students to learn by doing, enabling mentors to guide effectively, and offering organizations direct access to emerging talent through seamless project execution and discovery.
+Bridging the gap between classroom and career, we're building an ecosystem where students learn by doing, mentors guide with impact, and organizations discover talent through hands-on collaboration—not just credentials."
 
 ---
 
