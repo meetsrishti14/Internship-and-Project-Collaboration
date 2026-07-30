@@ -1,5 +1,8 @@
-# User Stories & Epics
+# User Stories
 
+> **Note:** These user stories have been migrated to GitHub Issues for project tracking. The GitHub Issues are the primary source for managing and tracking project progress.
+
+---
 ## Epic 1: Authentication & Access Control
 
 ### User Story 1: Student Account Registration
