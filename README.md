@@ -12,7 +12,7 @@ A centralized platform that connects students, mentors, and organizations to str
 
 ## 2. Project Overview
 
-**Project Name:** Internship and Project Collaboration
+
 
 Internship and Project Collaboration is a web-based platform that helps students discover internship opportunities, collaborate on academic and personal projects, and manage team activities in one place. The platform connects students, mentors, and organizations to improve communication, project management, and skill development.
 
