@@ -1,9 +1,12 @@
 # Internship and Project Collaboration
 A centralized platform that connects students, mentors, and organizations to streamline internship discovery, project collaboration, communication, and task management.
 ---
-#Vision Document 
-##1. Project Name
-**Internship and Project Collaboration
+
+# Vision Document
+
+## 1. Project Name
+
+**Internship and Project Collaboration**
 
 ---
 
