@@ -203,3 +203,95 @@ Future enhancements may include:
 ## 13. Conclusion
 
 Internship and Project Collaboration aims to provide a unified platform that simplifies internship management and project collaboration for students, mentors, and organizations. By integrating communication, task management, document sharing, and internship opportunities into a single system, the platform improves efficiency, collaboration, and overall user experience.
+## Development Setup
+
+### Branching Strategy
+
+This project follows the GitHub Flow branching strategy.
+
+- `main` contains the stable version of the project.
+- New features and development work are done in separate feature branches.
+- Feature branches are created from `main`.
+- Changes are tested locally before being merged into `main`.
+- Pull requests are used to review changes before merging.
+
+Example:
+
+```text
+main
+  |
+  └── feature/docker-setup
+```
+
+### Quick Start – Local Development
+
+#### Prerequisites
+
+Before running the project, make sure the following tools are installed:
+
+- Git
+- Docker Desktop
+- Visual Studio Code
+- Windows Subsystem for Linux 2 (WSL 2)
+
+#### Clone the Repository
+
+```bash
+git clone https://github.com/meetsrishti14/Internship-and-Project-Collaboration.git
+cd Internship-and-Project-Collaboration
+```
+
+#### Build the Docker Image
+
+Run:
+
+```bash
+docker build -t internship-portal .
+```
+
+#### Run the Application
+
+Run:
+
+```bash
+docker run -d -p 8080:80 --name internship-portal-container internship-portal
+```
+
+Open your browser and go to:
+
+```text
+http://localhost:8080
+```
+
+The Internship & Project Collaboration application should now be visible.
+
+#### Run Using Docker Compose
+
+You can also start the application using Docker Compose:
+
+```bash
+docker compose up --build
+```
+
+Then open:
+
+```text
+http://localhost:8080
+```
+
+To stop Docker Compose:
+
+```bash
+docker compose down
+```
+
+### Local Development Tools
+
+| Tool | Purpose |
+|------|---------|
+| Visual Studio Code | Code editing and project development |
+| Git | Version control |
+| GitHub | Repository hosting and collaboration |
+| Docker Desktop | Containerization and local development |
+| WSL 2 | Linux environment used by Docker Desktop |
+| Nginx | Web server used inside the Docker container |
