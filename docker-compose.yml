@@ -1,0 +1,6 @@
+services:
+  internship-app:
+    build: .
+    container_name: internship-project-app
+    ports:
+      - "8080:80"
