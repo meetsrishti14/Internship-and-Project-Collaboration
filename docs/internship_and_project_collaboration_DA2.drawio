@@ -1,0 +1,125 @@
+<mxfile host="app.diagrams.net" modified="2026-09-10T00:00:00.000Z" agent="Claude" version="24.0.0" type="device">
+  <diagram name="DA2 Architecture" id="da2arch">
+    <mxGraphModel dx="1400" dy="800" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1600" pageHeight="1000" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        <!-- Title -->
+        <mxCell id="title" value="Internship &amp; Project Collaboration — System Architecture" style="text;html=1;align=center;verticalAlign=middle;fontSize=20;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="480" y="20" width="640" height="30" as="geometry" />
+        </mxCell>
+
+        <!-- Student -->
+        <mxCell id="student" value="STUDENT&#10;Web Browser" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="40" y="220" width="140" height="60" as="geometry" />
+        </mxCell>
+
+        <!-- Frontend -->
+        <mxCell id="frontend" value="FRONTEND&#10;HTML / CSS / JavaScript&#10;Web Application" style="rounded=0;whiteSpace=wrap;html=1;fontSize=12;" vertex="1" parent="1">
+          <mxGeometry x="260" y="210" width="170" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- Student -> Frontend -->
+        <mxCell id="e_student_frontend" value="HTTP / HTTPS" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=11;" edge="1" parent="1" source="student" target="frontend">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Backend container -->
+        <mxCell id="backend" value="BACKEND / REST API" style="rounded=0;whiteSpace=wrap;html=1;verticalAlign=top;fontSize=14;fontStyle=1;" vertex="1" parent="1">
+          <mxGeometry x="520" y="140" width="340" height="320" as="geometry" />
+        </mxCell>
+
+        <mxCell id="mod_auth" value="Authentication Module&#10;Login&#10;Session / Token" style="rounded=0;whiteSpace=wrap;html=1;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="540" y="185" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="mod_user" value="User Management Module" style="rounded=0;whiteSpace=wrap;html=1;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="700" y="185" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="mod_project" value="Project Management Module" style="rounded=0;whiteSpace=wrap;html=1;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="540" y="270" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="mod_task" value="Task Management Module" style="rounded=0;whiteSpace=wrap;html=1;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="700" y="270" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="mod_appjoin" value="Application / Join Module" style="rounded=0;whiteSpace=wrap;html=1;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="540" y="355" width="140" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="mod_notif" value="Notification Service" style="rounded=0;whiteSpace=wrap;html=1;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="700" y="355" width="140" height="70" as="geometry" />
+        </mxCell>
+
+        <!-- Frontend -> Backend -->
+        <mxCell id="e_frontend_backend" value="REST API" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=11;" edge="1" parent="1" source="frontend" target="backend">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Repository layer -->
+        <mxCell id="repo" value="DATA ACCESS / REPOSITORY LAYER&#10;User Repository&#10;Project Repository&#10;Task Repository&#10;Application Repository" style="rounded=0;whiteSpace=wrap;html=1;fontSize=11;fontStyle=1;verticalAlign=top;" vertex="1" parent="1">
+          <mxGeometry x="530" y="500" width="320" height="110" as="geometry" />
+        </mxCell>
+
+        <!-- Backend -> Repo -->
+        <mxCell id="e_backend_repo" value="Data Access" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=11;" edge="1" parent="1" source="backend" target="repo">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Database -->
+        <mxCell id="database" value="DATABASE&#10;Users&#10;Projects&#10;Tasks&#10;Applications&#10;Internships" style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="600" y="660" width="180" height="110" as="geometry" />
+        </mxCell>
+
+        <!-- Repo -> Database -->
+        <mxCell id="e_repo_db" value="CRUD / SQL" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=11;" edge="1" parent="1" source="repo" target="database">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Cache -->
+        <mxCell id="cache" value="CACHE&#10;Redis&#10;Session Data&#10;Frequently Used Data" style="rounded=0;whiteSpace=wrap;html=1;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="940" y="500" width="160" height="90" as="geometry" />
+        </mxCell>
+
+        <!-- Backend -> Cache -->
+        <mxCell id="e_backend_cache" value="Caching" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=11;" edge="1" parent="1" source="backend" target="cache">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- External Services -->
+        <mxCell id="external" value="EXTERNAL SERVICES&#10;Email&#10;Notifications" style="rounded=0;whiteSpace=wrap;html=1;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="940" y="140" width="180" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- Notification module -> External services -->
+        <mxCell id="e_notif_external" value="Notifications" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=11;exitX=1;exitY=0.5;entryX=0;entryY=0.5;" edge="1" parent="1" source="mod_notif" target="external">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Containerization -->
+        <mxCell id="container" value="CONTAINERIZATION&#10;Docker&#10;Docker Compose&#10;Nginx" style="rounded=0;whiteSpace=wrap;html=1;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="560" y="800" width="200" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- Backend -> Containerization -->
+        <mxCell id="e_backend_container" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;dashed=1;" edge="1" parent="1" source="backend" target="container">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Deployment -->
+        <mxCell id="deploy" value="DEPLOYMENT / INFRA&#10;Web Server&#10;Cloud / Hosting" style="rounded=0;whiteSpace=wrap;html=1;fontSize=11;" vertex="1" parent="1">
+          <mxGeometry x="280" y="800" width="200" height="80" as="geometry" />
+        </mxCell>
+
+        <!-- Containerization -> Deployment -->
+        <mxCell id="e_container_deploy" value="Deploy" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;fontSize=11;" edge="1" parent="1" source="container" target="deploy">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        <!-- Legend -->
+        <mxCell id="legend" value="LEGEND&#10;&#10;→  Data / API Flow&#10;REST API = Frontend–Backend Communication&#10;Repository = Data Access Abstraction&#10;Database = Persistent Data&#10;Cache = Frequently Used / Session Data&#10;Docker = Containerization" style="rounded=0;whiteSpace=wrap;html=1;align=left;fontSize=10;spacingLeft=10;" vertex="1" parent="1">
+          <mxGeometry x="940" y="800" width="260" height="140" as="geometry" />
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
