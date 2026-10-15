@@ -101,6 +101,28 @@
         "Python",
         "JavaScript"
       ]
+    },
+    {
+      "id": "usr_1792085576357",
+      "name": "Nishtha Jain",
+      "email": "nishtha.jain2024@vitstudent.ac.in",
+      "password": "NishthaPass123!",
+      "role": "student",
+      "regNo": "24BAI1450",
+      "institution": "Vellore Institute of Technology",
+      "department": "B.Tech Cse",
+      "cgpa": "8.5 / 10.0",
+      "bio": "New member on Internship & Project Collaboration portal.",
+      "skills": [
+        "Python",
+        "JavaScript"
+      ],
+      "resume": {
+        "fileName": "Nishtha_Jain_Resume.pdf",
+        "fileSize": "1.2 MB",
+        "uploadDate": "Just now",
+        "atsScore": "92%"
+      }
     }
   ],
   "internships": [
@@ -325,7 +347,7 @@
         "Hands-on experience with Linux environments and basic bash scripting.",
         "Security certifications (CompTIA Security+, CEH) are a plus."
       ],
-      "applicants": 27,
+      "applicants": 28,
       "deadline": "In 4 days",
       "postedDate": "Oct 12, 2026",
       "recruiterId": "usr_recruiter_1",
@@ -334,6 +356,24 @@
     }
   ],
   "applications": [
+    {
+      "id": "app_1792085771557",
+      "internshipId": "int_6",
+      "internshipTitle": "Cybersecurity & SOC Analyst Intern",
+      "company": "SecureNet Defence",
+      "studentId": "usr_student_1",
+      "studentName": "Srishti Jain",
+      "studentEmail": "srishti.jain2024@vitstudent.ac.in",
+      "studentRegNo": "24BRS1412",
+      "studentCgpa": "8.42",
+      "stage": "Received",
+      "appliedDate": "Just now",
+      "resumeName": "Document 172.pdf",
+      "resumeSize": "1.1 MB",
+      "coverLetter": "Resume",
+      "recruiterNotes": "Application received with uploaded candidate resume.",
+      "lastUpdated": "Just now"
+    },
     {
       "id": "app_1792002052776",
       "internshipId": "int_5",
@@ -542,7 +582,7 @@
           "title": "End-to-End Dockerized Testing & CI/CD Deployment",
           "dueDate": "Nov 10, 2026",
           "completed": true,
-          "submissionStatus": "Needs Revision",
+          "submissionStatus": "Approved",
           "grade": "8/10"
         }
       ],
@@ -677,7 +717,7 @@
       "submittedAt": "Just now",
       "repoUrl": "https://github.com/meetsrishti14/ai-resume-analyzer",
       "deliverables": "Completed Docker containerization and automated pytest CI/CD suite.",
-      "status": "Needs Revision",
+      "status": "Approved",
       "facultyNotes": "NA",
       "grade": "8/10"
     },
@@ -731,6 +771,24 @@
     }
   ],
   "notifications": [
+    {
+      "id": "notif_1792086397127",
+      "recipientId": "usr_student_1",
+      "title": "Milestone Evaluated: Approved",
+      "message": "Your submission for 'End-to-End Dockerized Testing & CI/CD Deployment' has been evaluated: Approved. Grade: 8/10. Feedback: NA",
+      "type": "success",
+      "timestamp": "Just now",
+      "read": false
+    },
+    {
+      "id": "notif_1792085771558",
+      "recipientId": "usr_recruiter_1",
+      "title": "New Candidate Application",
+      "message": "Srishti Jain applied for Cybersecurity & SOC Analyst Intern at SecureNet Defence.",
+      "type": "info",
+      "timestamp": "Just now",
+      "read": false
+    },
     {
       "id": "notif_1792079851530",
       "recipientId": "usr_student_1",
