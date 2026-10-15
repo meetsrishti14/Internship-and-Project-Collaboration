@@ -1,0 +1,979 @@
+{
+  "users": [
+    {
+      "id": "usr_student_1",
+      "name": "Srishti Jain",
+      "email": "srishti.jain2024@vitstudent.ac.in",
+      "password": "StudentPass123!",
+      "role": "student",
+      "regNo": "24BRS1412",
+      "institution": "Vellore Institute of Technology",
+      "program": "B.Tech Computer Science & Engineering (AI & Robotics)",
+      "graduationYear": "2028",
+      "cgpa": "8.42 / 10.0",
+      "atsScore": "94%",
+      "bio": "Third-year engineering student passionate about artificial intelligence, full-stack microservices, and autonomous robotics perception systems.",
+      "skills": [
+        "Python",
+        "FastAPI",
+        "React",
+        "PyTorch",
+        "Docker",
+        "PostgreSQL",
+        "Figma UI/UX",
+        "Git"
+      ],
+      "socialLinks": {
+        "github": "https://github.com/meetsrishti14",
+        "linkedin": "https://linkedin.com/in/srishti-jain",
+        "portfolio": "https://srishti-portfolio.dev"
+      },
+      "resume": {
+        "fileName": "Srishti_Jain_Updated_Resume.pdf",
+        "fileSize": "1.6 MB",
+        "uploadDate": "Just now",
+        "atsScore": "96% Match"
+      }
+    },
+    {
+      "id": "usr_faculty_1",
+      "name": "Dr. Arun Kumar",
+      "email": "faculty@vit.ac.in",
+      "password": "FacultyPass123!",
+      "role": "faculty",
+      "employeeId": "VIT-FAC-4081",
+      "institution": "Vellore Institute of Technology",
+      "department": "Department of Artificial Intelligence & Data Engineering",
+      "designation": "Associate Professor & Senior Capstone Mentor",
+      "specialization": "Distributed Deep Learning, Computer Vision & Robotics",
+      "mentoredStudents": 256,
+      "activeProjectsCount": 14,
+      "rating": "4.95 / 5.0"
+    },
+    {
+      "id": "usr_recruiter_1",
+      "name": "Elena Vance",
+      "email": "recruiter@hyperscale.ai",
+      "password": "RecruiterPass123!",
+      "role": "recruiter",
+      "company": "HyperScale AI",
+      "companyLogo": "⚡",
+      "title": "Head of University Engineering Talent",
+      "location": "Bengaluru & Silicon Valley",
+      "industry": "Artificial Intelligence & Cloud Infrastructure",
+      "website": "https://hyperscale.ai",
+      "activePostingsCount": 4,
+      "totalCandidatesReviewed": 184
+    },
+    {
+      "id": "usr_1792000737236",
+      "name": "Aakriti",
+      "email": "aakriti.chadha2024@vitstudent.ac.in",
+      "password": "@Aakriti",
+      "role": "student",
+      "regNo": "24BAI1066",
+      "institution": "Vellore Institute of Technology",
+      "department": "B.Tech Cse",
+      "cgpa": "8.5 / 10.0",
+      "bio": "New member on Internship & Project Collaboration portal.",
+      "skills": [
+        "Python",
+        "JavaScript"
+      ],
+      "resume": {
+        "fileName": "Aakriti_Resume.pdf",
+        "fileSize": "1.2 MB",
+        "uploadDate": "Just now",
+        "atsScore": "92%"
+      }
+    },
+    {
+      "id": "usr_1792000816639",
+      "name": "Dr. Priya Sharma",
+      "email": "priya.sharma@institution.edu",
+      "password": "SecureFacultyPassword2026!",
+      "role": "faculty",
+      "institution": "Vellore Institute of Technology",
+      "department": "Department of Software Engineering",
+      "cgpa": "8.5 / 10.0",
+      "bio": "New member on Internship & Project Collaboration portal.",
+      "skills": [
+        "Python",
+        "JavaScript"
+      ]
+    }
+  ],
+  "internships": [
+    {
+      "id": "int_1792080866344",
+      "title": "Sofware Development INtern",
+      "company": "HyperScaleAI",
+      "logo": "💼",
+      "type": "On-site",
+      "location": "Bengaluru, India",
+      "stipend": "25000",
+      "duration": "6 Months",
+      "tags": [
+        "Coding Language",
+        "Frontend",
+        "Backend"
+      ],
+      "desc": "Real-time Industry opportunity in developing bank software",
+      "responsibilities": [
+        "Deliver reliable and well-tested features.",
+        "Collaborate with multi-functional engineering teams."
+      ],
+      "requirements": [
+        "Strong problem-solving fundamentals.",
+        "Familiarity with relevant tech stack and tools."
+      ],
+      "applicants": 0,
+      "deadline": "In 14 days",
+      "postedDate": "Just now",
+      "recruiterId": "usr_recruiter_1",
+      "status": "Active",
+      "capacity": 3
+    },
+    {
+      "id": "int_1",
+      "title": "Full-Stack Developer Intern",
+      "company": "HyperScale AI",
+      "logo": "⚡",
+      "type": "Remote",
+      "location": "Remote (Global / India)",
+      "stipend": "₹25,000/mo",
+      "duration": "6 Months",
+      "tags": [
+        "React",
+        "FastAPI",
+        "Node.js",
+        "PostgreSQL"
+      ],
+      "desc": "Build scalable dashboard interfaces, optimize GraphQL/REST pipelines, and create real-time collaboration engines using modern web standards.",
+      "responsibilities": [
+        "Design and implement responsive React modules adhering to atomic design standards.",
+        "Develop high-performance REST APIs with Node.js and FastAPI.",
+        "Collaborate closely with product designers and senior platform engineers."
+      ],
+      "requirements": [
+        "Hands-on experience with modern JavaScript / TypeScript and React.",
+        "Familiarity with containerization (Docker) and relational databases.",
+        "Strong understanding of component modularity and REST APIs."
+      ],
+      "applicants": 42,
+      "deadline": "In 5 days",
+      "postedDate": "Oct 10, 2026",
+      "recruiterId": "usr_recruiter_1",
+      "status": "Active",
+      "capacity": 5
+    },
+    {
+      "id": "int_2",
+      "title": "Machine Learning Research Intern",
+      "company": "Nexus Robotics Labs",
+      "logo": "🤖",
+      "type": "Hybrid",
+      "location": "Bengaluru, KA (Hybrid)",
+      "stipend": "₹22,000/mo",
+      "duration": "3 Months",
+      "tags": [
+        "Python",
+        "PyTorch",
+        "Computer Vision",
+        "ROS"
+      ],
+      "desc": "Train deep neural networks for multi-modal perception, object tracking, and edge inference on mobile robotic platforms.",
+      "responsibilities": [
+        "Curate and augment multi-spectral visual datasets.",
+        "Optimize neural net architectures for low-latency edge deployment.",
+        "Document ablation studies and benchmark model throughput."
+      ],
+      "requirements": [
+        "Proficiency in Python and PyTorch / TensorFlow.",
+        "Solid foundations in linear algebra, statistics, and neural networks.",
+        "Prior coursework or personal projects in computer vision."
+      ],
+      "applicants": 78,
+      "deadline": "In 2 days",
+      "postedDate": "Oct 11, 2026",
+      "recruiterId": "usr_recruiter_1",
+      "status": "Active",
+      "capacity": 3
+    },
+    {
+      "id": "int_3",
+      "title": "Cloud DevOps & Platform Intern",
+      "company": "CloudNative Systems",
+      "logo": "☁️",
+      "type": "Remote",
+      "location": "Remote (India)",
+      "stipend": "₹20,000/mo",
+      "duration": "6 Months",
+      "tags": [
+        "Docker",
+        "Kubernetes",
+        "AWS",
+        "CI/CD"
+      ],
+      "desc": "Deploy resilient CI/CD pipelines, containerize microservices, and manage telemetry monitoring metrics across multi-region Kubernetes clusters.",
+      "responsibilities": [
+        "Automate deployment workflows using GitHub Actions and Helm charts.",
+        "Provision cloud resources using Terraform infrastructure-as-code.",
+        "Configure Prometheus and Grafana alerts for microservice latency."
+      ],
+      "requirements": [
+        "Comfortable with Linux CLI and shell scripting.",
+        "Experience building and running Docker containers.",
+        "Familiarity with cloud concepts on AWS, GCP, or Azure."
+      ],
+      "applicants": 31,
+      "deadline": "In 9 days",
+      "postedDate": "Oct 08, 2026",
+      "recruiterId": "usr_recruiter_1",
+      "status": "Active",
+      "capacity": 2
+    },
+    {
+      "id": "int_4",
+      "title": "UI/UX Design Systems Intern",
+      "company": "PixelCraft Studio",
+      "logo": "🎨",
+      "type": "On-site",
+      "location": "Hyderabad, TS (On-site)",
+      "stipend": "₹18,000/mo",
+      "duration": "3 Months",
+      "tags": [
+        "Figma",
+        "Design Systems",
+        "CSS",
+        "Wireframing"
+      ],
+      "desc": "Develop atomic design component libraries, run user testing interviews, and engineer pixel-perfect interactive high-fidelity user workflows.",
+      "responsibilities": [
+        "Construct responsive component libraries in Figma with auto-layout.",
+        "Create wireframes and interactive prototypes for web and mobile.",
+        "Conduct usability audits and hand off design tokens to front-end teams."
+      ],
+      "requirements": [
+        "Demonstrated Figma portfolio showing design system thinking.",
+        "Understanding of accessibility standards (WCAG 2.1).",
+        "Foundational knowledge of CSS flexbox and responsive layouts."
+      ],
+      "applicants": 65,
+      "deadline": "In 7 days",
+      "postedDate": "Oct 09, 2026",
+      "recruiterId": "usr_recruiter_1",
+      "status": "Active",
+      "capacity": 4
+    },
+    {
+      "id": "int_5",
+      "title": "Data Engineering & Analytics Intern",
+      "company": "FinMetrics Analytics",
+      "logo": "📈",
+      "type": "Remote",
+      "location": "Remote",
+      "stipend": "₹24,000/mo",
+      "duration": "4 Months",
+      "tags": [
+        "SQL",
+        "Python",
+        "Kafka",
+        "PostgreSQL"
+      ],
+      "desc": "Architect high-throughput ETL data pipelines, transaction aggregation warehouses, and automated real-time financial reporting analytics.",
+      "responsibilities": [
+        "Write complex SQL queries and optimize analytical warehouse schemas.",
+        "Build automated batch and streaming ingestion pipelines with Python.",
+        "Maintain data cataloging, validation tests, and governance rules."
+      ],
+      "requirements": [
+        "Advanced proficiency in PostgreSQL / MySQL and SQL window functions.",
+        "Experience with Python data libraries (Pandas, Polars).",
+        "Analytical problem-solving and algorithmic thinking."
+      ],
+      "applicants": 50,
+      "deadline": "In 12 days",
+      "postedDate": "Oct 06, 2026",
+      "recruiterId": "usr_recruiter_1",
+      "status": "Active",
+      "capacity": 2
+    },
+    {
+      "id": "int_6",
+      "title": "Cybersecurity & SOC Analyst Intern",
+      "company": "SecureNet Defence",
+      "logo": "🛡️",
+      "type": "Hybrid",
+      "location": "Pune, MH (Hybrid)",
+      "stipend": "₹21,000/mo",
+      "duration": "6 Months",
+      "tags": [
+        "Network Security",
+        "Linux",
+        "SIEM",
+        "Python"
+      ],
+      "desc": "Audit cloud infrastructure configurations, perform automated vulnerability scans, and implement zero-trust defense access policies.",
+      "responsibilities": [
+        "Analyze security telemetry logs and investigate anomaly alerts.",
+        "Conduct baseline vulnerability scans and assist in threat modeling.",
+        "Develop automated security auditing scripts using Python."
+      ],
+      "requirements": [
+        "Knowledge of TCP/IP, OSI model, and standard cryptographic protocols.",
+        "Hands-on experience with Linux environments and basic bash scripting.",
+        "Security certifications (CompTIA Security+, CEH) are a plus."
+      ],
+      "applicants": 27,
+      "deadline": "In 4 days",
+      "postedDate": "Oct 12, 2026",
+      "recruiterId": "usr_recruiter_1",
+      "status": "Active",
+      "capacity": 2
+    }
+  ],
+  "applications": [
+    {
+      "id": "app_1792002052776",
+      "internshipId": "int_5",
+      "internshipTitle": "Data Engineering & Analytics Intern",
+      "company": "FinMetrics Analytics",
+      "studentId": "usr_student_1",
+      "studentName": "Srishti Jain",
+      "studentEmail": "srishti.jain2024@vitstudent.ac.in",
+      "studentRegNo": "24BRS1412",
+      "studentCgpa": "8.42",
+      "stage": "Received",
+      "appliedDate": "Just now",
+      "resumeName": "Srishti_Jain_ML_Perception_Resume.pdf",
+      "resumeSize": "2.4 MB",
+      "coverLetter": "Here is my custom tailored resume for this opening.",
+      "recruiterNotes": "Application received with uploaded candidate resume.",
+      "lastUpdated": "Just now"
+    },
+    {
+      "id": "app_1792000407705",
+      "internshipId": "int_1792000407694",
+      "internshipTitle": "Generative AI Platform Engineer Intern",
+      "company": "HyperScale AI",
+      "studentId": "usr_student_1",
+      "studentName": "Srishti Jain",
+      "studentEmail": "srishti.jain2024@vitstudent.ac.in",
+      "studentRegNo": "24BRS1412",
+      "studentCgpa": "8.42",
+      "stage": "Interview Scheduled",
+      "appliedDate": "Just now",
+      "resumeName": "Srishti_Jain_Resume.pdf",
+      "coverLetter": "I am excited to apply for this position and contribute to the engineering team.",
+      "recruiterNotes": "Passed technical screening! Video interview scheduled with Engineering VP on Monday 3:00 PM.",
+      "lastUpdated": "Just now"
+    },
+    {
+      "id": "app_1791997718900",
+      "internshipId": "int_4",
+      "internshipTitle": "UI/UX Design Systems Intern",
+      "company": "PixelCraft Studio",
+      "studentId": "usr_student_1",
+      "studentName": "Srishti Jain",
+      "studentEmail": "srishti.jain2024@vitstudent.ac.in",
+      "studentRegNo": "24BRS1412",
+      "studentCgpa": "8.42",
+      "stage": "Interview Scheduled",
+      "appliedDate": "Just now",
+      "resumeName": "Srishti_Jain_Resume.pdf",
+      "coverLetter": "I am excited to apply for this position and contribute to the engineering team.",
+      "recruiterNotes": "Great portfolio. Technical round set for Friday 3 PM.",
+      "lastUpdated": "Just now"
+    },
+    {
+      "id": "app_101",
+      "internshipId": "int_2",
+      "internshipTitle": "Machine Learning Research Intern",
+      "company": "Nexus Robotics Labs",
+      "studentId": "usr_student_1",
+      "studentName": "Srishti Jain",
+      "studentEmail": "srishti.jain2024@vitstudent.ac.in",
+      "studentRegNo": "24BRS1412",
+      "studentCgpa": "8.42",
+      "stage": "Interview Scheduled",
+      "appliedDate": "Sep 08, 2026",
+      "resumeName": "Srishti_Jain_Resume.pdf",
+      "coverLetter": "I have spent the past 2 semesters developing computer vision algorithms for edge robots in PyTorch. I would love to contribute to Nexus Robotics Labs.",
+      "recruiterNotes": "Strong academic record in AI & Robotics. Coding round cleared with 96%. Round 2 technical interview set for Friday.",
+      "lastUpdated": "Oct 13, 2026"
+    },
+    {
+      "id": "app_102",
+      "internshipId": "int_1",
+      "internshipTitle": "Full-Stack Developer Intern",
+      "company": "HyperScale AI",
+      "studentId": "usr_student_1",
+      "studentName": "Srishti Jain",
+      "studentEmail": "srishti.jain2024@vitstudent.ac.in",
+      "studentRegNo": "24BRS1412",
+      "studentCgpa": "8.42",
+      "stage": "Under Review",
+      "appliedDate": "Sep 10, 2026",
+      "resumeName": "Srishti_Jain_Resume.pdf",
+      "coverLetter": "Excited to work on HyperScale's real-time collaboration engines using React and FastAPI.",
+      "recruiterNotes": "Profile fits full-stack requirements well. Reviewing portfolio GitHub link.",
+      "lastUpdated": "Oct 12, 2026"
+    },
+    {
+      "id": "app_103",
+      "internshipId": "int_3",
+      "internshipTitle": "Cloud DevOps & Platform Intern",
+      "company": "CloudNative Systems",
+      "studentId": "usr_student_1",
+      "studentName": "Srishti Jain",
+      "studentEmail": "srishti.jain2024@vitstudent.ac.in",
+      "studentRegNo": "24BRS1412",
+      "studentCgpa": "8.42",
+      "stage": "Shortlisted",
+      "appliedDate": "Sep 02, 2026",
+      "resumeName": "Srishti_Jain_Resume.pdf",
+      "coverLetter": "Passionate about container orchestration and zero-downtime microservice deployments.",
+      "recruiterNotes": "Candidate shortlisted based on Docker containerization skills.",
+      "lastUpdated": "Oct 07, 2026"
+    },
+    {
+      "id": "app_104",
+      "internshipId": "int_1",
+      "internshipTitle": "Full-Stack Developer Intern",
+      "company": "HyperScale AI",
+      "studentId": "usr_student_2",
+      "studentName": "Aakriti Chadha",
+      "studentEmail": "aakriti.c2024@vitstudent.ac.in",
+      "studentRegNo": "24BCE1092",
+      "studentCgpa": "9.10",
+      "stage": "Interview Scheduled",
+      "appliedDate": "Oct 01, 2026",
+      "resumeName": "Aakriti_Chadha_CV.pdf",
+      "coverLetter": "Extensive experience with Node.js and PostgreSQL backend scaling.",
+      "recruiterNotes": "High CGPA and great previous project references. Scheduling technical interview.",
+      "lastUpdated": "Oct 11, 2026"
+    },
+    {
+      "id": "app_105",
+      "internshipId": "int_1",
+      "internshipTitle": "Full-Stack Developer Intern",
+      "company": "HyperScale AI",
+      "studentId": "usr_student_3",
+      "studentName": "Rohan Verma",
+      "studentEmail": "rohan.v2024@vitstudent.ac.in",
+      "studentRegNo": "24BIT2041",
+      "studentCgpa": "8.15",
+      "stage": "Received",
+      "appliedDate": "Oct 12, 2026",
+      "resumeName": "Rohan_Verma_Resume.pdf",
+      "coverLetter": "Proficient in frontend React components and state management.",
+      "recruiterNotes": "Application received. Pending initial ATS resume filter scan.",
+      "lastUpdated": "Oct 12, 2026"
+    }
+  ],
+  "projects": [
+    {
+      "id": "proj_1",
+      "title": "AI Resume Analyzer & ATS Scoring Engine",
+      "tagline": "Semantic embedding analysis for job descriptions and applicant resumes",
+      "desc": "An automated evaluation platform utilizing transformer-based NLP to parse resumes, compute vector cosine similarities against job descriptions, and deliver actionable feedback.",
+      "leadId": "usr_student_1",
+      "leadName": "Srishti Jain",
+      "leadRegNo": "24BRS1412",
+      "visibility": "Public",
+      "repoUrl": "https://github.com/meetsrishti14/ai-resume-analyzer",
+      "mentorId": "usr_faculty_1",
+      "mentorName": "Dr. Arun Kumar",
+      "techStack": [
+        "Python",
+        "FastAPI",
+        "React",
+        "PyTorch",
+        "Docker"
+      ],
+      "members": [
+        {
+          "name": "Srishti Jain",
+          "role": "Lead & AI Engineer",
+          "avatar": "SJ",
+          "id": "usr_student_1"
+        },
+        {
+          "name": "Aakriti Chadha",
+          "role": "Frontend & DevOps",
+          "avatar": "AC",
+          "id": "usr_student_2"
+        },
+        {
+          "name": "Rohan Verma",
+          "role": "Database Architect",
+          "avatar": "RV",
+          "id": "usr_student_3"
+        }
+      ],
+      "milestones": [
+        {
+          "id": "m_1",
+          "title": "System Architecture & SRS Document",
+          "dueDate": "Aug 25, 2026",
+          "completed": true,
+          "submissionStatus": "Approved",
+          "grade": "10/10"
+        },
+        {
+          "id": "m_2",
+          "title": "PDF Document Parser & Text Extraction Pipeline",
+          "dueDate": "Sep 20, 2026",
+          "completed": true,
+          "submissionStatus": "Approved",
+          "grade": "9.5/10"
+        },
+        {
+          "id": "m_3",
+          "title": "Semantic Embeddings Model & Matching API",
+          "dueDate": "Oct 16, 2026",
+          "completed": true,
+          "submissionStatus": "Approved",
+          "grade": "9.8/10"
+        },
+        {
+          "id": "m_4",
+          "title": "End-to-End Dockerized Testing & CI/CD Deployment",
+          "dueDate": "Nov 10, 2026",
+          "completed": true,
+          "submissionStatus": "Needs Revision",
+          "grade": "8/10"
+        }
+      ],
+      "tasks": [
+        {
+          "id": "t_101",
+          "title": "Configure Docker multi-stage build for React client",
+          "desc": "Ensure minimal alpine image footprint under 50MB with Nginx server caching.",
+          "column": "done",
+          "priority": "High",
+          "assignee": "Aakriti Chadha"
+        },
+        {
+          "id": "t_102",
+          "title": "Integrate Sentence-Transformers vector encoder",
+          "desc": "Generate 384-dimensional dense embeddings for resume bullet points.",
+          "column": "in-progress",
+          "priority": "High",
+          "assignee": "Srishti Jain"
+        },
+        {
+          "id": "t_103",
+          "title": "Build ATS match rubric preview modal",
+          "desc": "Display missing skill recommendations and formatting score breakdown.",
+          "column": "todo",
+          "priority": "Medium",
+          "assignee": "Rohan Verma"
+        },
+        {
+          "id": "t_104",
+          "title": "Optimize PostgreSQL pgvector nearest-neighbor search",
+          "desc": "Add HNSW indexing on candidate embeddings column for sub-10ms query latency.",
+          "column": "review",
+          "priority": "Medium",
+          "assignee": "Rohan Verma"
+        }
+      ],
+      "joinRequests": [
+        {
+          "id": "req_1",
+          "studentName": "Kunal Sharma",
+          "studentEmail": "kunal.s2024@vitstudent.ac.in",
+          "regNo": "24BCS1104",
+          "pitch": "I have experience fine-tuning BERT models and writing FastAPI async endpoints. Would love to help with the vector search component!",
+          "status": "Pending",
+          "requestedAt": "Oct 13, 2026"
+        }
+      ]
+    },
+    {
+      "id": "proj_2",
+      "title": "Autonomous Indoor Warehouse Navigation Drone",
+      "tagline": "Stereo SLAM & LiDAR obstacle avoidance on embedded Jetson Orin",
+      "desc": "Hardware-software integrated robotics system for GPS-denied indoor warehouse mapping and autonomous cargo inspection.",
+      "leadId": "usr_student_4",
+      "leadName": "Kunal Sharma",
+      "leadRegNo": "24BCS1104",
+      "visibility": "Public",
+      "repoUrl": "https://github.com/kunal-sharma/indoor-nav-drone",
+      "mentorId": "usr_faculty_1",
+      "mentorName": "Dr. Arun Kumar",
+      "techStack": [
+        "Python",
+        "C++",
+        "ROS2",
+        "OpenCV",
+        "Jetson Orin"
+      ],
+      "members": [
+        {
+          "name": "Kunal Sharma",
+          "role": "Lead & Robotics Engineer",
+          "avatar": "KS",
+          "id": "usr_student_4"
+        },
+        {
+          "name": "Srishti Jain",
+          "role": "Vision & Path Planning",
+          "avatar": "SJ",
+          "id": "usr_student_1"
+        }
+      ],
+      "milestones": [
+        {
+          "id": "m_201",
+          "title": "ROS2 Workspace & Gazebo Simulation Setup",
+          "dueDate": "Aug 30, 2026",
+          "completed": true,
+          "submissionStatus": "Approved",
+          "grade": "10/10"
+        },
+        {
+          "id": "m_202",
+          "title": "Real-time Point Cloud Odometry Testing",
+          "dueDate": "Oct 20, 2026",
+          "completed": false,
+          "submissionStatus": "Submitted",
+          "grade": "Pending Evaluation"
+        }
+      ],
+      "tasks": [
+        {
+          "id": "t_201",
+          "title": "Calibrate Intel RealSense D435i depth camera",
+          "desc": "Calculate intrinsics and extrinsics matrix for distortion correction.",
+          "column": "done",
+          "priority": "High",
+          "assignee": "Kunal Sharma"
+        },
+        {
+          "id": "t_202",
+          "title": "Implement A* global path planner in ROS2",
+          "desc": "Generate collision-free trajectories through mapped octomap grid.",
+          "column": "in-progress",
+          "priority": "High",
+          "assignee": "Srishti Jain"
+        }
+      ],
+      "joinRequests": []
+    }
+  ],
+  "milestoneSubmissions": [
+    {
+      "id": "sub_1792000407608",
+      "projectId": "proj_1",
+      "projectTitle": "AI Resume Analyzer & ATS Scoring Engine",
+      "studentId": "usr_student_1",
+      "studentName": "Srishti Jain",
+      "studentRegNo": "24BRS1412",
+      "milestoneId": "m_4",
+      "milestoneTitle": "End-to-End Dockerized Testing & CI/CD Deployment",
+      "submittedAt": "Just now",
+      "repoUrl": "https://github.com/meetsrishti14/ai-resume-analyzer",
+      "deliverables": "Completed Docker containerization and automated pytest CI/CD suite.",
+      "status": "Needs Revision",
+      "facultyNotes": "NA",
+      "grade": "8/10"
+    },
+    {
+      "id": "sub_501",
+      "projectId": "proj_1",
+      "projectTitle": "AI Resume Analyzer & ATS Scoring Engine",
+      "studentId": "usr_student_1",
+      "studentName": "Srishti Jain",
+      "studentRegNo": "24BRS1412",
+      "milestoneId": "m_3",
+      "milestoneTitle": "Milestone 3: Semantic Embeddings Model & Matching API",
+      "submittedAt": "Oct 14, 2026 at 2:15 PM",
+      "repoUrl": "https://github.com/meetsrishti14/ai-resume-analyzer/releases/tag/v0.3.0",
+      "deliverables": "FastAPI endpoints `/api/v1/score` with unit test suite (92% code coverage) and OpenAPI swagger docs.",
+      "status": "Approved",
+      "facultyNotes": "Outstanding architecture and vector embeddings pipeline. Approved.",
+      "grade": "9.8/10"
+    },
+    {
+      "id": "sub_502",
+      "projectId": "proj_2",
+      "projectTitle": "Autonomous Indoor Warehouse Navigation Drone",
+      "studentId": "usr_student_4",
+      "studentName": "Kunal Sharma",
+      "studentRegNo": "24BCS1104",
+      "milestoneId": "m_202",
+      "milestoneTitle": "Milestone 2: Real-time Point Cloud Odometry Testing",
+      "submittedAt": "Oct 13, 2026 at 6:40 PM",
+      "repoUrl": "https://github.com/kunal-sharma/indoor-nav-drone/tree/milestone-2",
+      "deliverables": "Bag file recordings from Gazebo simulation showing 3D point cloud registration with drift < 2.5cm.",
+      "status": "Pending Review",
+      "facultyNotes": "",
+      "grade": ""
+    },
+    {
+      "id": "sub_503",
+      "projectId": "proj_1",
+      "projectTitle": "AI Resume Analyzer & ATS Scoring Engine",
+      "studentId": "usr_student_1",
+      "studentName": "Srishti Jain",
+      "studentRegNo": "24BRS1412",
+      "milestoneId": "m_2",
+      "milestoneTitle": "Milestone 2: PDF Document Parser & Text Extraction Pipeline",
+      "submittedAt": "Sep 20, 2026 at 4:00 PM",
+      "repoUrl": "https://github.com/meetsrishti14/ai-resume-analyzer/tree/v0.2.0",
+      "deliverables": "PyPDF2 and pdfplumber extraction service with table header detection.",
+      "status": "Approved",
+      "facultyNotes": "Excellent code structure and modularity. Good error handling for encrypted PDF corner cases.",
+      "grade": "9.5/10"
+    }
+  ],
+  "notifications": [
+    {
+      "id": "notif_1792079851530",
+      "recipientId": "usr_student_1",
+      "title": "Milestone Evaluated: Needs Revision",
+      "message": "Your submission for 'End-to-End Dockerized Testing & CI/CD Deployment' has been evaluated: Needs Revision. Grade: 8/10. Feedback: NA",
+      "type": "warning",
+      "timestamp": "Just now",
+      "read": false
+    },
+    {
+      "id": "notif_1792002052776",
+      "recipientId": "usr_recruiter_1",
+      "title": "New Candidate Application",
+      "message": "Srishti Jain applied for Data Engineering & Analytics Intern at FinMetrics Analytics.",
+      "type": "info",
+      "timestamp": "Just now",
+      "read": false
+    },
+    {
+      "id": "notif_1792000407718",
+      "recipientId": "usr_student_1",
+      "title": "Application Status Updated: Interview Scheduled",
+      "message": "Your application for Generative AI Platform Engineer Intern at HyperScale AI has been moved to 'Interview Scheduled'. Notes: Passed technical screening! Video interview scheduled with Engineering VP on Monday 3:00 PM.",
+      "type": "success",
+      "timestamp": "Just now",
+      "read": false
+    },
+    {
+      "id": "notif_1792000407705",
+      "recipientId": "usr_student_1",
+      "title": "New Candidate Application",
+      "message": "Srishti Jain applied for Generative AI Platform Engineer Intern at HyperScale AI.",
+      "type": "info",
+      "timestamp": "Just now",
+      "read": false
+    },
+    {
+      "id": "notif_1792000407647",
+      "recipientId": "usr_student_1",
+      "title": "Milestone Evaluated: Approved",
+      "message": "Your submission for 'End-to-End Dockerized Testing & CI/CD Deployment' has been evaluated: Approved. Grade: 10/10. Feedback: Exemplary Docker configuration and test coverage. Approved with highest distinction.",
+      "type": "success",
+      "timestamp": "Just now",
+      "read": false
+    },
+    {
+      "id": "notif_1792000407608",
+      "recipientId": "usr_faculty_1",
+      "title": "Milestone Submitted for Evaluation",
+      "message": "Srishti Jain submitted 'End-to-End Dockerized Testing & CI/CD Deployment' for project 'AI Resume Analyzer & ATS Scoring Engine'.",
+      "type": "warning",
+      "timestamp": "Just now",
+      "read": false
+    },
+    {
+      "id": "notif_1791998889298",
+      "recipientId": "usr_student_1",
+      "title": "Milestone Evaluated: Approved",
+      "message": "Your submission for 'Milestone 3: Semantic Embeddings Model & Matching API' has been evaluated: Approved. Grade: 9.8/10. Feedback: Outstanding architecture and vector embeddings pipeline. Approved.",
+      "type": "success",
+      "timestamp": "Just now",
+      "read": false
+    },
+    {
+      "id": "notif_1791998730612",
+      "recipientId": "usr_student_1",
+      "title": "Application Status Updated: Interview Scheduled",
+      "message": "Your application for UI/UX Design Systems Intern at PixelCraft Studio has been moved to 'Interview Scheduled'. Notes: Great portfolio. Technical round set for Friday 3 PM.",
+      "type": "success",
+      "timestamp": "Just now",
+      "read": false
+    },
+    {
+      "id": "notif_1791997718901",
+      "recipientId": "usr_recruiter_1",
+      "title": "New Candidate Applied",
+      "message": "Srishti Jain applied for UI/UX Design Systems Intern at PixelCraft Studio.",
+      "type": "info",
+      "timestamp": "Just now",
+      "read": false
+    },
+    {
+      "id": "notif_1",
+      "recipientId": "usr_student_1",
+      "title": "Interview Round 2 Scheduled",
+      "message": "Nexus Robotics Labs invited you for Technical Round 2 for Machine Learning Research Intern.",
+      "type": "info",
+      "timestamp": "Today at 3:10 PM",
+      "read": false
+    },
+    {
+      "id": "notif_2",
+      "recipientId": "usr_student_1",
+      "title": "Milestone 2 Approved",
+      "message": "Dr. Arun Kumar approved Milestone 2 for 'AI Resume Analyzer & ATS' with grade 9.5/10.",
+      "type": "success",
+      "timestamp": "Yesterday at 11:45 AM",
+      "read": true
+    },
+    {
+      "id": "notif_3",
+      "recipientId": "usr_recruiter_1",
+      "title": "New Internship Application",
+      "message": "Srishti Jain applied for Full-Stack Developer Intern with a 94% ATS match resume.",
+      "type": "info",
+      "timestamp": "Today at 1:20 PM",
+      "read": false
+    },
+    {
+      "id": "notif_4",
+      "recipientId": "usr_faculty_1",
+      "title": "Milestone Submitted for Review",
+      "message": "Team 'AI Resume Analyzer' submitted Milestone 3 for evaluation.",
+      "type": "warning",
+      "timestamp": "Today at 2:15 PM",
+      "read": false
+    }
+  ],
+  "facultySchedule": [
+    {
+      "id": "viva_1792079556413",
+      "projectId": "proj_1",
+      "projectTitle": "AI Resume Analyzer & ATS Scoring System",
+      "studentLead": "Srishti Jain",
+      "sessionType": "Sprint Review & Viva Defense",
+      "date": "Oct 25, 2026",
+      "time": "4:00 PM - 5:00 PM",
+      "meetUrl": "https://meet.google.com/abc-xyz-vit",
+      "status": "Scheduled",
+      "agenda": "Milestone verification and sprint code quality assessment."
+    },
+    {
+      "id": "viva_1",
+      "projectId": "proj_1",
+      "projectTitle": "AI Resume Analyzer & ATS Scoring Engine",
+      "studentLead": "Srishti Jain",
+      "sessionType": "Final Capstone Defense & Demo",
+      "date": "Oct 20, 2026",
+      "time": "4:30 PM - 5:30 PM",
+      "meetUrl": "https://meet.google.com/abc-xyz-vit",
+      "status": "Scheduled",
+      "agenda": "Review of Docker containerization, pytest test coverage, and vector similarity API benchmark."
+    },
+    {
+      "id": "viva_2",
+      "projectId": "proj_2",
+      "projectTitle": "Autonomous Indoor Warehouse Navigation Drone",
+      "studentLead": "Kunal Sharma",
+      "sessionType": "Mid-Term Milestone Evaluation",
+      "date": "Oct 22, 2026",
+      "time": "3:00 PM - 4:00 PM",
+      "meetUrl": "https://meet.google.com/drone-viva-2026",
+      "status": "Scheduled",
+      "agenda": "Point cloud odometry testing in Gazebo simulation environment."
+    }
+  ],
+  "recruiterInterviews": [
+    {
+      "id": "intv_1792079556423",
+      "applicationId": "app_1",
+      "candidateName": "Srishti Jain",
+      "candidateEmail": "srishti.jain2024@vitstudent.ac.in",
+      "roleTitle": "Generative AI Platform Engineer Intern",
+      "company": "HyperScale AI",
+      "round": "Technical Screening - Round 1",
+      "date": "Oct 21, 2026",
+      "time": "3:00 PM - 3:45 PM",
+      "interviewer": "Elena Vance",
+      "meetUrl": "https://meet.google.com/interview-sync",
+      "status": "Confirmed",
+      "notes": "Technical interview round scheduled."
+    },
+    {
+      "id": "intv_1",
+      "applicationId": "app_1792000407705",
+      "candidateName": "Srishti Jain",
+      "candidateEmail": "srishti.jain2024@vitstudent.ac.in",
+      "roleTitle": "Generative AI Platform Engineer Intern",
+      "company": "HyperScale AI",
+      "round": "Technical Screening & System Architecture",
+      "date": "Oct 19, 2026",
+      "time": "3:00 PM - 3:45 PM",
+      "interviewer": "Elena Vance (Head of University Talent)",
+      "meetUrl": "https://meet.google.com/hyperscale-int-01",
+      "status": "Confirmed",
+      "notes": "Passed technical screening! Video interview scheduled with Engineering VP on Monday 3:00 PM."
+    },
+    {
+      "id": "intv_2",
+      "applicationId": "app_1791997718900",
+      "candidateName": "Srishti Jain",
+      "candidateEmail": "srishti.jain2024@vitstudent.ac.in",
+      "roleTitle": "UI/UX Design Systems Intern",
+      "company": "PixelCraft Studio",
+      "round": "Design Portfolio & Figma Systems Round",
+      "date": "Oct 17, 2026",
+      "time": "3:00 PM - 4:00 PM",
+      "interviewer": "Design Lead (PixelCraft Studio)",
+      "meetUrl": "https://meet.google.com/pixelcraft-round2",
+      "status": "Confirmed",
+      "notes": "Great portfolio. Technical round set for Friday 3 PM."
+    },
+    {
+      "id": "intv_3",
+      "applicationId": "app_101",
+      "candidateName": "Srishti Jain",
+      "candidateEmail": "srishti.jain2024@vitstudent.ac.in",
+      "roleTitle": "Machine Learning Research Intern",
+      "company": "Nexus Robotics Labs",
+      "round": "Round 2 Technical Deep Dive",
+      "date": "Oct 16, 2026",
+      "time": "2:30 PM - 3:30 PM",
+      "interviewer": "Robotics Vision Lead",
+      "meetUrl": "https://meet.google.com/nexus-robotics-int",
+      "status": "Confirmed",
+      "notes": "Strong academic record in AI & Robotics. Coding round cleared with 96%. Round 2 technical interview set for Friday."
+    }
+  ],
+  "recruiterOffers": [
+    {
+      "id": "off_1792079556431",
+      "applicationId": "app_1",
+      "candidateName": "Srishti Jain",
+      "candidateEmail": "srishti.jain2024@vitstudent.ac.in",
+      "roleTitle": "Generative AI Platform Engineer Intern",
+      "company": "HyperScale AI",
+      "stipend": "₹45,000/mo",
+      "startDate": "Nov 15, 2026",
+      "duration": "6 Months (PPO eligible)",
+      "status": "Offer Extended",
+      "message": "Congratulations! We are delighted to extend this internship offer."
+    },
+    {
+      "id": "off_1",
+      "candidateName": "Srishti Jain",
+      "candidateEmail": "srishti.jain2024@vitstudent.ac.in",
+      "roleTitle": "Generative AI Platform Engineer Intern",
+      "company": "HyperScale AI",
+      "stipend": "₹45,000/mo",
+      "startDate": "Nov 15, 2026",
+      "duration": "6 Months",
+      "status": "Offer Extended",
+      "message": "We are thrilled to extend an internship offer for the Generative AI Platform Engineer role at HyperScale AI! Your technical foundation in PyTorch and FastAPI was outstanding."
+    }
+  ]
+}

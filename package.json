@@ -1,0 +1,17 @@
+{
+  "name": "internship-and-project-collaboration",
+  "version": "1.0.0",
+  "description": "A centralized platform connecting students, mentors, and organizations for internships and project collaboration.",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "keywords": [
+    "internship",
+    "project-collaboration",
+    "student-portal",
+    "mentorship"
+  ],
+  "author": "Srishti Jain",
+  "license": "ISC"
+}

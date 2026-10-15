@@ -1,0 +1,2489 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Enhanced Figma Mockup Screens &bull; Internship & Project Collaboration</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #4f46e5;
+      --primary-hover: #4338ca;
+      --primary-light: #eef2ff;
+      --primary-border: #c7d2fe;
+      --accent: #06b6d4;
+      --accent-light: #ecfeff;
+      --success: #10b981;
+      --success-light: #ecfdf5;
+      --success-text: #065f46;
+      --warning: #f59e0b;
+      --warning-light: #fffbeb;
+      --warning-text: #92400e;
+      --danger: #ef4444;
+      --danger-light: #fef2f2;
+      --danger-text: #991b1b;
+      --slate-900: #0f172a;
+      --slate-800: #1e293b;
+      --slate-700: #334155;
+      --slate-600: #475569;
+      --slate-500: #64748b;
+      --slate-400: #94a3b8;
+      --slate-300: #cbd5e1;
+      --slate-200: #e2e8f0;
+      --slate-100: #f1f5f9;
+      --slate-50: #f8fafc;
+      --white: #ffffff;
+      
+      --font-body: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      --font-heading: 'Outfit', 'Inter', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+      
+      --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.06);
+      --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.08), 0 2px 4px -2px rgba(0, 0, 0, 0.06);
+      --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -4px rgba(0, 0, 0, 0.04);
+      --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.05);
+      --radius-sm: 6px;
+      --radius-md: 10px;
+      --radius-lg: 16px;
+      --radius-full: 9999px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background-color: #0b0f19;
+      color: var(--slate-800);
+      margin: 0;
+      padding: 0;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Screen Canvas Frame (1920x1080 fixed for perfect Figma capture) */
+    .screen-canvas {
+      width: 1920px;
+      height: 1080px;
+      background-color: var(--slate-50);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* Header Nav Component */
+    .top-nav {
+      height: 74px;
+      background: #ffffff;
+      border-bottom: 1px solid var(--slate-200);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 48px;
+      z-index: 10;
+      flex-shrink: 0;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+      color: var(--slate-900);
+    }
+
+    .brand-icon {
+      width: 40px;
+      height: 40px;
+      background: linear-gradient(135deg, #4f46e5 0%, #3b82f6 100%);
+      border-radius: 11px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-size: 20px;
+      font-weight: 800;
+      font-family: var(--font-heading);
+      box-shadow: 0 4px 12px rgba(79, 70, 229, 0.35);
+    }
+
+    .brand-text {
+      font-family: var(--font-heading);
+      font-size: 21px;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+      color: var(--slate-900);
+    }
+    .brand-text span {
+      color: var(--primary);
+    }
+
+    .nav-search-bar {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: var(--slate-100);
+      border: 1px solid var(--slate-200);
+      padding: 9px 18px;
+      border-radius: var(--radius-full);
+      width: 420px;
+      color: var(--slate-500);
+      font-size: 14px;
+    }
+    .nav-search-bar kbd {
+      margin-left: auto;
+      background: #ffffff;
+      border: 1px solid var(--slate-300);
+      border-radius: 4px;
+      padding: 2px 7px;
+      font-size: 11px;
+      font-family: var(--font-mono);
+      color: var(--slate-500);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .nav-link {
+      padding: 9px 18px;
+      border-radius: var(--radius-full);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--slate-600);
+      transition: all 0.15s ease;
+      display: flex;
+      align-items: center;
+      gap: 7px;
+    }
+    .nav-link.active {
+      background: var(--primary-light);
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    .nav-user-area {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .icon-btn {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      border: 1px solid var(--slate-200);
+      background: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--slate-600);
+      cursor: pointer;
+      position: relative;
+    }
+    .icon-btn .badge-dot {
+      position: absolute;
+      top: 9px;
+      right: 9px;
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--danger);
+      border: 2px solid #fff;
+    }
+
+    .user-pill {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 5px 16px 5px 5px;
+      border-radius: var(--radius-full);
+      border: 1px solid var(--slate-200);
+      background: var(--slate-50);
+    }
+    .user-avatar {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #6366f1 0%, #a855f7 100%);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      font-weight: 700;
+    }
+    .user-info-text {
+      text-align: left;
+      line-height: 1.25;
+    }
+    .user-name {
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--slate-800);
+    }
+    .user-role {
+      font-size: 11.5px;
+      color: var(--slate-500);
+    }
+
+    /* Common Buttons */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 20px;
+      border-radius: var(--radius-md);
+      font-size: 14px;
+      font-weight: 600;
+      cursor: pointer;
+      border: 1px solid transparent;
+      transition: all 0.15s ease;
+      text-decoration: none;
+      font-family: var(--font-body);
+    }
+    .btn-primary {
+      background: var(--primary);
+      color: #ffffff;
+      box-shadow: 0 3px 8px rgba(79, 70, 229, 0.28);
+    }
+    .btn-secondary {
+      background: #ffffff;
+      border-color: var(--slate-300);
+      color: var(--slate-700);
+      box-shadow: var(--shadow-sm);
+    }
+    .btn-outline-primary {
+      background: transparent;
+      border-color: var(--primary-border);
+      color: var(--primary);
+    }
+    .btn-sm {
+      padding: 7px 14px;
+      font-size: 13px;
+      border-radius: var(--radius-sm);
+    }
+
+    /* Common Tags & Badges */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 4px 10px;
+      border-radius: var(--radius-full);
+      font-size: 12px;
+      font-weight: 600;
+    }
+    .badge-success { background: var(--success-light); color: var(--success-text); border: 1px solid #a7f3d0; }
+    .badge-warning { background: var(--warning-light); color: var(--warning-text); border: 1px solid #fde68a; }
+    .badge-primary { background: var(--primary-light); color: var(--primary); border: 1px solid var(--primary-border); }
+    .badge-neutral { background: var(--slate-100); color: var(--slate-600); border: 1px solid var(--slate-200); }
+
+    /* SVG Helper */
+    svg.icon {
+      width: 17px;
+      height: 17px;
+      stroke-width: 2.2;
+      stroke: currentColor;
+      fill: none;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    /* ==========================================================================
+       SCREEN 1: LOGIN & AUTHENTICATION
+       ========================================================================== */
+    #screen-1 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      background: #ffffff;
+      height: 1080px;
+    }
+    .auth-left {
+      background: linear-gradient(135deg, #1e1b4b 0%, #0f172a 100%);
+      padding: 80px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      overflow: hidden;
+      color: #fff;
+    }
+    .auth-left::before {
+      content: '';
+      position: absolute;
+      top: -100px;
+      right: -100px;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(99, 102, 241, 0.4) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .auth-left::after {
+      content: '';
+      position: absolute;
+      bottom: -80px;
+      left: -80px;
+      width: 450px;
+      height: 450px;
+      border-radius: 50%;
+      background: radial-gradient(circle, rgba(6, 182, 212, 0.3) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .auth-brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-family: var(--font-heading);
+      font-size: 24px;
+      font-weight: 700;
+      color: #fff;
+      z-index: 2;
+    }
+    .auth-brand-logo .brand-icon {
+      width: 44px;
+      height: 44px;
+      box-shadow: 0 0 25px rgba(99, 102, 241, 0.7);
+    }
+    .auth-left-content {
+      position: relative;
+      z-index: 2;
+      max-width: 620px;
+    }
+    .auth-tagline {
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      color: #818cf8;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }
+    .auth-title {
+      font-family: var(--font-heading);
+      font-size: 48px;
+      line-height: 1.15;
+      font-weight: 800;
+      letter-spacing: -1px;
+      margin-bottom: 20px;
+    }
+    .auth-title span {
+      background: linear-gradient(135deg, #a5b4fc 0%, #38bdf8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+    .auth-subtitle {
+      font-size: 17px;
+      color: #94a3b8;
+      line-height: 1.55;
+      margin-bottom: 40px;
+    }
+    .auth-stats-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+    .auth-stat-card {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      backdrop-filter: blur(12px);
+      padding: 20px;
+      border-radius: var(--radius-md);
+    }
+    .auth-stat-num {
+      font-family: var(--font-heading);
+      font-size: 32px;
+      font-weight: 800;
+      color: #fff;
+    }
+    .auth-stat-lbl {
+      font-size: 13px;
+      color: #94a3b8;
+      margin-top: 4px;
+    }
+
+    .auth-right {
+      padding: 80px 100px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      background: #f8fafc;
+    }
+    .auth-card {
+      max-width: 540px;
+      width: 100%;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 48px;
+      border-radius: var(--radius-lg);
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.06);
+      border: 1px solid var(--slate-200);
+    }
+    .auth-card-header {
+      margin-bottom: 28px;
+    }
+    .auth-card-header h2 {
+      font-family: var(--font-heading);
+      font-size: 30px;
+      font-weight: 800;
+      color: var(--slate-900);
+      margin-bottom: 8px;
+    }
+    .auth-card-header p {
+      font-size: 14.5px;
+      color: var(--slate-500);
+    }
+    .role-tabs {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      background: var(--slate-100);
+      padding: 5px;
+      border-radius: var(--radius-md);
+      margin-bottom: 26px;
+    }
+    .role-tab {
+      padding: 10px;
+      text-align: center;
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--slate-600);
+      border-radius: var(--radius-sm);
+      cursor: pointer;
+    }
+    .role-tab.active {
+      background: #ffffff;
+      color: var(--primary);
+      box-shadow: var(--shadow-sm);
+      font-weight: 700;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    .form-label {
+      display: block;
+      font-size: 13.5px;
+      font-weight: 600;
+      color: var(--slate-700);
+      margin-bottom: 7px;
+    }
+    .input-wrapper {
+      position: relative;
+      display: flex;
+      align-items: center;
+    }
+    .input-wrapper .input-icon {
+      position: absolute;
+      left: 15px;
+      color: var(--slate-400);
+    }
+    .form-input {
+      width: 100%;
+      padding: 13px 16px 13px 44px;
+      border: 1px solid var(--slate-300);
+      border-radius: var(--radius-md);
+      font-size: 14.5px;
+      font-family: var(--font-body);
+      color: var(--slate-800);
+      background: #fff;
+    }
+    .form-options {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 13.5px;
+      margin-bottom: 24px;
+    }
+    .checkbox-label {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--slate-600);
+      cursor: pointer;
+    }
+    .forgot-link {
+      color: var(--primary);
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .btn-login-submit {
+      width: 100%;
+      padding: 14px;
+      font-size: 15.5px;
+      border-radius: var(--radius-md);
+      font-weight: 700;
+    }
+    .divider {
+      display: flex;
+      align-items: center;
+      margin: 24px 0;
+      color: var(--slate-400);
+      font-size: 12px;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+    .divider::before, .divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--slate-200);
+    }
+    .divider span {
+      padding: 0 14px;
+    }
+    .sso-btn {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      background: #ffffff;
+      border: 1px solid var(--slate-300);
+      padding: 12px;
+      border-radius: var(--radius-md);
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--slate-700);
+      cursor: pointer;
+      box-shadow: var(--shadow-sm);
+    }
+
+    /* ==========================================================================
+       SCREEN 2: STUDENT DASHBOARD
+       ========================================================================== */
+    .dashboard-layout {
+      flex: 1;
+      padding: 32px 48px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+      background: #f8fafc;
+      overflow: hidden;
+    }
+    .hero-greeting {
+      background: linear-gradient(135deg, #4f46e5 0%, #3b82f6 100%);
+      border-radius: var(--radius-lg);
+      padding: 26px 36px;
+      color: #ffffff;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 10px 25px rgba(79, 70, 229, 0.25);
+    }
+    .hero-left h1 {
+      font-family: var(--font-heading);
+      font-size: 28px;
+      font-weight: 800;
+      margin-bottom: 6px;
+    }
+    .hero-left p {
+      font-size: 15px;
+      color: #e0e7ff;
+    }
+    .hero-actions {
+      display: flex;
+      gap: 14px;
+    }
+
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 22px;
+    }
+    .stat-card-widget {
+      background: #ffffff;
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-md);
+      padding: 20px 24px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .stat-widget-info .lbl {
+      font-size: 12.5px;
+      font-weight: 700;
+      color: var(--slate-500);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .stat-widget-info .val {
+      font-family: var(--font-heading);
+      font-size: 32px;
+      font-weight: 800;
+      color: var(--slate-900);
+      margin: 4px 0;
+    }
+    .stat-widget-info .trend {
+      font-size: 12.5px;
+      font-weight: 600;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .stat-icon-box {
+      width: 52px;
+      height: 52px;
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .dash-two-col {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr;
+      gap: 24px;
+      flex: 1;
+    }
+    .card-panel {
+      background: #ffffff;
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+    }
+    .panel-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 18px;
+    }
+    .panel-header h3 {
+      font-family: var(--font-heading);
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--slate-900);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .panel-header .view-all {
+      font-size: 13.5px;
+      font-weight: 700;
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    .opp-item-card {
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-md);
+      padding: 16px 18px;
+      margin-bottom: 14px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #ffffff;
+      box-shadow: var(--shadow-sm);
+    }
+    .opp-meta-left {
+      display: flex;
+      gap: 16px;
+      align-items: center;
+    }
+    .comp-logo {
+      width: 48px;
+      height: 48px;
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 17px;
+      color: #fff;
+    }
+    .opp-details h4 {
+      font-size: 15.5px;
+      font-weight: 700;
+      color: var(--slate-900);
+      margin-bottom: 3px;
+    }
+    .opp-details .comp-name {
+      font-size: 13px;
+      color: var(--slate-500);
+      margin-bottom: 6px;
+    }
+    .pill-row {
+      display: flex;
+      gap: 6px;
+    }
+
+    .project-card-mini {
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-md);
+      padding: 16px 18px;
+      margin-bottom: 14px;
+      background: #ffffff;
+      box-shadow: var(--shadow-sm);
+    }
+    .proj-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 8px;
+    }
+    .proj-title {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--slate-900);
+    }
+    .proj-role {
+      font-size: 12.5px;
+      color: var(--slate-500);
+    }
+    .progress-bar-wrap {
+      background: var(--slate-100);
+      height: 8px;
+      border-radius: 4px;
+      overflow: hidden;
+      margin: 12px 0 8px 0;
+    }
+    .progress-bar-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #4f46e5, #06b6d4);
+      border-radius: 4px;
+    }
+    .proj-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 12.5px;
+      color: var(--slate-500);
+    }
+    .avatar-stack {
+      display: flex;
+      align-items: center;
+    }
+    .avatar-stack .av {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      border: 2px solid #fff;
+      margin-left: -7px;
+      font-size: 10.5px;
+      font-weight: 700;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .avatar-stack .av:first-child { margin-left: 0; }
+
+    /* ==========================================================================
+       SCREEN 3: BROWSE INTERNSHIPS
+       ========================================================================== */
+    .browse-layout {
+      flex: 1;
+      padding: 28px 48px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      background: #f8fafc;
+    }
+    .browse-header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+    .browse-header-row h1 {
+      font-family: var(--font-heading);
+      font-size: 26px;
+      font-weight: 800;
+      color: var(--slate-900);
+    }
+    .browse-header-row p {
+      font-size: 14.5px;
+      color: var(--slate-500);
+      margin-top: 3px;
+    }
+
+    .filter-action-bar {
+      background: #ffffff;
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-lg);
+      padding: 14px 20px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      box-shadow: var(--shadow-sm);
+    }
+    .search-input-box {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--slate-50);
+      border: 1px solid var(--slate-300);
+      border-radius: var(--radius-md);
+      padding: 10px 16px;
+    }
+    .search-input-box input {
+      border: none;
+      background: transparent;
+      outline: none;
+      font-size: 14px;
+      width: 100%;
+      font-family: var(--font-body);
+    }
+    .filter-dropdown {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      padding: 10px 15px;
+      border: 1px solid var(--slate-200);
+      background: #ffffff;
+      border-radius: var(--radius-md);
+      font-size: 13.5px;
+      font-weight: 500;
+      color: var(--slate-700);
+      cursor: pointer;
+    }
+
+    .internships-grid-6 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 20px;
+      flex: 1;
+    }
+    .internship-card-6 {
+      background: #ffffff;
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-lg);
+      padding: 20px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .int-card-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 12px;
+    }
+    .int-comp-info {
+      display: flex;
+      gap: 12px;
+    }
+    .int-role-title {
+      font-family: var(--font-heading);
+      font-size: 16.5px;
+      font-weight: 700;
+      color: var(--slate-900);
+      margin-bottom: 2px;
+    }
+    .int-company {
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--slate-600);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .stipend-tag {
+      font-family: var(--font-heading);
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--success-text);
+      background: var(--success-light);
+      padding: 4px 9px;
+      border-radius: var(--radius-sm);
+      border: 1px solid #a7f3d0;
+    }
+    .int-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin: 10px 0 14px 0;
+    }
+    .int-card-bottom {
+      border-top: 1px solid var(--slate-100);
+      padding-top: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .int-meta-info {
+      display: flex;
+      gap: 12px;
+      font-size: 12px;
+      color: var(--slate-500);
+    }
+
+    /* ==========================================================================
+       SCREEN 4: PROJECT COLLABORATION
+       ========================================================================== */
+    .collab-layout {
+      flex: 1;
+      padding: 28px 48px;
+      display: grid;
+      grid-template-columns: 1.9fr 1.05fr;
+      gap: 26px;
+      background: #f8fafc;
+    }
+    .collab-main-col {
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+    }
+    .collab-head-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .collab-head-bar h1 {
+      font-family: var(--font-heading);
+      font-size: 26px;
+      font-weight: 800;
+      color: var(--slate-900);
+    }
+    .collab-projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 20px;
+    }
+    .project-collab-card {
+      background: #ffffff;
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-lg);
+      padding: 22px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .proj-card-title-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 8px;
+    }
+    .proj-big-title {
+      font-family: var(--font-heading);
+      font-size: 17.5px;
+      font-weight: 700;
+      color: var(--slate-900);
+    }
+    .proj-desc {
+      font-size: 13px;
+      color: var(--slate-600);
+      line-height: 1.45;
+      margin-bottom: 14px;
+    }
+    .collab-side-col {
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+    }
+    .meeting-item {
+      display: flex;
+      gap: 14px;
+      padding: 12px 0;
+      border-bottom: 1px solid var(--slate-100);
+    }
+    .meeting-date-badge {
+      width: 44px;
+      height: 44px;
+      border-radius: var(--radius-sm);
+      background: var(--primary-light);
+      border: 1px solid var(--primary-border);
+      color: var(--primary);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      font-size: 11px;
+      font-weight: 700;
+      line-height: 1.1;
+      flex-shrink: 0;
+    }
+    .meeting-details h5 {
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--slate-800);
+      margin-bottom: 3px;
+    }
+    .meeting-details p {
+      font-size: 12.5px;
+      color: var(--slate-500);
+    }
+    .activity-feed-item {
+      display: flex;
+      gap: 12px;
+      padding: 10px 0;
+      font-size: 13.5px;
+    }
+    .activity-dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--primary);
+      margin-top: 6px;
+      flex-shrink: 0;
+    }
+
+    /* ==========================================================================
+       SCREEN 5: STUDENT PROFILE
+       ========================================================================== */
+    .profile-layout {
+      flex: 1;
+      padding: 26px 48px;
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+      background: #f8fafc;
+    }
+    .profile-hero-card {
+      background: #ffffff;
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      flex-shrink: 0;
+    }
+    .profile-banner {
+      height: 110px;
+      background: linear-gradient(135deg, #1e1b4b 0%, #4338ca 50%, #06b6d4 100%);
+      position: relative;
+    }
+    .profile-main-body {
+      padding: 0 36px 20px 36px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      position: relative;
+    }
+    .profile-avatar-wrap {
+      display: flex;
+      align-items: flex-end;
+      gap: 22px;
+      margin-top: -50px;
+    }
+    .big-avatar {
+      width: 105px;
+      height: 105px;
+      border-radius: 50%;
+      border: 4px solid #ffffff;
+      background: linear-gradient(135deg, #6366f1 0%, #3b82f6 100%);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 36px;
+      font-weight: 800;
+      font-family: var(--font-heading);
+      box-shadow: var(--shadow-md);
+    }
+    .profile-names h2 {
+      font-family: var(--font-heading);
+      font-size: 24px;
+      font-weight: 800;
+      color: var(--slate-900);
+    }
+    .profile-names p {
+      font-size: 14px;
+      color: var(--slate-500);
+      margin-top: 3px;
+    }
+    .profile-info-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      background: var(--slate-50);
+      border-top: 1px solid var(--slate-200);
+      padding: 16px 36px;
+    }
+    .info-cell .lbl {
+      font-size: 12px;
+      color: var(--slate-500);
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+    .info-cell .val {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--slate-800);
+      margin-top: 2px;
+    }
+
+    .profile-content-grid {
+      display: grid;
+      grid-template-columns: 1.8fr 1fr;
+      gap: 24px;
+      flex: 1;
+    }
+
+    /* ==========================================================================
+       SCREEN 6: FACULTY DASHBOARD
+       ========================================================================== */
+    .faculty-layout {
+      flex: 1;
+      padding: 26px 48px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      background: #f8fafc;
+    }
+    .faculty-header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .faculty-header-row h1 {
+      font-family: var(--font-heading);
+      font-size: 26px;
+      font-weight: 800;
+      color: var(--slate-900);
+    }
+    .faculty-header-row p {
+      font-size: 14px;
+      color: var(--slate-500);
+      margin-top: 3px;
+    }
+    .faculty-metrics-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      flex-shrink: 0;
+    }
+    .fac-metric-card {
+      background: #ffffff;
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-lg);
+      padding: 20px;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+    .fac-icon-square {
+      width: 52px;
+      height: 52px;
+      border-radius: var(--radius-md);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+    }
+    .fac-metric-data .title {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--slate-500);
+    }
+    .fac-metric-data .num {
+      font-family: var(--font-heading);
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--slate-900);
+    }
+
+    .fac-table-card {
+      background: #ffffff;
+      border: 1px solid var(--slate-200);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    .fac-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+    }
+    .fac-table th {
+      background: var(--slate-50);
+      padding: 13px 20px;
+      font-size: 12.5px;
+      font-weight: 700;
+      color: var(--slate-600);
+      border-bottom: 1px solid var(--slate-200);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .fac-table td {
+      padding: 13px 20px;
+      font-size: 14px;
+      color: var(--slate-700);
+      border-bottom: 1px solid var(--slate-100);
+      vertical-align: middle;
+    }
+    .fac-table tr:hover td {
+      background: #f8fafc;
+    }
+    .student-cell {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .student-cell .av {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: var(--primary-light);
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 12.5px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- =========================================================================
+       SCREEN 1: LOGIN & AUTHENTICATION
+       ========================================================================= -->
+  <div class="screen-canvas" id="screen-1">
+    <!-- Left Feature Brand Banner -->
+    <div class="auth-left">
+      <div class="auth-brand-logo">
+        <div class="brand-icon">⚡</div>
+        <div>Collaborate<span>X</span> &bull; Campus Portal</div>
+      </div>
+
+      <div class="auth-left-content">
+        <div class="auth-tagline">Academic &bull; Industry &bull; Innovation</div>
+        <h1 class="auth-title">Where Ambition Meets <span>Real Opportunities</span></h1>
+        <p class="auth-subtitle">Connect with verified industry internships, build high-impact engineering projects, and collaborate with faculty mentors seamlessly in one unified platform.</p>
+        
+        <div class="auth-stats-grid">
+          <div class="auth-stat-card">
+            <div class="auth-stat-num">500+</div>
+            <div class="auth-stat-lbl">Active Internships</div>
+          </div>
+          <div class="auth-stat-card">
+            <div class="auth-stat-num">120+</div>
+            <div class="auth-stat-lbl">Live Projects</div>
+          </div>
+          <div class="auth-stat-card">
+            <div class="auth-stat-num">98%</div>
+            <div class="auth-stat-lbl">Placement Match</div>
+          </div>
+        </div>
+      </div>
+
+      <div style="font-size: 13px; color: #64748b;">
+        &copy; 2026 Internship & Project Collaboration Platform &bull; ISO 27001 Certified Security &bull; Vit University
+      </div>
+    </div>
+
+    <!-- Right Login Card -->
+    <div class="auth-right">
+      <div class="auth-card">
+        <div class="auth-card-header">
+          <h2>Welcome Back</h2>
+          <p>Please enter your institutional credentials to access your portal</p>
+        </div>
+
+        <div class="role-tabs">
+          <div class="role-tab active">Student</div>
+          <div class="role-tab">Faculty</div>
+          <div class="role-tab">Recruiter</div>
+        </div>
+
+        <form onsubmit="return false;">
+          <div class="form-group">
+            <label class="form-label">Institutional Email</label>
+            <div class="input-wrapper">
+              <svg class="icon input-icon" viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+              <input type="email" class="form-input" value="aarav.sharma@college.edu" placeholder="name@college.edu">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Password</label>
+            <div class="input-wrapper">
+              <svg class="icon input-icon" viewBox="0 0 24 24"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>
+              <input type="password" class="form-input" value="••••••••••••" placeholder="Enter your password">
+            </div>
+          </div>
+
+          <div class="form-options">
+            <label class="checkbox-label">
+              <input type="checkbox" checked style="accent-color: var(--primary);"> Remember for 30 days
+            </label>
+            <a href="#" class="forgot-link">Forgot Password?</a>
+          </div>
+
+          <button class="btn btn-primary btn-login-submit">Sign In to Dashboard &rarr;</button>
+
+          <div class="divider">
+            <span>Or continue with</span>
+          </div>
+
+          <button class="sso-btn">
+            <svg style="width: 18px; height: 18px;" viewBox="0 0 24 24"><path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/><path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/><path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.06H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.94l2.85-2.22.81-.63z"/><path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.06l3.66 2.84c.87-2.6 3.3-4.52 6.16-4.52z"/></svg>
+            Single Sign-On (University SSO)
+          </button>
+        </form>
+
+        <div style="text-align: center; margin-top: 22px; font-size: 13.5px; color: var(--slate-500);">
+          Don't have an account? <a href="#" style="color: var(--primary); font-weight: 700; text-decoration: none;">Register with Student ID</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       SCREEN 2: STUDENT DASHBOARD
+       ========================================================================= -->
+  <div class="screen-canvas" id="screen-2">
+    <!-- Navigation Bar -->
+    <nav class="top-nav">
+      <div class="brand-logo">
+        <div class="brand-icon">⚡</div>
+        <div class="brand-text">Collaborate<span>X</span></div>
+      </div>
+
+      <div class="nav-search-bar">
+        <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+        <span>Search opportunities, skills, projects...</span>
+        <kbd>⌘K</kbd>
+      </div>
+
+      <div class="nav-links">
+        <a href="#" class="nav-link active">
+          <svg class="icon" viewBox="0 0 24 24"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+          Dashboard
+        </a>
+        <a href="#" class="nav-link">
+          <svg class="icon" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+          Internships
+        </a>
+        <a href="#" class="nav-link">
+          <svg class="icon" viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+          Projects
+        </a>
+        <a href="#" class="nav-link">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+          Profile
+        </a>
+      </div>
+
+      <div class="nav-user-area">
+        <div class="icon-btn">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+          <div class="badge-dot"></div>
+        </div>
+        <div class="user-pill">
+          <div class="user-avatar">AS</div>
+          <div class="user-info-text">
+            <div class="user-name">Aarav Sharma</div>
+            <div class="user-role">Student &bull; 3rd Yr CSE</div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="dashboard-layout">
+      <!-- Greeting Banner -->
+      <div class="hero-greeting">
+        <div class="hero-left">
+          <h1>Welcome back, Aarav! 🚀</h1>
+          <p>You have <strong>4 new internship matches</strong>, <strong>2 active capstones</strong>, and <strong>1 interview invite</strong> this week.</p>
+        </div>
+        <div class="hero-actions">
+          <button class="btn btn-secondary">Resume ATS: 94%</button>
+          <button class="btn" style="background: #ffffff; color: var(--primary); font-weight: 700;">Explore Matched Roles &rarr;</button>
+        </div>
+      </div>
+
+      <!-- Quick Metrics -->
+      <div class="stats-row">
+        <div class="stat-card-widget">
+          <div class="stat-widget-info">
+            <div class="lbl">Active Applications</div>
+            <div class="val">4</div>
+            <div class="trend" style="color: var(--success);"><svg class="icon" viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline><polyline points="17 6 23 6 23 12"></polyline></svg> 1 Selected &bull; 1 Under Review</div>
+          </div>
+          <div class="stat-icon-box" style="background: var(--primary-light); color: var(--primary);">
+            <svg class="icon" style="width: 26px; height: 26px;" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+          </div>
+        </div>
+
+        <div class="stat-card-widget">
+          <div class="stat-widget-info">
+            <div class="lbl">Ongoing Projects</div>
+            <div class="val">2</div>
+            <div class="trend" style="color: var(--primary);"><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg> Next Sprint Sync: Today 5 PM</div>
+          </div>
+          <div class="stat-icon-box" style="background: #ecfeff; color: #0891b2;">
+            <svg class="icon" style="width: 26px; height: 26px;" viewBox="0 0 24 24"><polygon points="12 2 2 7 12 12 22 7 12 2"></polygon><polyline points="2 17 12 22 22 17"></polyline><polyline points="2 12 12 17 22 12"></polyline></svg>
+          </div>
+        </div>
+
+        <div class="stat-card-widget">
+          <div class="stat-widget-info">
+            <div class="lbl">Profile Views</div>
+            <div class="val">142</div>
+            <div class="trend" style="color: var(--success);"><svg class="icon" viewBox="0 0 24 24"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"></polyline></svg> +28% recruiter impressions</div>
+          </div>
+          <div class="stat-icon-box" style="background: var(--success-light); color: var(--success);">
+            <svg class="icon" style="width: 26px; height: 26px;" viewBox="0 0 24 24"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path><circle cx="12" cy="12" r="3"></circle></svg>
+          </div>
+        </div>
+
+        <div class="stat-card-widget">
+          <div class="stat-widget-info">
+            <div class="lbl">Mentor Rating</div>
+            <div class="val">4.9<span style="font-size: 18px; color: var(--slate-400);">/5</span></div>
+            <div class="trend" style="color: var(--warning);"><svg class="icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg> Top 5% CSE cohort</div>
+          </div>
+          <div class="stat-icon-box" style="background: var(--warning-light); color: var(--warning);">
+            <svg class="icon" style="width: 26px; height: 26px;" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg>
+          </div>
+        </div>
+      </div>
+
+      <!-- Two Column Section -->
+      <div class="dash-two-col">
+        <!-- Recommended Opportunities -->
+        <div class="card-panel">
+          <div class="panel-header">
+            <h3><svg class="icon" viewBox="0 0 24 24"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"></polygon></svg> Top Recommended Internships</h3>
+            <a href="#" class="view-all">Browse All 24 Openings &rarr;</a>
+          </div>
+
+          <div class="opp-item-card">
+            <div class="opp-meta-left">
+              <div class="comp-logo" style="background: linear-gradient(135deg, #6366f1, #8b5cf6);">TN</div>
+              <div class="opp-details">
+                <h4>Frontend Developer Intern</h4>
+                <div class="comp-name">TechNova Solutions &bull; Remote &bull; 3 Months</div>
+                <div class="pill-row">
+                  <span class="badge badge-primary">React.js</span>
+                  <span class="badge badge-neutral">TypeScript</span>
+                  <span class="badge badge-neutral">TailwindCSS</span>
+                </div>
+              </div>
+            </div>
+            <div style="text-align: right;">
+              <div style="font-weight: 800; color: var(--slate-900); font-size: 16px;">₹15,000<span style="font-size: 12px; color: var(--slate-500); font-weight: normal;">/mo</span></div>
+              <button class="btn btn-primary btn-sm" style="margin-top: 6px;">Apply Now</button>
+            </div>
+          </div>
+
+          <div class="opp-item-card">
+            <div class="opp-meta-left">
+              <div class="comp-logo" style="background: linear-gradient(135deg, #0ea5e9, #06b6d4);">DL</div>
+              <div class="opp-details">
+                <h4>Data Science & ML Intern</h4>
+                <div class="comp-name">DataLabs India &bull; Hybrid (Bangalore) &bull; 6 Months</div>
+                <div class="pill-row">
+                  <span class="badge badge-primary">Python</span>
+                  <span class="badge badge-neutral">PyTorch</span>
+                  <span class="badge badge-neutral">SQL</span>
+                </div>
+              </div>
+            </div>
+            <div style="text-align: right;">
+              <div style="font-weight: 800; color: var(--slate-900); font-size: 16px;">₹20,000<span style="font-size: 12px; color: var(--slate-500); font-weight: normal;">/mo</span></div>
+              <button class="btn btn-primary btn-sm" style="margin-top: 6px;">Apply Now</button>
+            </div>
+          </div>
+
+          <div class="opp-item-card">
+            <div class="opp-meta-left">
+              <div class="comp-logo" style="background: linear-gradient(135deg, #10b981, #059669);">AI</div>
+              <div class="opp-details">
+                <h4>AI & NLP Research Intern</h4>
+                <div class="comp-name">NeuroScale AI &bull; Remote &bull; 6 Months</div>
+                <div class="pill-row">
+                  <span class="badge badge-primary">LLMs</span>
+                  <span class="badge badge-neutral">LangChain</span>
+                  <span class="badge badge-neutral">FastAPI</span>
+                </div>
+              </div>
+            </div>
+            <div style="text-align: right;">
+              <div style="font-weight: 800; color: var(--slate-900); font-size: 16px;">₹25,000<span style="font-size: 12px; color: var(--slate-500); font-weight: normal;">/mo</span></div>
+              <button class="btn btn-primary btn-sm" style="margin-top: 6px;">Apply Now</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Active Projects -->
+        <div class="card-panel">
+          <div class="panel-header">
+            <h3><svg class="icon" viewBox="0 0 24 24"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg> Active Capstone Projects</h3>
+            <a href="#" class="view-all">+ New Project</a>
+          </div>
+
+          <div class="project-card-mini">
+            <div class="proj-head">
+              <div>
+                <div class="proj-title">AI Student Assistant</div>
+                <div class="proj-role">Role: Lead Frontend Engineer</div>
+              </div>
+              <span class="badge badge-success">● Sprint 4 Active</span>
+            </div>
+            <div class="progress-bar-wrap">
+              <div class="progress-bar-fill" style="width: 65%;"></div>
+            </div>
+            <div class="proj-footer">
+              <span>Milestone Progress: <strong>65%</strong></span>
+              <div class="avatar-stack">
+                <div class="av" style="background: #ef4444;">AS</div>
+                <div class="av" style="background: #3b82f6;">RV</div>
+                <div class="av" style="background: #10b981;">TK</div>
+                <div class="av" style="background: #64748b;">+2</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="project-card-mini">
+            <div class="proj-head">
+              <div>
+                <div class="proj-title">Campus Placement Tracker</div>
+                <div class="proj-role">Role: Full Stack Contributor</div>
+              </div>
+              <span class="badge badge-warning">● Milestone 2 Review</span>
+            </div>
+            <div class="progress-bar-wrap">
+              <div class="progress-bar-fill" style="width: 45%; background: linear-gradient(90deg, #f59e0b, #ec4899);"></div>
+            </div>
+            <div class="proj-footer">
+              <span>Milestone Progress: <strong>45%</strong></span>
+              <div class="avatar-stack">
+                <div class="av" style="background: #8b5cf6;">AS</div>
+                <div class="av" style="background: #06b6d4;">TP</div>
+                <div class="av" style="background: #ec4899;">VM</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       SCREEN 3: BROWSE INTERNSHIPS & FACETED FILTERING
+       ========================================================================= -->
+  <div class="screen-canvas" id="screen-3">
+    <!-- Top Nav -->
+    <nav class="top-nav">
+      <div class="brand-logo">
+        <div class="brand-icon">⚡</div>
+        <div class="brand-text">Collaborate<span>X</span></div>
+      </div>
+      <div class="nav-links">
+        <a href="#" class="nav-link">Dashboard</a>
+        <a href="#" class="nav-link active">Internships</a>
+        <a href="#" class="nav-link">Projects</a>
+        <a href="#" class="nav-link">Profile</a>
+      </div>
+      <div class="nav-user-area">
+        <div class="icon-btn"><svg class="icon" viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg><div class="badge-dot"></div></div>
+        <div class="user-pill">
+          <div class="user-avatar">AS</div>
+          <div class="user-info-text"><div class="user-name">Aarav Sharma</div></div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="browse-layout">
+      <div class="browse-header-row">
+        <div>
+          <h1>Explore Verified Industry Internships</h1>
+          <p>Discover corporate & university research internships eligible for academic credit transfer</p>
+        </div>
+        <div style="font-size: 14px; font-weight: 600; color: var(--slate-600);">
+          Showing <strong>6 of 24 verified opportunities</strong>
+        </div>
+      </div>
+
+      <!-- Filter Controls Bar -->
+      <div class="filter-action-bar">
+        <div class="search-input-box">
+          <svg class="icon" viewBox="0 0 24 24"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
+          <input type="text" placeholder="Search by role title, tech stack (React, Python, AWS), or company...">
+        </div>
+        
+        <div class="filter-dropdown">
+          <svg class="icon" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+          Location: <strong>All (Remote / Hybrid)</strong> &#9662;
+        </div>
+
+        <div class="filter-dropdown">
+          <svg class="icon" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+          Type: <strong>Full-time &amp; Part-time</strong> &#9662;
+        </div>
+
+        <div class="filter-dropdown">
+          <svg class="icon" viewBox="0 0 24 24"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+          Tech: <strong>React, Python, SQL</strong> &#9662;
+        </div>
+
+        <div class="filter-dropdown">
+          <svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+          Duration: <strong>3-6 Months</strong> &#9662;
+        </div>
+
+        <button class="btn btn-primary"><svg class="icon" viewBox="0 0 24 24"><polygon points="22 3 2 3 10 12.46 10 19 14 21 14 12.46 22 3"></polygon></svg> Apply Filters</button>
+      </div>
+
+      <!-- Internship Cards 6-Grid -->
+      <div class="internships-grid-6">
+        <!-- Card 1 -->
+        <div class="internship-card-6">
+          <div>
+            <div class="int-card-top">
+              <div class="int-comp-info">
+                <div class="comp-logo" style="background: linear-gradient(135deg, #4f46e5, #818cf8);">TN</div>
+                <div>
+                  <div class="int-role-title">Frontend Developer Intern</div>
+                  <div class="int-company">TechNova Solutions &bull; Remote</div>
+                </div>
+              </div>
+              <div class="stipend-tag">₹15,000/mo</div>
+            </div>
+            <div style="font-size: 13px; color: var(--slate-600); line-height: 1.45;">
+              Build interactive components, optimize React SPAs, and collaborate with backend engineers on REST API integration.
+            </div>
+            <div class="int-tags">
+              <span class="badge badge-primary">React 18</span>
+              <span class="badge badge-neutral">TypeScript</span>
+              <span class="badge badge-neutral">TailwindCSS</span>
+            </div>
+          </div>
+          <div class="int-card-bottom">
+            <div class="int-meta-info">
+              <span>⏳ 3 Mos</span>
+              <span>👥 18 Apps</span>
+              <span>📅 2d ago</span>
+            </div>
+            <button class="btn btn-primary btn-sm">Apply Now &rarr;</button>
+          </div>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="internship-card-6">
+          <div>
+            <div class="int-card-top">
+              <div class="int-comp-info">
+                <div class="comp-logo" style="background: linear-gradient(135deg, #0284c7, #38bdf8);">DL</div>
+                <div>
+                  <div class="int-role-title">Data Science &amp; ML Intern</div>
+                  <div class="int-company">DataLabs India &bull; Hybrid</div>
+                </div>
+              </div>
+              <div class="stipend-tag">₹20,000/mo</div>
+            </div>
+            <div style="font-size: 13px; color: var(--slate-600); line-height: 1.45;">
+              Train predictive analytics models, clean large structured datasets with Pandas, and construct interactive dashboards.
+            </div>
+            <div class="int-tags">
+              <span class="badge badge-primary">Python</span>
+              <span class="badge badge-neutral">PyTorch</span>
+              <span class="badge badge-neutral">SQL</span>
+            </div>
+          </div>
+          <div class="int-card-bottom">
+            <div class="int-meta-info">
+              <span>⏳ 6 Mos</span>
+              <span>👥 32 Apps</span>
+              <span>📅 1d ago</span>
+            </div>
+            <button class="btn btn-primary btn-sm">Apply Now &rarr;</button>
+          </div>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="internship-card-6">
+          <div>
+            <div class="int-card-top">
+              <div class="int-comp-info">
+                <div class="comp-logo" style="background: linear-gradient(135deg, #ec4899, #f43f5e);">DS</div>
+                <div>
+                  <div class="int-role-title">UI/UX Design Intern</div>
+                  <div class="int-company">DesignStudio X &bull; On-site</div>
+                </div>
+              </div>
+              <div class="stipend-tag">₹12,000/mo</div>
+            </div>
+            <div style="font-size: 13px; color: var(--slate-600); line-height: 1.45;">
+              Create wireframes, conduct user usability studies, construct design system tokens in Figma, and build prototypes.
+            </div>
+            <div class="int-tags">
+              <span class="badge badge-primary">Figma</span>
+              <span class="badge badge-neutral">Tokens</span>
+              <span class="badge badge-neutral">Wireframing</span>
+            </div>
+          </div>
+          <div class="int-card-bottom">
+            <div class="int-meta-info">
+              <span>⏳ 3 Mos</span>
+              <span>👥 14 Apps</span>
+              <span>📅 4h ago</span>
+            </div>
+            <button class="btn btn-primary btn-sm">Apply Now &rarr;</button>
+          </div>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="internship-card-6">
+          <div>
+            <div class="int-card-top">
+              <div class="int-comp-info">
+                <div class="comp-logo" style="background: linear-gradient(135deg, #10b981, #059669);">AI</div>
+                <div>
+                  <div class="int-role-title">AI &amp; NLP Research Intern</div>
+                  <div class="int-company">NeuroScale AI &bull; Remote</div>
+                </div>
+              </div>
+              <div class="stipend-tag">₹25,000/mo</div>
+            </div>
+            <div style="font-size: 13px; color: var(--slate-600); line-height: 1.45;">
+              Benchmark LLMs, build RAG pipelines using LangChain and Vector DBs, and fine-tune small language models.
+            </div>
+            <div class="int-tags">
+              <span class="badge badge-primary">PyTorch</span>
+              <span class="badge badge-neutral">LangChain</span>
+              <span class="badge badge-neutral">FastAPI</span>
+            </div>
+          </div>
+          <div class="int-card-bottom">
+            <div class="int-meta-info">
+              <span>⏳ 6 Mos</span>
+              <span>👥 45 Apps</span>
+              <span>📅 Today</span>
+            </div>
+            <button class="btn btn-primary btn-sm">Apply Now &rarr;</button>
+          </div>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="internship-card-6">
+          <div>
+            <div class="int-card-top">
+              <div class="int-comp-info">
+                <div class="comp-logo" style="background: linear-gradient(135deg, #f59e0b, #d97706);">GC</div>
+                <div>
+                  <div class="int-role-title">Cloud DevOps Intern</div>
+                  <div class="int-company">CloudOrbit Labs &bull; Hybrid</div>
+                </div>
+              </div>
+              <div class="stipend-tag">₹18,000/mo</div>
+            </div>
+            <div style="font-size: 13px; color: var(--slate-600); line-height: 1.45;">
+              Set up CI/CD pipelines with GitHub Actions, containerize microservices with Docker, and manage AWS ECS instances.
+            </div>
+            <div class="int-tags">
+              <span class="badge badge-primary">Docker</span>
+              <span class="badge badge-neutral">AWS</span>
+              <span class="badge badge-neutral">Kubernetes</span>
+            </div>
+          </div>
+          <div class="int-card-bottom">
+            <div class="int-meta-info">
+              <span>⏳ 4 Mos</span>
+              <span>👥 22 Apps</span>
+              <span>📅 3d ago</span>
+            </div>
+            <button class="btn btn-primary btn-sm">Apply Now &rarr;</button>
+          </div>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="internship-card-6">
+          <div>
+            <div class="int-card-top">
+              <div class="int-comp-info">
+                <div class="comp-logo" style="background: linear-gradient(135deg, #8b5cf6, #6d28d9);">NX</div>
+                <div>
+                  <div class="int-role-title">Full Stack Web Intern</div>
+                  <div class="int-company">Nexus Infotech &bull; Remote</div>
+                </div>
+              </div>
+              <div class="stipend-tag">₹16,000/mo</div>
+            </div>
+            <div style="font-size: 13px; color: var(--slate-600); line-height: 1.45;">
+              Develop end-to-end features on Node.js &amp; MongoDB backend, with React SPA frontend and Jest automated testing.
+            </div>
+            <div class="int-tags">
+              <span class="badge badge-primary">Node.js</span>
+              <span class="badge badge-neutral">MongoDB</span>
+              <span class="badge badge-neutral">Express</span>
+            </div>
+          </div>
+          <div class="int-card-bottom">
+            <div class="int-meta-info">
+              <span>⏳ 3 Mos</span>
+              <span>👥 29 Apps</span>
+              <span>📅 5d ago</span>
+            </div>
+            <button class="btn btn-primary btn-sm">Apply Now &rarr;</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       SCREEN 4: PROJECT COLLABORATION WORKSPACE
+       ========================================================================= -->
+  <div class="screen-canvas" id="screen-4">
+    <!-- Top Nav -->
+    <nav class="top-nav">
+      <div class="brand-logo">
+        <div class="brand-icon">⚡</div>
+        <div class="brand-text">Collaborate<span>X</span></div>
+      </div>
+      <div class="nav-links">
+        <a href="#" class="nav-link">Dashboard</a>
+        <a href="#" class="nav-link">Internships</a>
+        <a href="#" class="nav-link active">Projects</a>
+        <a href="#" class="nav-link">Profile</a>
+      </div>
+      <div class="nav-user-area">
+        <div class="icon-btn"><svg class="icon" viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg><div class="badge-dot"></div></div>
+        <div class="user-pill">
+          <div class="user-avatar">AS</div>
+          <div class="user-info-text"><div class="user-name">Aarav Sharma</div></div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="collab-layout">
+      <!-- Main Project Cards Column -->
+      <div class="collab-main-col">
+        <div class="collab-head-bar">
+          <div>
+            <h1>Project Collaboration Workspace</h1>
+            <p style="font-size: 14.5px; color: var(--slate-500); margin-top: 3px;">Manage student engineering teams, track milestone sprints, and sync with faculty advisors</p>
+          </div>
+          <button class="btn btn-primary"><svg class="icon" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg> Create New Project</button>
+        </div>
+
+        <div class="collab-projects-grid">
+          <!-- Project 1 -->
+          <div class="project-collab-card">
+            <div>
+              <div class="proj-card-title-row">
+                <div class="proj-big-title">AI Resume Builder &amp; ATS</div>
+                <span class="badge badge-success">● Active Sprint 4</span>
+              </div>
+              <p class="proj-desc">An AI-powered resume builder and ATS analyzer that helps university students optimize resumes for top tier tech recruiters.</p>
+              
+              <div style="margin-bottom: 12px;">
+                <div style="font-size: 12px; font-weight: 700; color: var(--slate-500); margin-bottom: 6px; text-transform: uppercase;">Team Members</div>
+                <div style="display: flex; align-items: center; gap: 8px;">
+                  <div class="avatar-stack">
+                    <div class="av" style="background: #4f46e5;">AS</div>
+                    <div class="av" style="background: #ef4444;">RV</div>
+                    <div class="av" style="background: #10b981;">TK</div>
+                    <div class="av" style="background: #f59e0b;">PD</div>
+                    <div class="av" style="background: #64748b;">+2</div>
+                  </div>
+                  <span style="font-size: 12.5px; color: var(--slate-500);">Updated 2h ago &bull; 6 contributors</span>
+                </div>
+              </div>
+
+              <div style="margin-bottom: 16px;">
+                <div style="font-size: 12px; font-weight: 700; color: var(--slate-500); margin-bottom: 6px; text-transform: uppercase;">Tech Stack</div>
+                <div class="pill-row">
+                  <span class="badge badge-primary">React 18</span>
+                  <span class="badge badge-neutral">Node.js</span>
+                  <span class="badge badge-neutral">FastAPI</span>
+                  <span class="badge badge-neutral">OpenAI</span>
+                </div>
+              </div>
+            </div>
+
+            <div style="border-top: 1px solid var(--slate-100); padding-top: 14px; display: flex; justify-content: space-between; align-items: center;">
+              <span style="font-size: 13.5px; font-weight: 700; color: var(--primary);">Milestone 3 / 5 (75%)</span>
+              <button class="btn btn-secondary btn-sm">Open Workspace &rarr;</button>
+            </div>
+          </div>
+
+          <!-- Project 2 -->
+          <div class="project-collab-card">
+            <div>
+              <div class="proj-card-title-row">
+                <div class="proj-big-title">Placement Tracker Portal</div>
+                <span class="badge badge-warning">● Milestone 2 Review</span>
+              </div>
+              <p class="proj-desc">A centralized institutional portal to track campus placement drives, company test rounds, student shortlists, and offer letters.</p>
+              
+              <div style="margin-bottom: 12px;">
+                <div style="font-size: 12px; font-weight: 700; color: var(--slate-500); margin-bottom: 6px; text-transform: uppercase;">Team Members</div>
+                <div style="display: flex; align-items: center; gap: 8px;">
+                  <div class="avatar-stack">
+                    <div class="av" style="background: #4f46e5;">AS</div>
+                    <div class="av" style="background: #06b6d4;">TP</div>
+                    <div class="av" style="background: #8b5cf6;">VM</div>
+                    <div class="av" style="background: #64748b;">+2</div>
+                  </div>
+                  <span style="font-size: 12.5px; color: var(--slate-500);">Updated 5h ago &bull; 5 contributors</span>
+                </div>
+              </div>
+
+              <div style="margin-bottom: 16px;">
+                <div style="font-size: 12px; font-weight: 700; color: var(--slate-500); margin-bottom: 6px; text-transform: uppercase;">Tech Stack</div>
+                <div class="pill-row">
+                  <span class="badge badge-primary">React</span>
+                  <span class="badge badge-neutral">Express.js</span>
+                  <span class="badge badge-neutral">MySQL</span>
+                  <span class="badge badge-neutral">Docker</span>
+                </div>
+              </div>
+            </div>
+
+            <div style="border-top: 1px solid var(--slate-100); padding-top: 14px; display: flex; justify-content: space-between; align-items: center;">
+              <span style="font-size: 13.5px; font-weight: 700; color: var(--warning-text);">Milestone 2 / 4 (50%)</span>
+              <button class="btn btn-secondary btn-sm">Open Workspace &rarr;</button>
+            </div>
+          </div>
+
+          <!-- Project 3 -->
+          <div class="project-collab-card">
+            <div>
+              <div class="proj-card-title-row">
+                <div class="proj-big-title">Campus Event Hub</div>
+                <span class="badge badge-primary">● Milestone 1 (Design)</span>
+              </div>
+              <p class="proj-desc">Modern web application for student club ticketing, hackathon registrations, and faculty venue scheduling.</p>
+              
+              <div style="margin-bottom: 12px;">
+                <div style="font-size: 12px; font-weight: 700; color: var(--slate-500); margin-bottom: 6px; text-transform: uppercase;">Team Members</div>
+                <div style="display: flex; align-items: center; gap: 8px;">
+                  <div class="avatar-stack">
+                    <div class="av" style="background: #ec4899;">VA</div>
+                    <div class="av" style="background: #4f46e5;">AS</div>
+                    <div class="av" style="background: #10b981;">PC</div>
+                  </div>
+                  <span style="font-size: 12.5px; color: var(--slate-500);">Updated 1d ago</span>
+                </div>
+              </div>
+
+              <div style="margin-bottom: 16px;">
+                <div style="font-size: 12px; font-weight: 700; color: var(--slate-500); margin-bottom: 6px; text-transform: uppercase;">Tech Stack</div>
+                <div class="pill-row">
+                  <span class="badge badge-primary">Figma</span>
+                  <span class="badge badge-neutral">Next.js</span>
+                  <span class="badge badge-neutral">Tailwind</span>
+                </div>
+              </div>
+            </div>
+
+            <div style="border-top: 1px solid var(--slate-100); padding-top: 14px; display: flex; justify-content: space-between; align-items: center;">
+              <span style="font-size: 13.5px; font-weight: 700; color: var(--primary);">Milestone 1 / 4 (25%)</span>
+              <button class="btn btn-secondary btn-sm">Open Workspace &rarr;</button>
+            </div>
+          </div>
+
+          <!-- Project 4 -->
+          <div class="project-collab-card">
+            <div>
+              <div class="proj-card-title-row">
+                <div class="proj-big-title">Smart Campus IoT Network</div>
+                <span class="badge badge-success">● Sprint 3 Active</span>
+              </div>
+              <p class="proj-desc">IoT sensor mesh network for smart energy monitoring and real-time room occupancy heatmaps across campus labs.</p>
+              
+              <div style="margin-bottom: 12px;">
+                <div style="font-size: 12px; font-weight: 700; color: var(--slate-500); margin-bottom: 6px; text-transform: uppercase;">Team Members</div>
+                <div style="display: flex; align-items: center; gap: 8px;">
+                  <div class="avatar-stack">
+                    <div class="av" style="background: #0ea5e9;">RK</div>
+                    <div class="av" style="background: #f59e0b;">AM</div>
+                    <div class="av" style="background: #64748b;">+1</div>
+                  </div>
+                  <span style="font-size: 12.5px; color: var(--slate-500);">Updated 3h ago</span>
+                </div>
+              </div>
+
+              <div style="margin-bottom: 16px;">
+                <div style="font-size: 12px; font-weight: 700; color: var(--slate-500); margin-bottom: 6px; text-transform: uppercase;">Tech Stack</div>
+                <div class="pill-row">
+                  <span class="badge badge-primary">C++</span>
+                  <span class="badge badge-neutral">MQTT</span>
+                  <span class="badge badge-neutral">Node-RED</span>
+                </div>
+              </div>
+            </div>
+
+            <div style="border-top: 1px solid var(--slate-100); padding-top: 14px; display: flex; justify-content: space-between; align-items: center;">
+              <span style="font-size: 13.5px; font-weight: 700; color: var(--success-text);">Milestone 3 / 4 (75%)</span>
+              <button class="btn btn-secondary btn-sm">Open Workspace &rarr;</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: Meetings & Activity -->
+      <div class="collab-side-col">
+        <!-- Upcoming Meetings -->
+        <div class="card-panel">
+          <div class="panel-header">
+            <h3><svg class="icon" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect><line x1="16" y1="2" x2="16" y2="6"></line><line x1="8" y1="2" x2="8" y2="6"></line><line x1="3" y1="10" x2="21" y2="10"></line></svg> Scheduled Team Syncs</h3>
+            <a href="#" class="view-all">+ Schedule</a>
+          </div>
+
+          <div class="meeting-item">
+            <div class="meeting-date-badge">
+              <div>SEP</div>
+              <div style="font-size: 16px;">12</div>
+            </div>
+            <div class="meeting-details">
+              <h5>AI Resume Builder &bull; Sprint 4 Review</h5>
+              <p>Today at 5:00 PM &bull; Google Meet (Video Call)</p>
+            </div>
+          </div>
+
+          <div class="meeting-item">
+            <div class="meeting-date-badge" style="background: var(--warning-light); color: var(--warning-text); border-color: #fde68a;">
+              <div>SEP</div>
+              <div style="font-size: 16px;">14</div>
+            </div>
+            <div class="meeting-details">
+              <h5>Faculty Evaluation &bull; Prof. Rajiv Mehta</h5>
+              <p>Tomorrow at 3:30 PM &bull; Seminar Hall B</p>
+            </div>
+          </div>
+
+          <div class="meeting-item">
+            <div class="meeting-date-badge" style="background: var(--success-light); color: var(--success-text); border-color: #a7f3d0;">
+              <div>SEP</div>
+              <div style="font-size: 16px;">17</div>
+            </div>
+            <div class="meeting-details">
+              <h5>Campus Event Hub &bull; Wireframe Demo</h5>
+              <p>Thursday at 11:00 AM &bull; Lab 304</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Recent Activity Feed -->
+        <div class="card-panel">
+          <div class="panel-header">
+            <h3><svg class="icon" viewBox="0 0 24 24"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"></polyline></svg> Real-Time Team Activity</h3>
+          </div>
+
+          <div class="activity-feed-item">
+            <div class="activity-dot"></div>
+            <div>
+              <strong>Rohan Verma</strong> merged PR <code>#14 (feat/auth-jwt)</code>
+              <div style="font-size: 11.5px; color: var(--slate-400); margin-top: 2px;">2 hours ago &bull; AI Resume Builder</div>
+            </div>
+          </div>
+
+          <div class="activity-feed-item">
+            <div class="activity-dot" style="background: #06b6d4;"></div>
+            <div>
+              <strong>Priya Sharma</strong> uploaded Figma mockups <code>v2.4_final.fig</code>
+              <div style="font-size: 11.5px; color: var(--slate-400); margin-top: 2px;">4 hours ago &bull; Event Platform</div>
+            </div>
+          </div>
+
+          <div class="activity-feed-item">
+            <div class="activity-dot" style="background: var(--success);"></div>
+            <div>
+              <strong>Prof. Rajiv Mehta</strong> approved Milestone 2 deliverables
+              <div style="font-size: 11.5px; color: var(--slate-400); margin-top: 2px;">Yesterday &bull; Placement Tracker</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       SCREEN 5: STUDENT PROFILE & PORTFOLIO
+       ========================================================================= -->
+  <div class="screen-canvas" id="screen-5">
+    <!-- Top Nav -->
+    <nav class="top-nav">
+      <div class="brand-logo">
+        <div class="brand-icon">⚡</div>
+        <div class="brand-text">Collaborate<span>X</span></div>
+      </div>
+      <div class="nav-links">
+        <a href="#" class="nav-link">Dashboard</a>
+        <a href="#" class="nav-link">Internships</a>
+        <a href="#" class="nav-link">Projects</a>
+        <a href="#" class="nav-link active">Profile</a>
+      </div>
+      <div class="nav-user-area">
+        <div class="icon-btn"><svg class="icon" viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg><div class="badge-dot"></div></div>
+        <div class="user-pill">
+          <div class="user-avatar">AS</div>
+          <div class="user-info-text"><div class="user-name">Aarav Sharma</div></div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="profile-layout">
+      <!-- Profile Header Hero -->
+      <div class="profile-hero-card">
+        <div class="profile-banner"></div>
+        <div class="profile-main-body">
+          <div class="profile-avatar-wrap">
+            <div class="big-avatar">AS</div>
+            <div class="profile-names">
+              <h2>Aarav Sharma <svg style="width: 20px; height: 20px; color: var(--primary); display: inline-block; vertical-align: middle;" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/></svg></h2>
+              <p>B.Tech Computer Science &amp; Engineering &bull; 3rd Year (Batch 2023-2027) &bull; New Delhi, India</p>
+            </div>
+          </div>
+          <div style="display: flex; gap: 12px;">
+            <button class="btn btn-secondary"><svg class="icon" viewBox="0 0 24 24"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"></path><polyline points="16 6 12 2 8 6"></polyline><line x1="12" y1="2" x2="12" y2="15"></line></svg> Share Profile</button>
+            <button class="btn btn-primary"><svg class="icon" viewBox="0 0 24 24"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path></svg> Edit Profile</button>
+          </div>
+        </div>
+
+        <div class="profile-info-grid">
+          <div class="info-cell">
+            <div class="lbl">Registration Number</div>
+            <div class="val">24CS1421</div>
+          </div>
+          <div class="info-cell">
+            <div class="lbl">Institutional Email</div>
+            <div class="val">aarav.sharma@college.edu</div>
+          </div>
+          <div class="info-cell">
+            <div class="lbl">Cumulative GPA</div>
+            <div class="val">8.42 / 10.0 <span style="font-size: 11.5px; color: var(--success); font-weight: 700;">(Top 10%)</span></div>
+          </div>
+          <div class="info-cell">
+            <div class="lbl">Phone Contact</div>
+            <div class="val">+91 98765 43210</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Skills and Resume Section -->
+      <div class="profile-content-grid">
+        <div style="display: flex; flex-direction: column; gap: 20px;">
+          <!-- Skills Card -->
+          <div class="card-panel">
+            <div class="panel-header">
+              <h3><svg class="icon" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon></svg> Verified Technical Competencies</h3>
+              <button class="btn btn-outline-primary btn-sm">+ Add Skill</button>
+            </div>
+            <div style="display: flex; flex-wrap: wrap; gap: 8px;">
+              <span class="badge badge-primary" style="padding: 7px 14px; font-size: 13.5px;">React.js &bull; Advanced</span>
+              <span class="badge badge-primary" style="padding: 7px 14px; font-size: 13.5px;">TypeScript &bull; Proficient</span>
+              <span class="badge badge-neutral" style="padding: 7px 14px; font-size: 13.5px;">Node.js</span>
+              <span class="badge badge-neutral" style="padding: 7px 14px; font-size: 13.5px;">Python</span>
+              <span class="badge badge-neutral" style="padding: 7px 14px; font-size: 13.5px;">Figma &bull; UI Design</span>
+              <span class="badge badge-neutral" style="padding: 7px 14px; font-size: 13.5px;">Git / GitHub</span>
+              <span class="badge badge-neutral" style="padding: 7px 14px; font-size: 13.5px;">SQL &amp; MongoDB</span>
+              <span class="badge badge-neutral" style="padding: 7px 14px; font-size: 13.5px;">Docker &amp; AWS</span>
+            </div>
+          </div>
+
+          <!-- Featured Projects -->
+          <div class="card-panel">
+            <div class="panel-header">
+              <h3><svg class="icon" viewBox="0 0 24 24"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg> Featured Portfolio Capstones</h3>
+              <a href="#" class="view-all">+ Add Project</a>
+            </div>
+
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px;">
+              <div style="border: 1px solid var(--slate-200); border-radius: var(--radius-md); padding: 16px; background: #ffffff;">
+                <div style="font-weight: 700; font-size: 15px; color: var(--slate-900);">AI Student Assistant</div>
+                <div style="font-size: 12.5px; color: var(--slate-500); margin: 4px 0 10px 0;">Lead Frontend Engineer &bull; Team of 4</div>
+                <div class="progress-bar-wrap"><div class="progress-bar-fill" style="width: 65%;"></div></div>
+                <div style="font-size: 12px; color: var(--slate-500); margin-top: 6px;">Status: 65% Completed &bull; React &amp; FastAPI</div>
+              </div>
+              <div style="border: 1px solid var(--slate-200); border-radius: var(--radius-md); padding: 16px; background: #ffffff;">
+                <div style="font-weight: 700; font-size: 15px; color: var(--slate-900);">Campus Event Platform</div>
+                <div style="font-size: 12.5px; color: var(--slate-500); margin: 4px 0 10px 0;">UI/UX Designer &bull; Team of 6</div>
+                <div class="progress-bar-wrap"><div class="progress-bar-fill" style="width: 55%; background: linear-gradient(90deg, #f59e0b, #ec4899);"></div></div>
+                <div style="font-size: 12px; color: var(--slate-500); margin-top: 6px;">Status: 55% Completed &bull; Figma Tokens</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Side: Resume & Applications -->
+        <div style="display: flex; flex-direction: column; gap: 20px;">
+          <!-- Resume Card -->
+          <div class="card-panel">
+            <div class="panel-header">
+              <h3><svg class="icon" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline></svg> Official Verified Resume</h3>
+              <span class="badge badge-success">ATS 94%</span>
+            </div>
+            <div style="display: flex; align-items: center; gap: 14px; background: var(--slate-50); border: 1px solid var(--slate-200); padding: 14px; border-radius: var(--radius-md); margin-bottom: 14px;">
+              <div style="width: 40px; height: 40px; background: #fee2e2; color: #ef4444; border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 12px;">PDF</div>
+              <div style="flex: 1;">
+                <div style="font-size: 13.5px; font-weight: 700; color: var(--slate-800);">Aarav_Sharma_Resume_v4.pdf</div>
+                <div style="font-size: 11.5px; color: var(--slate-500);">2.4 MB &bull; Updated 18 May 2026</div>
+              </div>
+              <button class="btn btn-secondary btn-sm"><svg class="icon" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg></button>
+            </div>
+            <button class="btn btn-primary" style="width: 100%;">Upload New Resume Version</button>
+          </div>
+
+          <!-- Application Status Tracking -->
+          <div class="card-panel">
+            <div class="panel-header">
+              <h3><svg class="icon" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 14 14"></polyline></svg> Internship Application Pipeline</h3>
+            </div>
+            <div style="display: flex; flex-direction: column; gap: 12px;">
+              <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--slate-100);">
+                <div>
+                  <div style="font-size: 14px; font-weight: 700; color: var(--slate-800);">TechNova Solutions</div>
+                  <div style="font-size: 12px; color: var(--slate-500);">Frontend Developer Intern</div>
+                </div>
+                <span class="badge badge-success">Selected 🎉</span>
+              </div>
+
+              <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--slate-100);">
+                <div>
+                  <div style="font-size: 14px; font-weight: 700; color: var(--slate-800);">DataLabs India</div>
+                  <div style="font-size: 12px; color: var(--slate-500);">Data Science Intern</div>
+                </div>
+                <span class="badge badge-primary">Under Review</span>
+              </div>
+
+              <div style="display: flex; justify-content: space-between; align-items: center; padding: 10px 0;">
+                <div>
+                  <div style="font-size: 14px; font-weight: 700; color: var(--slate-800);">DesignStudio X</div>
+                  <div style="font-size: 12px; color: var(--slate-500);">UI/UX Design Intern</div>
+                </div>
+                <span class="badge badge-neutral">Applied</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       SCREEN 6: FACULTY / MENTOR DASHBOARD
+       ========================================================================= -->
+  <div class="screen-canvas" id="screen-6">
+    <!-- Top Nav -->
+    <nav class="top-nav">
+      <div class="brand-logo">
+        <div class="brand-icon">⚡</div>
+        <div class="brand-text">Collaborate<span>X</span> <span style="font-size: 11.5px; background: var(--primary-light); color: var(--primary); padding: 3px 10px; border-radius: var(--radius-full); margin-left: 8px; font-weight: 800;">FACULTY PORTAL</span></div>
+      </div>
+      <div class="nav-links">
+        <a href="#" class="nav-link active">Overview</a>
+        <a href="#" class="nav-link">Students</a>
+        <a href="#" class="nav-link">Project Reviews</a>
+        <a href="#" class="nav-link">Internship Postings</a>
+        <a href="#" class="nav-link">Analytics</a>
+      </div>
+      <div class="nav-user-area">
+        <div class="icon-btn"><svg class="icon" viewBox="0 0 24 24"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg><div class="badge-dot"></div></div>
+        <div class="user-pill">
+          <div class="user-avatar" style="background: linear-gradient(135deg, #10b981, #059669);">PM</div>
+          <div class="user-info-text">
+            <div class="user-name">Prof. Rajiv Mehta</div>
+            <div class="user-role">Head of Department (CSE)</div>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content -->
+    <div class="faculty-layout">
+      <div class="faculty-header-row">
+        <div>
+          <h1>Department Academic &amp; Internship Oversight</h1>
+          <p>Supervise student capstone projects, evaluate milestones, and manage corporate internship postings</p>
+        </div>
+        <div style="display: flex; gap: 12px;">
+          <button class="btn btn-secondary"><svg class="icon" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><polyline points="7 10 12 15 17 10"></polyline><line x1="12" y1="15" x2="12" y2="3"></line></svg> Export Grade Report</button>
+          <button class="btn btn-primary"><svg class="icon" viewBox="0 0 24 24"><line x1="12" y1="5" x2="12" y2="19"></line><line x1="5" y1="12" x2="19" y2="12"></line></svg> Post New Research / Internship</button>
+        </div>
+      </div>
+
+      <!-- Analytical Metrics Row -->
+      <div class="faculty-metrics-grid">
+        <div class="fac-metric-card">
+          <div class="fac-icon-square" style="background: linear-gradient(135deg, #0ea5e9, #0284c7);">
+            <svg class="icon" style="width: 26px; height: 26px;" viewBox="0 0 24 24"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
+          </div>
+          <div class="fac-metric-data">
+            <div class="title">Total Enrolled Students</div>
+            <div class="num">256</div>
+            <div style="font-size: 12px; color: var(--success); font-weight: 600;">+14 enrolled this semester</div>
+          </div>
+        </div>
+
+        <div class="fac-metric-card">
+          <div class="fac-icon-square" style="background: linear-gradient(135deg, #10b981, #059669);">
+            <svg class="icon" style="width: 26px; height: 26px;" viewBox="0 0 24 24"><path d="M22 19a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h5l2 3h9a2 2 0 0 1 2 2z"></path></svg>
+          </div>
+          <div class="fac-metric-data">
+            <div class="title">Active Capstone Projects</div>
+            <div class="num">38</div>
+            <div style="font-size: 12px; color: var(--primary); font-weight: 600;">100% on milestone schedule</div>
+          </div>
+        </div>
+
+        <div class="fac-metric-card">
+          <div class="fac-icon-square" style="background: linear-gradient(135deg, #8b5cf6, #6366f1);">
+            <svg class="icon" style="width: 26px; height: 26px;" viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2" ry="2"></rect><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"></path></svg>
+          </div>
+          <div class="fac-metric-data">
+            <div class="title">Active Internship Posts</div>
+            <div class="num">17</div>
+            <div style="font-size: 12px; color: var(--slate-500); font-weight: 600;">4 closing applications soon</div>
+          </div>
+        </div>
+
+        <div class="fac-metric-card">
+          <div class="fac-icon-square" style="background: linear-gradient(135deg, #f43f5e, #e11d48);">
+            <svg class="icon" style="width: 26px; height: 26px;" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line></svg>
+          </div>
+          <div class="fac-metric-data">
+            <div class="title">Pending Milestone Reviews</div>
+            <div class="num">12</div>
+            <div style="font-size: 12px; color: var(--danger); font-weight: 700;">Action required (Review 2)</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Student Activity & Evaluation Table -->
+      <div class="fac-table-card">
+        <div style="padding: 16px 24px; border-bottom: 1px solid var(--slate-200); display: flex; justify-content: space-between; align-items: center;">
+          <h3 style="font-family: var(--font-heading); font-size: 17px; font-weight: 700; color: var(--slate-900);">Student Project Deliverables &amp; Evaluation Pipeline</h3>
+          <div style="display: flex; gap: 10px;">
+            <input type="text" placeholder="Filter by student, reg no, or project..." style="padding: 7px 14px; border: 1px solid var(--slate-300); border-radius: var(--radius-sm); font-size: 13px; outline: none; width: 280px;">
+          </div>
+        </div>
+
+        <table class="fac-table">
+          <thead>
+            <tr>
+              <th>Student Name</th>
+              <th>Department / Reg No</th>
+              <th>Project Name</th>
+              <th>Current Milestone Deliverable</th>
+              <th>Status</th>
+              <th style="text-align: right;">Action</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>
+                <div class="student-cell">
+                  <div class="av">AS</div>
+                  <div>
+                    <div style="font-weight: 700; color: var(--slate-900);">Aarav Sharma</div>
+                    <div style="font-size: 12px; color: var(--slate-500);">aarav.s@college.edu</div>
+                  </div>
+                </div>
+              </td>
+              <td>CSE &bull; 24CS1421</td>
+              <td><strong>AI Resume Builder &amp; ATS</strong></td>
+              <td>Milestone 3 (API Integration &amp; Docker)</td>
+              <td><span class="badge badge-success">● Active</span></td>
+              <td style="text-align: right;"><button class="btn btn-primary btn-sm">Review &amp; Grade</button></td>
+            </tr>
+
+            <tr>
+              <td>
+                <div class="student-cell">
+                  <div class="av" style="background: #e0e7ff; color: #4338ca;">AV</div>
+                  <div>
+                    <div style="font-weight: 700; color: var(--slate-900);">Arjeet Verma</div>
+                    <div style="font-size: 12px; color: var(--slate-500);">arjeet.v@college.edu</div>
+                  </div>
+                </div>
+              </td>
+              <td>ECE &bull; 24EC1089</td>
+              <td><strong>Placement Tracker Portal</strong></td>
+              <td>Milestone 2 (Database Schema &amp; ER)</td>
+              <td><span class="badge badge-warning">● In Review</span></td>
+              <td style="text-align: right;"><button class="btn btn-primary btn-sm">Review &amp; Grade</button></td>
+            </tr>
+
+            <tr>
+              <td>
+                <div class="student-cell">
+                  <div class="av" style="background: #fce7f3; color: #be185d;">VA</div>
+                  <div>
+                    <div style="font-weight: 700; color: var(--slate-900);">Vishakha Arya</div>
+                    <div style="font-size: 12px; color: var(--slate-500);">vishakha.a@college.edu</div>
+                  </div>
+                </div>
+              </td>
+              <td>CSE &bull; 24CS1552</td>
+              <td><strong>Campus Event Management</strong></td>
+              <td>Milestone 1 (UI/UX Figma Wireframes)</td>
+              <td><span class="badge badge-primary">● Planning</span></td>
+              <td style="text-align: right;"><button class="btn btn-secondary btn-sm">View Work</button></td>
+            </tr>
+
+            <tr>
+              <td>
+                <div class="student-cell">
+                  <div class="av" style="background: #fef3c7; color: #b45309;">RR</div>
+                  <div>
+                    <div style="font-weight: 700; color: var(--slate-900);">Ruhani Roy</div>
+                    <div style="font-size: 12px; color: var(--slate-500);">ruhani.r@college.edu</div>
+                  </div>
+                </div>
+              </td>
+              <td>IT &bull; 24IT1104</td>
+              <td><strong>Placement Tracker Portal</strong></td>
+              <td>Milestone 2 (Express API Routes)</td>
+              <td><span class="badge badge-warning">● In Review</span></td>
+              <td style="text-align: right;"><button class="btn btn-primary btn-sm">Review &amp; Grade</button></td>
+            </tr>
+
+            <tr>
+              <td>
+                <div class="student-cell">
+                  <div class="av" style="background: #dcfce7; color: #15803d;">AT</div>
+                  <div>
+                    <div style="font-weight: 700; color: var(--slate-900);">Abhishek Tripathy</div>
+                    <div style="font-size: 12px; color: var(--slate-500);">abhishek.t@college.edu</div>
+                  </div>
+                </div>
+              </td>
+              <td>CSE &bull; 24CS1390</td>
+              <td><strong>AI Resume Builder &amp; ATS</strong></td>
+              <td>Milestone 3 (ML Embeddings Model)</td>
+              <td><span class="badge badge-success">● Active</span></td>
+              <td style="text-align: right;"><button class="btn btn-primary btn-sm">Review &amp; Grade</button></td>
+            </tr>
+
+            <tr>
+              <td>
+                <div class="student-cell">
+                  <div class="av" style="background: #ede9fe; color: #6d28d9;">SD</div>
+                  <div>
+                    <div style="font-weight: 700; color: var(--slate-900);">Sneha Deshmukh</div>
+                    <div style="font-size: 12px; color: var(--slate-500);">sneha.d@college.edu</div>
+                  </div>
+                </div>
+              </td>
+              <td>CSE &bull; 24CS1612</td>
+              <td><strong>Smart Campus IoT Network</strong></td>
+              <td>Milestone 3 (Sensor Hardware &amp; MQTT)</td>
+              <td><span class="badge badge-success">● Active</span></td>
+              <td style="text-align: right;"><button class="btn btn-primary btn-sm">Review &amp; Grade</button></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

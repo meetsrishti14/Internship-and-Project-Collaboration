@@ -1,190 +1,1856 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Internship & Project Collaboration</title>
-
-    <style>
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
-
-        body {
-            font-family: Arial, sans-serif;
-            background: #f5f7fb;
-            color: #1f2937;
-        }
-
-        header {
-            background: #2563eb;
-            color: white;
-            padding: 20px 8%;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        header h1 {
-            font-size: 22px;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin-left: 25px;
-            font-size: 15px;
-        }
-
-        .hero {
-            text-align: center;
-            padding: 100px 20px;
-            background: white;
-        }
-
-        .hero h2 {
-            font-size: 42px;
-            margin-bottom: 20px;
-            color: #111827;
-        }
-
-        .hero p {
-            max-width: 650px;
-            margin: 0 auto 30px;
-            font-size: 18px;
-            line-height: 1.6;
-            color: #6b7280;
-        }
-
-        .buttons a {
-            display: inline-block;
-            padding: 13px 25px;
-            margin: 5px;
-            border-radius: 7px;
-            text-decoration: none;
-            font-weight: bold;
-        }
-
-        .primary {
-            background: #2563eb;
-            color: white;
-        }
-
-        .secondary {
-            border: 1px solid #2563eb;
-            color: #2563eb;
-        }
-
-        .features {
-            padding: 60px 8%;
-            display: flex;
-            gap: 25px;
-            justify-content: center;
-        }
-
-        .card {
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            width: 30%;
-            text-align: center;
-            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
-        }
-
-        .card h3 {
-            margin-bottom: 12px;
-            color: #2563eb;
-        }
-
-        .card p {
-            color: #6b7280;
-            line-height: 1.5;
-        }
-
-        footer {
-            text-align: center;
-            padding: 25px;
-            background: #111827;
-            color: white;
-        }
-
-        @media (max-width: 700px) {
-            .features {
-                flex-direction: column;
-            }
-
-            .card {
-                width: 100%;
-            }
-
-            .hero h2 {
-                font-size: 32px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Internship &amp; Project Collaboration Portal</title>
+  
+  <!-- Modern Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  
+  <!-- Design System CSS -->
+  <link rel="stylesheet" href="styles.css">
 </head>
-
 <body>
 
-    <header>
-        <h1>Internship & Project Collaboration</h1>
+  <!-- =========================================================================
+       GLOBAL TOP NAVIGATION (Modular Component)
+       ========================================================================= -->
+  <nav class="top-nav">
+    <div class="brand-logo" onclick="window.navigateToRoleDashboard()" style="cursor: pointer;" title="Go to Dashboard">
+      <div class="brand-icon">⚡</div>
+      <span class="brand-text">Internship &amp; Projects</span>
+    </div>
 
-        <nav>
-            <a href="#">Home</a>
-            <a href="#">Internships</a>
-            <a href="#">Projects</a>
-            <a href="#">Login</a>
-        </nav>
-    </header>
+    <!-- Role-Aware Navigation Links -->
+    <div class="nav-links" id="navLinksContainer">
+      <!-- 1. Student Role Links -->
+      <button class="nav-link role-link-student" data-view="dashboard" style="display: none;">⚡ Dashboard</button>
+      <button class="nav-link role-link-student" data-view="internships" style="display: none;">💼 Browse Internships</button>
+      <button class="nav-link role-link-student" data-view="projects" style="display: none;">📁 Capstone Workspace</button>
+      <button class="nav-link role-link-student" data-view="profile" style="display: none;">👤 My Profile</button>
+      <button class="nav-link role-link-student" data-view="student-report" style="display: none;">📄 Evaluation Report</button>
+      
+      <!-- 2. Faculty Role Links -->
+      <button class="nav-link role-link-faculty" data-view="faculty" style="display: none;">🎓 Supervision Portal</button>
+      <button class="nav-link role-link-faculty" data-view="faculty-evaluations" style="display: none;">📋 Milestone Evaluations</button>
+      <button class="nav-link role-link-faculty" data-view="faculty-projects" style="display: none;">🚀 Supervised Capstones</button>
+      <button class="nav-link role-link-faculty" data-view="faculty-schedule" style="display: none;">📅 Viva &amp; Mentorship</button>
+      <button class="nav-link role-link-faculty" data-view="faculty-report" style="display: none;">📊 Academic Report</button>
+      
+      <!-- 3. Recruiter Role Links -->
+      <button class="nav-link role-link-recruiter" data-view="recruiter" style="display: none;">⚡ Talent Pipeline</button>
+      <button class="nav-link role-link-recruiter" data-view="recruiter-jobs" style="display: none;">📢 Posted Opportunities</button>
+      <button class="nav-link role-link-recruiter" data-view="recruiter-interviews" style="display: none;">🗓️ Interview &amp; Offers</button>
+      <button class="nav-link role-link-recruiter" data-view="recruiter-report" style="display: none;">📈 Hiring Analytics</button>
+    </div>
 
-    <section class="hero">
-        <h2>Build Skills. Find Opportunities. Collaborate.</h2>
+    <div class="nav-right">
+      <!-- Global Search -->
+      <div class="global-search" id="navGlobalSearch" style="display: none;">
+        <span>🔍</span>
+        <input type="text" id="globalSearchInput" placeholder="Search internships, skills...">
+        <span class="search-shortcut">⌘K</span>
+      </div>
 
-        <p>
-            A centralized platform that connects students, mentors,
-            and organizations for internships, projects, collaboration,
-            and skill development.
-        </p>
-
-        <div class="buttons">
-            <a href="#" class="primary">Explore Internships</a>
-            <a href="#" class="secondary">Browse Projects</a>
+      <!-- User Profile Badge -->
+      <div class="user-profile-badge" id="userProfileBadge" style="display: none; cursor: pointer;" title="View Profile">
+        <div class="user-avatar" id="navUserAvatar">SJ</div>
+        <div class="user-info">
+          <div class="user-name" id="navUserName">Srishti Jain</div>
+          <div class="user-role" id="navUserRole">Student</div>
         </div>
+      </div>
+
+      <!-- Logout Button -->
+      <button type="button" class="btn-secondary" id="btnNavLogout" onclick="window.logoutUser()" style="display: none; padding: 6px 12px; font-size: 12px; align-items: center; gap: 4px; border-radius: var(--radius-full); cursor: pointer;" title="Sign out of workspace">
+        <span>🚪</span> <span>Logout</span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- =========================================================================
+       MAIN APPLICATION VIEW CONTAINER
+       ========================================================================= -->
+  <main class="app-container">
+
+    <!-- -----------------------------------------------------------------------
+         VIEW 1: AUTH & ROLE SELECTOR (Figma Screen 01 / Epic 1)
+         ----------------------------------------------------------------------- -->
+    <section class="view-section active" id="view-auth">
+      <div class="auth-wrapper">
+        <!-- Hero Side -->
+        <div class="auth-hero">
+          <div>
+            <div class="auth-hero-badge">🔒 Enterprise Access Control &bull; RBAC</div>
+            <h1 class="auth-hero-title">Connecting Talent, <span>Mentors &amp; Industry.</span></h1>
+            <p class="auth-hero-desc">
+              Discover verified internships, collaborate on academic capstone projects with mentors, and recruit elite student engineering talent.
+            </p>
+          </div>
+
+          <div class="auth-stats-grid">
+            <div class="auth-stat-item">
+              <h4>500+</h4>
+              <p>Active Internships</p>
+            </div>
+            <div class="auth-stat-item">
+              <h4>120+</h4>
+              <p>Capstone Teams</p>
+            </div>
+            <div class="auth-stat-item">
+              <h4>98%</h4>
+              <p>Placement Match</p>
+            </div>
+          </div>
+
+          <!-- Initial Login Credentials Reference Box -->
+          <div style="margin-top: 24px; padding: 14px 16px; background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.18); border-radius: 10px; backdrop-filter: blur(10px);">
+            <div style="font-size: 12px; font-weight: 700; color: #a5b4fc; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 8px; display: flex; align-items: center; gap: 6px;">
+              <span>🔑</span> Initial Login Credentials
+            </div>
+            <div style="font-size: 12px; color: #f1f5f9; line-height: 1.7;">
+              <div>👨‍🎓 <strong>Student:</strong> <code>srishti.jain2024@vitstudent.ac.in</code> | <code>StudentPass123!</code></div>
+              <div style="margin-top: 4px;">👨‍🏫 <strong>Faculty Mentor:</strong> <code>faculty@vit.ac.in</code> | <code>FacultyPass123!</code></div>
+              <div style="margin-top: 4px;">🏢 <strong>Recruiter:</strong> <code>recruiter@hyperscale.ai</code> | <code>RecruiterPass123!</code></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Form Side -->
+        <div class="auth-form-side">
+          <div class="auth-form-header">
+            <h2 id="authFormTitle">Institutional Authentication Gateway</h2>
+            <p id="authFormSubtitle">Select your role first, then sign in with your credentials or register a new account.</p>
+          </div>
+
+          <!-- Step 1: Select Role First -->
+          <div style="margin-bottom: 12px;">
+            <label style="font-size: 13px; font-weight: 700; color: #0f172a; display: block; margin-bottom: 4px;">
+              Step 1: Choose Your Role
+            </label>
+            <div class="role-cards-grid" id="roleCardsGrid">
+              <div class="role-choice-card active" id="cardRoleStudent" onclick="window.selectAuthRole('student')">
+                <div class="role-choice-icon">👨‍🎓</div>
+                <div class="role-choice-title">Student</div>
+                <div class="role-choice-desc">Apply for internships &amp; capstone projects</div>
+              </div>
+              <div class="role-choice-card" id="cardRoleFaculty" onclick="window.selectAuthRole('faculty')">
+                <div class="role-choice-icon">👨‍🏫</div>
+                <div class="role-choice-title">Faculty Mentor</div>
+                <div class="role-choice-desc">Supervise projects &amp; grade deliverables</div>
+              </div>
+              <div class="role-choice-card" id="cardRoleRecruiter" onclick="window.selectAuthRole('recruiter')">
+                <div class="role-choice-icon">🏢</div>
+                <div class="role-choice-title">Recruiter</div>
+                <div class="role-choice-desc">Post openings &amp; evaluate candidates</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 2: Tailored Sign In / Sign Up Mode Header -->
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; border-bottom: 1px solid var(--slate-200); padding-bottom: 8px;">
+            <span style="font-size: 13px; font-weight: 700; color: #0f172a;" id="authStep2Title">
+              Step 2: Sign In as Student
+            </span>
+            <div style="display: flex; gap: 6px;">
+              <button type="button" id="tabSignIn" class="subnav-tab active" onclick="window.switchAuthTab('signin')" style="padding: 5px 12px; font-size: 12px;">Log In</button>
+              <button type="button" id="tabRegister" class="subnav-tab" onclick="window.switchAuthTab('register')" style="padding: 5px 12px; font-size: 12px;">Sign Up</button>
+              <button type="button" id="tabForgot" class="subnav-tab" onclick="window.switchAuthTab('forgot')" style="padding: 5px 12px; font-size: 12px;">Recovery</button>
+            </div>
+          </div>
+
+          <!-- Inline Error Banners -->
+          <div id="authLoginError" style="display: none; margin-bottom: 12px; padding: 10px 14px; background: #fef2f2; border: 1px solid #fecaca; border-radius: 8px; color: #991b1b; font-size: 12px; font-weight: 600;"></div>
+          <div id="authRegisterError" style="display: none; margin-bottom: 12px; padding: 10px 14px; background: #fef2f2; border: 1px solid #fecaca; border-radius: 8px; color: #991b1b; font-size: 12px; font-weight: 600;"></div>
+
+          <!-- Form 1: Tailored Sign In (No instant click access - actual credentials required) -->
+          <form id="authForm">
+            <div class="form-group">
+              <label class="form-label" for="loginEmail" id="lblLoginEmail">Institutional Student Email</label>
+              <input type="email" id="loginEmail" class="form-input" placeholder="srishti.jain2024@vitstudent.ac.in" required>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label" for="loginPassword">Password</label>
+              <input type="password" id="loginPassword" class="form-input" placeholder="Enter your account password" required>
+            </div>
+
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px; font-size: 12px;">
+              <label style="display: flex; align-items: center; gap: 6px; cursor: pointer;">
+                <input type="checkbox" checked id="rememberMeCheckbox"> Remember credentials
+              </label>
+              <span class="section-link" onclick="window.switchAuthTab('forgot')" style="cursor: pointer;">Forgot Password?</span>
+            </div>
+
+            <button type="submit" class="btn-primary" id="btnSubmitAuth">
+              Sign In to Student Dashboard &rarr;
+            </button>
+          </form>
+
+          <!-- Form 2: Tailored Sign Up / Register -->
+          <form id="registerForm" style="display: none;">
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label">Full Name *</label>
+                <input type="text" id="regName" class="form-input" placeholder="e.g. Srishti Jain" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label" id="lblRegExtra">Registration No. *</label>
+                <input type="text" id="regExtra" class="form-input" placeholder="e.g. 24BRS1412" required>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Email Address *</label>
+              <input type="email" id="regEmail" class="form-input" placeholder="name@institution.edu" required>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label class="form-label" id="lblRegDept">Degree / Department</label>
+                <input type="text" id="regDept" class="form-input" placeholder="B.Tech Computer Science (AI & Robotics)">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Password *</label>
+                <input type="password" id="regPassword" class="form-input" placeholder="Min 8 characters" required>
+              </div>
+            </div>
+
+            <button type="submit" class="btn-primary" style="margin-top: 10px;" id="btnSubmitRegister">
+              Create Student Account &rarr;
+            </button>
+          </form>
+
+          <!-- Form 3: Forgot Password -->
+          <form id="forgotForm" style="display: none;">
+            <div class="form-group">
+              <label class="form-label">Enter Registered Email</label>
+              <input type="email" id="forgotEmail" class="form-input" placeholder="name@institution.edu" required>
+              <div class="form-helper">A time-bound password reset token link will be dispatched to this address.</div>
+            </div>
+
+            <button type="submit" class="btn-primary" style="margin-top: 10px;">
+              Send Recovery Instructions &rarr;
+            </button>
+          </form>
+        </div>
+      </div>
     </section>
 
-    <section class="features">
+    <!-- -----------------------------------------------------------------------
+         VIEW 2: STUDENT DASHBOARD (Figma Screen 02)
+         ----------------------------------------------------------------------- -->
+    <section class="view-section" id="view-dashboard">
+      <div class="dashboard-header">
+        <div>
+          <h1 class="page-title" id="dashGreeting">Welcome back, Srishti! 👋</h1>
+          <p class="page-subtitle">Here is what is happening across your applications, milestones, and project sprints today.</p>
+        </div>
+        <div class="header-actions">
+          <button class="btn-secondary" onclick="window.appRouter.navigateTo('internships')">Explore Internships</button>
+          <button class="btn-primary" style="width: auto;" onclick="window.openNewProjectModal()">+ Create Project</button>
+        </div>
+      </div>
 
-        <div class="card">
-            <h3>Find Internships</h3>
-            <p>
-                Discover internship opportunities based on your
-                interests, skills, and career goals.
-            </p>
+      <!-- KPI Summary Cards Grid -->
+      <div class="metrics-grid">
+        <div class="metric-card">
+          <div class="metric-info">
+            <h5>Active Applications</h5>
+            <div class="metric-num" id="statStudentApps">06</div>
+            <div class="metric-trend trend-up">Live recruiter sync</div>
+          </div>
+          <div class="metric-icon-box icon-blue">📄</div>
         </div>
 
-        <div class="card">
-            <h3>Join Projects</h3>
-            <p>
-                Find collaborative projects and connect with
-                students who share your interests.
-            </p>
+        <div class="metric-card">
+          <div class="metric-info">
+            <h5>Collaborative Projects</h5>
+            <div class="metric-num" id="statStudentProjects">02</div>
+            <div class="metric-trend trend-sub">1 awaiting mentor review</div>
+          </div>
+          <div class="metric-icon-box icon-cyan">🚀</div>
         </div>
 
-        <div class="card">
-            <h3>Build Your Skills</h3>
-            <p>
-                Gain practical experience and strengthen your
-                portfolio through real-world collaboration.
-            </p>
+        <div class="metric-card">
+          <div class="metric-info">
+            <h5>Profile Views</h5>
+            <div class="metric-num">142</div>
+            <div class="metric-trend trend-up">↑ +28% this week</div>
+          </div>
+          <div class="metric-icon-box icon-green">👁️</div>
         </div>
 
+        <div class="metric-card">
+          <div class="metric-info">
+            <h5>Mentor Rating</h5>
+            <div class="metric-num">4.95/5</div>
+            <div class="metric-trend trend-up">★ Top 5% Peer Rank</div>
+          </div>
+          <div class="metric-icon-box icon-amber">⭐</div>
+        </div>
+      </div>
+
+      <!-- Main Dashboard 2-Column Split -->
+      <div class="dashboard-layout-grid">
+        <!-- Left: Recommended Opportunities & Real-Time Application Tracker -->
+        <div style="display: flex; flex-direction: column; gap: 24px;">
+          <div class="section-card">
+            <div class="section-header">
+              <h3>Recommended Opportunities For You</h3>
+              <span class="section-link" onclick="window.appRouter.navigateTo('internships')">View All Internships &rarr;</span>
+            </div>
+
+            <div class="opps-list" id="dashboardOppsList">
+              <!-- Dynamically populated -->
+            </div>
+          </div>
+
+          <div class="section-card">
+            <div class="section-header">
+              <h3>My Applications &amp; Recruiter Pipeline Status</h3>
+              <span class="section-link" onclick="window.appRouter.navigateTo('profile')">Full Portfolio &rarr;</span>
+            </div>
+
+            <div class="opps-list" id="dashboardApplicationsList">
+              <!-- Dynamically synchronized with Recruiter updates -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Active Capstone Sprint -->
+        <div class="section-card">
+          <div class="section-header">
+            <h3>Active Capstone Sprint</h3>
+            <span class="section-link" onclick="window.appRouter.navigateTo('projects')">Workspace &rarr;</span>
+          </div>
+
+          <div class="capstone-item">
+            <div class="capstone-top">
+              <h4 id="dashCapstoneTitle">AI Resume Analyzer &amp; ATS</h4>
+              <span class="status-badge status-active">80% Done</span>
+            </div>
+            <p style="font-size: 12px; color: #64748b;" id="dashCapstoneMilestone">Milestone 3: Semantic Embeddings &amp; Parser</p>
+            <div class="progress-bar-wrap">
+              <div class="progress-bar-fill" style="width: 80%;"></div>
+            </div>
+            <div style="font-size: 12px; color: #475569; display: flex; justify-content: space-between; margin-top: 8px;">
+              <span>Due: Tomorrow, 5:00 PM</span>
+              <span>Mentor: Dr. Arun Kumar</span>
+            </div>
+
+            <button type="button" class="btn-primary" style="margin-top: 14px; width: 100%; font-size: 13px; display: flex; align-items: center; justify-content: center; gap: 8px;" onclick="window.openSubmitMilestoneModal()">
+              <span style="font-size: 15px;">📤</span> Submit Milestone Deliverable to Faculty &rarr;
+            </button>
+          </div>
+
+          <div style="margin-top: 20px;">
+            <h4 style="font-size: 14px; font-weight: 700; color: #0f172a; margin-bottom: 10px;">Upcoming Schedule &amp; Mentorship</h4>
+            <div class="activity-item">
+              <div class="activity-dot"></div>
+              <div>
+                <strong>Sprint Sync &amp; Milestone Review</strong><br>
+                <span style="font-size: 12px; color: #64748b;">Today at 4:30 PM &bull; Google Meet (with Dr. Arun Kumar)</span>
+              </div>
+            </div>
+            <div class="activity-item" style="margin-top: 10px;">
+              <div class="activity-dot" style="background: #10b981;"></div>
+              <div>
+                <strong>Technical Interview: Machine Learning Intern</strong><br>
+                <span style="font-size: 12px; color: #64748b;">Friday, 2:00 PM &bull; Nexus Robotics Labs</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <footer>
-        <p>© 2026 Internship & Project Collaboration</p>
-    </footer>
+    <!-- -----------------------------------------------------------------------
+         VIEW 3: BROWSE INTERNSHIPS (Figma Screen 03 / Epic 3)
+         ----------------------------------------------------------------------- -->
+    <section class="view-section" id="view-internships">
+      <div class="dashboard-header">
+        <div>
+          <h1 class="page-title">Explore Verified Internships 🎯</h1>
+          <p class="page-subtitle">Discover high-impact roles tailored to your skill set with instant one-click applications.</p>
+        </div>
+      </div>
 
+      <!-- Faceted Multi-Tag Filter Bar -->
+      <div class="filter-bar-card">
+        <div class="filter-inputs-group">
+          <input type="text" id="internSearchInput" class="form-input" style="max-width: 320px;" placeholder="Search role title, company, or keywords...">
+          
+          <select id="filterType" class="filter-select">
+            <option value="all">All Work Modes (Remote / Hybrid / On-site)</option>
+            <option value="remote">Remote Only</option>
+            <option value="hybrid">Hybrid</option>
+            <option value="on-site">On-site</option>
+          </select>
+
+          <select id="filterTag" class="filter-select">
+            <option value="all">All Skill Categories</option>
+            <option value="react">React / Frontend</option>
+            <option value="python">Python / ML</option>
+            <option value="docker">Cloud / DevOps</option>
+            <option value="figma">UI/UX Design</option>
+            <option value="sql">Data &amp; SQL</option>
+          </select>
+
+          <button class="btn-secondary" onclick="window.resetInternshipFilters()" style="padding: 10px 14px;">Reset</button>
+        </div>
+      </div>
+
+      <!-- Reactive Internships Grid -->
+      <div class="internships-grid" id="internshipsGrid">
+        <!-- Rendered dynamically by InternshipsModule -->
+      </div>
+    </section>
+
+    <!-- -----------------------------------------------------------------------
+         VIEW 4: PROJECT COLLABORATION WORKSPACE (Figma Screen 04 / Epic 4)
+         ----------------------------------------------------------------------- -->
+    <section class="view-section" id="view-projects">
+      <div class="dashboard-header">
+        <div>
+          <h1 class="page-title">Project Collaboration Hub 🛠️</h1>
+          <p class="page-subtitle">Manage sprint deliverables, milestone completion, and team collaboration in real time.</p>
+        </div>
+        <button class="btn-primary" style="width: auto; padding: 10px 20px;" onclick="window.openNewProjectModal()">+ New Capstone Project</button>
+      </div>
+
+      <!-- Subnav Tabs for Projects -->
+      <div class="subnav-tabs">
+        <button type="button" class="subnav-tab active" id="tabProjectKanban" onclick="window.switchProjectTab('kanban')">📋 Sprint Kanban Board</button>
+        <button type="button" class="subnav-tab" id="tabProjectMilestones" onclick="window.switchProjectTab('milestones')">🏆 Milestone Tracker</button>
+        <button type="button" class="subnav-tab" id="tabProjectDirectory" onclick="window.switchProjectTab('directory')">🌐 Open Projects Directory</button>
+      </div>
+
+      <div class="project-workspace-grid">
+        <!-- Main: Kanban / Milestones Container -->
+        <div>
+          <!-- Tab 1: Interactive 4-Column Kanban -->
+          <div id="projectKanbanView">
+            <div class="kanban-board-4col" id="kanbanBoard4Col">
+              <!-- Rendered dynamically -->
+            </div>
+          </div>
+
+          <!-- Tab 2: Milestone Tracker -->
+          <div id="projectMilestonesView" style="display: none;">
+            <div class="section-card">
+              <div class="section-header">
+                <h3>Capstone Milestones &amp; Academic Submissions</h3>
+                <button class="btn-secondary" onclick="window.openSubmitMilestoneModal()">+ Submit Milestone to Faculty</button>
+              </div>
+              <div id="milestonesListContainer">
+                <!-- Dynamically rendered -->
+              </div>
+            </div>
+          </div>
+
+          <!-- Tab 3: Open Projects Directory -->
+          <div id="projectDirectoryView" style="display: none;">
+            <div class="internships-grid" id="projectsDirectoryGrid">
+              <!-- Dynamically rendered -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Team Activity & Join Requests Sidebar -->
+        <div>
+          <div class="section-card" style="margin-bottom: 20px;">
+            <div class="section-header">
+              <h3>Team Join Requests</h3>
+            </div>
+            <div id="teamJoinRequestsList">
+              <!-- Dynamically rendered -->
+            </div>
+          </div>
+
+          <div class="section-card">
+            <div class="section-header">
+              <h3>Recent Team Activity</h3>
+            </div>
+
+            <div class="activity-feed">
+              <div class="activity-item">
+                <div class="activity-dot"></div>
+                <div>
+                  <strong>Aakriti Chadha</strong> completed <code>Docker multi-stage build</code><br>
+                  <span style="font-size: 11px; color: #94a3b8;">15 minutes ago</span>
+                </div>
+              </div>
+
+              <div class="activity-item">
+                <div class="activity-dot" style="background: #10b981;"></div>
+                <div>
+                  <strong>Dr. Arun Kumar</strong> evaluated <strong>Milestone 2</strong>: Approved (9.5/10)<br>
+                  <span style="font-size: 11px; color: #94a3b8;">Yesterday at 11:45 AM</span>
+                </div>
+              </div>
+
+              <div class="activity-item">
+                <div class="activity-dot" style="background: #f59e0b;"></div>
+                <div>
+                  <strong>Srishti Jain</strong> submitted <strong>Milestone 3 Code Deliverables</strong><br>
+                  <span style="font-size: 11px; color: #94a3b8;">Today, 2:15 PM</span>
+                </div>
+              </div>
+            </div>
+
+            <div style="margin-top: 24px; padding-top: 16px; border-top: 1px solid #f1f5f9;">
+              <button class="btn-secondary" style="width: 100%; justify-content: center;" onclick="window.notificationService.show('Team video sync room started: meet.google.com/abc-xyz', 'info')">
+                📹 Launch Team Video Sync
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- -----------------------------------------------------------------------
+         VIEW 5: STUDENT PROFILE & PORTFOLIO (Figma Screen 05 / Epic 2)
+         ----------------------------------------------------------------------- -->
+    <section class="view-section" id="view-profile">
+      <div class="profile-banner-card">
+        <div class="profile-cover"></div>
+        <div class="profile-main-info">
+          <div class="profile-avatar-row">
+            <div class="profile-big-avatar" id="profileBigAvatar">SJ</div>
+            <div class="profile-names">
+              <h2 id="profileFullName">Srishti Jain <span style="font-size: 16px; color: #3b82f6;">✓ Verified</span></h2>
+              <p id="profileDegreeLine">B.Tech Computer Science &bull; AI &amp; Robotics Specialization &bull; Reg: 24BRS1412</p>
+            </div>
+          </div>
+          <button class="btn-primary" style="width: auto; padding: 10px 20px;" onclick="window.openEditProfileModal()">Edit Profile</button>
+        </div>
+      </div>
+
+      <div class="profile-grid">
+        <!-- Left: Academic Metrics & Resume -->
+        <div>
+          <div class="section-card" style="margin-bottom: 24px;">
+            <div class="section-header">
+              <h3>Academic Metrics</h3>
+            </div>
+            <div style="line-height: 1.8; font-size: 13px; color: #334155;">
+              <div><strong>Institution:</strong> <span id="profileInst">Vellore Institute of Technology</span></div>
+              <div><strong>CGPA:</strong> <span id="profileCgpa">8.42 / 10.0</span></div>
+              <div><strong>Graduation Year:</strong> <span id="profileGrad">Class of 2028</span></div>
+              <div><strong>ATS Resume Score:</strong> <span style="color: #10b981; font-weight: 700;" id="profileAts">94% Match</span></div>
+            </div>
+            <div style="display: flex; gap: 8px; margin-top: 14px;">
+              <button class="btn-secondary" style="flex: 1; justify-content: center;" onclick="window.openResumePreviewModal()">
+                📄 Preview Resume
+              </button>
+              <button class="btn-secondary" style="flex: 1; justify-content: center;" onclick="window.simulateResumeUpload()">
+                ⬆️ Upload PDF
+              </button>
+            </div>
+          </div>
+
+          <div class="section-card">
+            <div class="section-header">
+              <h3>Verified Skill Matrix</h3>
+              <span class="section-link" onclick="window.openEditProfileModal()">Manage &rarr;</span>
+            </div>
+            <div id="profileSkillMatrix">
+              <!-- Dynamically populated -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Application Tracking Pipeline -->
+        <div class="section-card">
+          <div class="section-header">
+            <h3>Internship Application Tracker</h3>
+            <span class="section-link" onclick="window.appRouter.navigateTo('internships')">+ Apply to More &rarr;</span>
+          </div>
+
+          <div class="data-table-wrap">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Company &amp; Role</th>
+                  <th>Applied On</th>
+                  <th>Stage</th>
+                  <th>Notes</th>
+                </tr>
+              </thead>
+              <tbody id="studentApplicationTableBody">
+                <!-- Dynamically populated by Store -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- Enrolled Capstone Projects & Academic Coursework in Profile -->
+      <div class="section-card" style="margin-top: 24px;">
+        <div class="section-header">
+          <h3>Enrolled Capstone Projects &amp; Academic Coursework</h3>
+          <span class="section-link" onclick="window.appRouter.navigateTo('projects')">Collaborate in Workspace &rarr;</span>
+        </div>
+        <div id="profileProjectsList" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap: 16px; margin-top: 14px;">
+          <!-- Dynamically populated from store.state.projects -->
+        </div>
+      </div>
+    </section>
+
+    <!-- -----------------------------------------------------------------------
+         VIEW: STUDENT COMPREHENSIVE ACADEMIC & PLACEMENT EVALUATION REPORT
+         ----------------------------------------------------------------------- -->
+    <section class="view-section" id="view-student-report">
+      <div class="dashboard-header">
+        <div>
+          <h1 class="page-title">Academic &amp; Placement Performance Transcript 📄</h1>
+          <p class="page-subtitle">Official verified evaluation summary of coursework, capstone milestone grades, and internship application status.</p>
+        </div>
+        <div class="header-actions">
+          <button class="btn-primary" style="width: auto; padding: 10px 20px; display: flex; align-items: center; gap: 8px;" onclick="window.printReport('student')">
+            <span>🖨️</span> Print / Export Official PDF
+          </button>
+        </div>
+      </div>
+
+      <div class="section-card" style="border: 2px solid var(--slate-200); background: #ffffff; padding: 32px; border-radius: 12px; box-shadow: var(--shadow-md);">
+        <!-- Report Official Header -->
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; padding-bottom: 24px; border-bottom: 2px solid #e2e8f0; margin-bottom: 24px;">
+          <div>
+            <div style="font-size: 11px; font-weight: 800; color: #4338ca; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 6px;">
+              INSTITUTIONAL EVALUATION TRANSCRIPT &bull; AUTONOMOUS COLLABORATION PORTAL
+            </div>
+            <h2 style="font-size: 24px; font-weight: 800; color: #0f172a; margin: 0;" id="reportStudentName">Srishti Jain</h2>
+            <p style="font-size: 13px; color: #475569; margin: 4px 0 0;" id="reportStudentMeta">
+              B.Tech Computer Science &amp; Engineering (AI &amp; Robotics) &bull; Reg: 24BRS1412 &bull; Vellore Institute of Technology
+            </p>
+          </div>
+          <div style="text-align: right;">
+            <span style="display: inline-block; padding: 6px 14px; background: #ecfdf5; border: 1px solid #a7f3d0; color: #065f46; font-weight: 700; border-radius: 999px; font-size: 12px;">
+              ✓ ACADEMICALLY VERIFIED
+            </span>
+            <div style="font-size: 11px; color: #94a3b8; margin-top: 6px;">Evaluation Date: Oct 15, 2026</div>
+          </div>
+        </div>
+
+        <!-- 4 Key Assessment KPI Badges -->
+        <div class="metrics-grid" style="margin-bottom: 28px;">
+          <div class="metric-card" style="background: #f8fafc;">
+            <div class="metric-info">
+              <h5>Cumulative CGPA</h5>
+              <div class="metric-num" style="color: #4338ca;">8.42 / 10.0</div>
+              <div class="metric-trend trend-up">★ Top 10% Batch Rank</div>
+            </div>
+            <div class="metric-icon-box icon-blue">🎓</div>
+          </div>
+
+          <div class="metric-card" style="background: #f8fafc;">
+            <div class="metric-info">
+              <h5>ATS Resume Score</h5>
+              <div class="metric-num" style="color: #10b981;">94% Match</div>
+              <div class="metric-trend trend-up">High Industry Alignment</div>
+            </div>
+            <div class="metric-icon-box icon-green">📄</div>
+          </div>
+
+          <div class="metric-card" style="background: #f8fafc;">
+            <div class="metric-info">
+              <h5>Capstone Projects</h5>
+              <div class="metric-num" id="reportStatProjects" style="color: #0284c7;">02 Active</div>
+              <div class="metric-trend trend-up">100% Milestone Clearance</div>
+            </div>
+            <div class="metric-icon-box icon-cyan">🚀</div>
+          </div>
+
+          <div class="metric-card" style="background: #f8fafc;">
+            <div class="metric-info">
+              <h5>Faculty Mentor Rating</h5>
+              <div class="metric-num" style="color: #d97706;">4.95 / 5.0</div>
+              <div class="metric-trend trend-up">Dr. Arun Kumar (Senior Mentor)</div>
+            </div>
+            <div class="metric-icon-box icon-amber">⭐</div>
+          </div>
+        </div>
+
+        <!-- Section 1: Verified Technical Skills -->
+        <div style="margin-bottom: 28px;">
+          <h3 style="font-size: 15px; font-weight: 700; color: #1e293b; margin-bottom: 12px; border-bottom: 1px solid #f1f5f9; padding-bottom: 8px;">
+            1. Verified Technical Competencies &amp; Skill Rubrics
+          </h3>
+          <div id="reportStudentSkills" style="display: flex; gap: 8px; flex-wrap: wrap;">
+            <!-- Dynamically populated -->
+          </div>
+        </div>
+
+        <!-- Section 2: Capstone Projects & Milestone Evaluation -->
+        <div style="margin-bottom: 28px;">
+          <h3 style="font-size: 15px; font-weight: 700; color: #1e293b; margin-bottom: 12px; border-bottom: 1px solid #f1f5f9; padding-bottom: 8px;">
+            2. Capstone Project Deliverables &amp; Faculty Milestone Evaluation
+          </h3>
+          <div id="reportStudentProjectsList">
+            <!-- Dynamically populated -->
+          </div>
+        </div>
+
+        <!-- Section 3: Internship Applications & Placement Pipeline Tracker -->
+        <div style="margin-bottom: 24px;">
+          <h3 style="font-size: 15px; font-weight: 700; color: #1e293b; margin-bottom: 12px; border-bottom: 1px solid #f1f5f9; padding-bottom: 8px;">
+            3. Applied Internship Opportunities &amp; Corporate Review Status
+          </h3>
+          <div class="data-table-wrap">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Target Company &amp; Role</th>
+                  <th>Applied On</th>
+                  <th>Selection Pipeline Stage</th>
+                  <th>Corporate Recruiter Remarks</th>
+                </tr>
+              </thead>
+              <tbody id="reportStudentAppsTable">
+                <!-- Dynamically populated -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Official Sign-off Footer -->
+        <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 20px; border-top: 1px dashed #cbd5e1; font-size: 12px; color: #64748b;">
+          <div>
+            <strong>Supervising Faculty:</strong> Dr. Arun Kumar, Ph.D. &bull; Department of AI &amp; Data Engineering<br>
+            <span>Verified through Digital Academic Collaboration Key (DACK-2026-VIT)</span>
+          </div>
+          <div style="text-align: right;">
+            <div style="font-weight: 700; color: #0f172a;">Academic Dean / Collaboration Board</div>
+            <div style="color: #10b981; font-weight: 600;">Digitally Certified &amp; Approved</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- -----------------------------------------------------------------------
+         FACULTY VIEW 1: SUPERVISION OVERVIEW
+         ----------------------------------------------------------------------- -->
+    <section class="view-section" id="view-faculty">
+      <div class="dashboard-header">
+        <div>
+          <h1 class="page-title">Faculty Supervision &amp; Mentor Portal 🎓</h1>
+          <p class="page-subtitle">Oversee student capstone projects, evaluate milestone submissions, and record academic evaluations.</p>
+        </div>
+        <div class="header-actions">
+          <button class="btn-primary" style="width: auto; padding: 10px 18px;" onclick="window.appRouter.navigateTo('faculty-evaluations')">Evaluate Submissions &rarr;</button>
+          <button class="btn-secondary" style="width: auto; padding: 10px 18px;" onclick="window.openScheduleVivaModal()">+ Schedule Viva</button>
+        </div>
+      </div>
+
+      <!-- Institutional Summary Metrics -->
+      <div class="metrics-grid">
+        <div class="metric-card">
+          <div class="metric-info">
+            <h5>Mentored Students</h5>
+            <div class="metric-num">256</div>
+            <div class="metric-trend trend-sub">Across 8 batches</div>
+          </div>
+          <div class="metric-icon-box icon-blue">👨‍🎓</div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-info">
+            <h5>Active Supervised Capstones</h5>
+            <div class="metric-num" id="statFacultyProjects">02</div>
+            <div class="metric-trend trend-up">Current academic semester</div>
+          </div>
+          <div class="metric-icon-box icon-cyan">🚀</div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-info">
+            <h5>Pending Evaluations</h5>
+            <div class="metric-num" id="statFacultyPending" style="color: #f59e0b;">02</div>
+            <div class="metric-trend trend-up" style="color: #f59e0b;">Needs grading today</div>
+          </div>
+          <div class="metric-icon-box icon-amber">⏳</div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-info">
+            <h5>Approval Rate</h5>
+            <div class="metric-num">96%</div>
+            <div class="metric-trend trend-up">Average grade 9.7/10</div>
+          </div>
+          <div class="metric-icon-box icon-green">🏆</div>
+        </div>
+      </div>
+
+      <!-- Quick Actions Grid -->
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; margin-bottom: 24px;">
+        <div class="section-card" style="cursor: pointer; transition: transform 0.2s;" onclick="window.appRouter.navigateTo('faculty-evaluations')">
+          <div style="display: flex; gap: 12px; align-items: center;">
+            <div style="font-size: 28px;">📋</div>
+            <div>
+              <h4 style="margin: 0; font-size: 15px; color: #1e293b;">Milestone Evaluations Queue</h4>
+              <p style="margin: 4px 0 0; font-size: 12px; color: #64748b;">Review code deliverables, assign scores, and provide rubric feedback.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-card" style="cursor: pointer; transition: transform 0.2s;" onclick="window.appRouter.navigateTo('faculty-projects')">
+          <div style="display: flex; gap: 12px; align-items: center;">
+            <div style="font-size: 28px;">🚀</div>
+            <div>
+              <h4 style="margin: 0; font-size: 15px; color: #1e293b;">Supervised Capstone Teams</h4>
+              <p style="margin: 4px 0 0; font-size: 12px; color: #64748b;">Inspect team compositions, milestones clearance %, and GitHub repositories.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-card" style="cursor: pointer; transition: transform 0.2s;" onclick="window.appRouter.navigateTo('faculty-schedule')">
+          <div style="display: flex; gap: 12px; align-items: center;">
+            <div style="font-size: 28px;">📅</div>
+            <div>
+              <h4 style="margin: 0; font-size: 15px; color: #1e293b;">Viva &amp; Mentorship Defenses</h4>
+              <p style="margin: 4px 0 0; font-size: 12px; color: #64748b;">Schedule and conduct virtual sprint reviews with meeting links.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-card" style="cursor: pointer; transition: transform 0.2s;" onclick="window.appRouter.navigateTo('faculty-report')">
+          <div style="display: flex; gap: 12px; align-items: center;">
+            <div style="font-size: 28px;">📊</div>
+            <div>
+              <h4 style="margin: 0; font-size: 15px; color: #1e293b;">Academic Grading Reports</h4>
+              <p style="margin: 4px 0 0; font-size: 12px; color: #64748b;">Generate and export official institutional capstone performance sheets.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recent Submissions Table -->
+      <div class="section-card">
+        <div class="section-header">
+          <h3>Recent Student Milestone Submissions Awaiting Grading</h3>
+          <span class="section-link" onclick="window.appRouter.navigateTo('faculty-evaluations')">View All Queue &rarr;</span>
+        </div>
+
+        <div class="data-table-wrap">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Student</th>
+                <th>Project Title</th>
+                <th>Milestone</th>
+                <th>Submitted</th>
+                <th>Status</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="facultyTableBody">
+              <!-- Rendered dynamically -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- -----------------------------------------------------------------------
+         FACULTY VIEW 2: DEDICATED MILESTONE EVALUATION QUEUE
+         ----------------------------------------------------------------------- -->
+    <section class="view-section" id="view-faculty-evaluations">
+      <div class="dashboard-header">
+        <div>
+          <h1 class="page-title">Student Milestone Deliverables &amp; Grading Queue 📋</h1>
+          <p class="page-subtitle">Inspect code repositories, evaluate test coverage, score rubrics, and record official academic approvals.</p>
+        </div>
+        <div class="header-actions">
+          <button class="btn-secondary" onclick="window.appRouter.navigateTo('faculty')">&larr; Back to Portal</button>
+        </div>
+      </div>
+
+      <div class="section-card">
+        <div class="section-header">
+          <h3>Milestone Deliverables &amp; Evaluation Registry</h3>
+        </div>
+        <div class="data-table-wrap">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Student Candidate</th>
+                <th>Project Title</th>
+                <th>Milestone Deliverable</th>
+                <th>Submitted</th>
+                <th>Deliverables / Release URL</th>
+                <th>Status</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="facultyAllSubmissionsBody">
+              <!-- Rendered dynamically -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- -----------------------------------------------------------------------
+         FACULTY VIEW 3: SUPERVISED CAPSTONE TEAMS ROSTER
+         ----------------------------------------------------------------------- -->
+    <section class="view-section" id="view-faculty-projects">
+      <div class="dashboard-header">
+        <div>
+          <h1 class="page-title">Supervised Capstone Projects &amp; Student Teams 🚀</h1>
+          <p class="page-subtitle">Oversee team compositions, track milestone completion timelines, and inspect project repositories.</p>
+        </div>
+        <div class="header-actions">
+          <button class="btn-secondary" onclick="window.appRouter.navigateTo('faculty')">&larr; Back to Portal</button>
+        </div>
+      </div>
+
+      <div class="section-card">
+        <div class="section-header">
+          <h3>Active Project Teams under Mentorship</h3>
+        </div>
+        <div class="internships-grid" id="facultyProjectsRoster">
+          <!-- Rendered dynamically -->
+        </div>
+      </div>
+    </section>
+
+    <!-- -----------------------------------------------------------------------
+         FACULTY VIEW 4: VIVA & MENTORSHIP SCHEDULE
+         ----------------------------------------------------------------------- -->
+    <section class="view-section" id="view-faculty-schedule">
+      <div class="dashboard-header">
+        <div>
+          <h1 class="page-title">Mentorship Reviews &amp; Viva Defense Schedule 📅</h1>
+          <p class="page-subtitle">Coordinate project milestone defenses, sprint check-ins, and office hours with student teams.</p>
+        </div>
+        <div class="header-actions">
+          <button class="btn-primary" style="width: auto; padding: 10px 18px;" onclick="window.openScheduleVivaModal()">+ Schedule Review Session</button>
+          <button class="btn-secondary" onclick="window.appRouter.navigateTo('faculty')">&larr; Back to Portal</button>
+        </div>
+      </div>
+
+      <div class="section-card">
+        <div class="section-header">
+          <h3>Upcoming Defenses &amp; Mentorship Syncs</h3>
+        </div>
+        <div class="data-table-wrap">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Project Team</th>
+                <th>Student Lead</th>
+                <th>Session Type</th>
+                <th>Date &amp; Time</th>
+                <th>Agenda Notes</th>
+                <th>Status</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="facultyScheduleTableBody">
+              <!-- Rendered dynamically -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- -----------------------------------------------------------------------
+         FACULTY VIEW 5: ACADEMIC PERFORMANCE & GRADING REPORT
+         ----------------------------------------------------------------------- -->
+    <section class="view-section" id="view-faculty-report">
+      <div class="dashboard-header">
+        <div>
+          <h1 class="page-title">Institutional Capstone Assessment Report 📊</h1>
+          <p class="page-subtitle">Faculty grading sheet, milestone rubrics summary, and official evaluation records.</p>
+        </div>
+        <div class="header-actions">
+          <button class="btn-primary" style="width: auto; padding: 10px 20px;" onclick="window.printReport('faculty')">🖨️ Export Faculty Sheet (PDF)</button>
+          <button class="btn-secondary" onclick="window.appRouter.navigateTo('faculty')">&larr; Back to Portal</button>
+        </div>
+      </div>
+
+      <div class="section-card" style="border: 2px solid var(--slate-200); background: #ffffff; padding: 32px; border-radius: 12px;">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; padding-bottom: 20px; border-bottom: 2px solid #e2e8f0; margin-bottom: 24px;">
+          <div>
+            <div style="font-size: 11px; font-weight: 800; color: #4338ca; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 4px;">
+              DEPARTMENT OF ARTIFICIAL INTELLIGENCE &bull; SENIOR MENTORSHIP ASSESSMENT
+            </div>
+            <h2 style="font-size: 22px; font-weight: 800; color: #0f172a; margin: 0;">Dr. Arun Kumar &bull; Faculty Capstone Assessment</h2>
+            <p style="font-size: 13px; color: #475569; margin: 4px 0 0;">
+              Associate Professor &bull; Specialization: Distributed Deep Learning &amp; Computer Vision &bull; VIT
+            </p>
+          </div>
+          <span style="padding: 6px 14px; background: #eff6ff; color: #1d4ed8; border: 1px solid #bfdbfe; font-weight: 700; border-radius: 999px; font-size: 12px;">
+            SEMESTER FALL 2026
+          </span>
+        </div>
+
+        <div class="data-table-wrap" style="margin-bottom: 24px;">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Project Title</th>
+                <th>Team Members</th>
+                <th>Milestones Approved</th>
+                <th>Average Grade</th>
+                <th>Defense Recommendation</th>
+              </tr>
+            </thead>
+            <tbody id="facultyReportTableBody">
+              <!-- Dynamically populated -->
+            </tbody>
+          </table>
+        </div>
+
+        <div style="padding-top: 16px; border-top: 1px dashed #cbd5e1; display: flex; justify-content: space-between; font-size: 12px; color: #64748b;">
+          <div>Certified by: Dr. Arun Kumar &bull; Senior Capstone Evaluation Committee</div>
+          <div>Status: Fully Evaluated &bull; Approved for Academic Credits</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- -----------------------------------------------------------------------
+         RECRUITER VIEW 1: TALENT ACQUISITION PIPELINE
+         ----------------------------------------------------------------------- -->
+    <section class="view-section" id="view-recruiter">
+      <div class="dashboard-header">
+        <div>
+          <h1 class="page-title">Talent Acquisition &amp; Applicant Pipeline 🏢</h1>
+          <p class="page-subtitle">Track candidate applications, review resumes with ATS match scores, and manage hiring stages.</p>
+        </div>
+        <div class="recruiter-header-actions" style="display: flex; gap: 8px;">
+          <button class="btn-primary" style="width: auto; padding: 10px 18px;" onclick="window.openPostJobModal()">+ Post New Internship</button>
+          <button class="btn-secondary" style="width: auto; padding: 10px 18px;" onclick="window.openScheduleInterviewModal()">🗓️ Schedule Interview</button>
+          <button class="btn-secondary" style="width: auto; padding: 10px 18px;" onclick="window.openExtendOfferModal()">🎉 Extend Offer</button>
+        </div>
+      </div>
+
+      <!-- Recruiter KPI Summary Metrics -->
+      <div class="metrics-grid">
+        <div class="metric-card">
+          <div class="metric-info">
+            <h5>Active Job Openings</h5>
+            <div class="metric-num" id="statRecruiterJobs">06</div>
+            <div class="metric-trend trend-up">All live on student board</div>
+          </div>
+          <div class="metric-icon-box icon-blue">💼</div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-info">
+            <h5>Total Candidate Applications</h5>
+            <div class="metric-num" id="statRecruiterApplicants">08</div>
+            <div class="metric-trend trend-up">Across engineering roles</div>
+          </div>
+          <div class="metric-icon-box icon-cyan">👥</div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-info">
+            <h5>Shortlisted Candidates</h5>
+            <div class="metric-num" id="statRecruiterShortlisted">02</div>
+            <div class="metric-trend trend-up">Passed ATS resume filter</div>
+          </div>
+          <div class="metric-icon-box icon-green">🎯</div>
+        </div>
+
+        <div class="metric-card">
+          <div class="metric-info">
+            <h5>Interviews Scheduled</h5>
+            <div class="metric-num" id="statRecruiterInterviews">04</div>
+            <div class="metric-trend trend-up">Active video sync rounds</div>
+          </div>
+          <div class="metric-icon-box icon-amber">🗓️</div>
+        </div>
+      </div>
+
+      <!-- Pipeline Board -->
+      <div class="section-card">
+        <div class="section-header">
+          <h3>Candidate Recruitment Pipeline (Kanban)</h3>
+          <span style="font-size: 12px; color: #64748b;">Click any candidate card to inspect ATS score, preview resume, or transition stages</span>
+        </div>
+        <div class="pipeline-board" id="recruiterPipelineBoard">
+          <!-- Rendered dynamically by RecruiterModule -->
+        </div>
+      </div>
+    </section>
+
+    <!-- -----------------------------------------------------------------------
+         RECRUITER VIEW 2: MANAGE POSTED JOB OPENINGS
+         ----------------------------------------------------------------------- -->
+    <section class="view-section" id="view-recruiter-jobs">
+      <div class="dashboard-header">
+        <div>
+          <h1 class="page-title">Manage Posted Internship Opportunities 📢</h1>
+          <p class="page-subtitle">Publish, edit, and monitor active university internship roles and applicant capacities.</p>
+        </div>
+        <div class="header-actions">
+          <button class="btn-primary" style="width: auto; padding: 10px 20px;" onclick="window.openPostJobModal()">+ Post New Internship Opening</button>
+          <button class="btn-secondary" onclick="window.appRouter.navigateTo('recruiter')">&larr; Back to Pipeline</button>
+        </div>
+      </div>
+
+      <div class="section-card">
+        <div class="section-header">
+          <h3>All Published Opportunities</h3>
+        </div>
+        <div class="data-table-wrap">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th>Role Title &amp; Company</th>
+                <th>Work Mode</th>
+                <th>Monthly Stipend</th>
+                <th>Applicants</th>
+                <th>Deadline</th>
+                <th>Status</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+            <tbody id="recruiterJobsTableBody">
+              <!-- Dynamically rendered -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- -----------------------------------------------------------------------
+         RECRUITER VIEW 3: INTERVIEW COORDINATION & EXTENDED OFFERS
+         ----------------------------------------------------------------------- -->
+    <section class="view-section" id="view-recruiter-interviews">
+      <div class="dashboard-header">
+        <div>
+          <h1 class="page-title">Candidate Interviews &amp; Job Offers Coordination 🗓️</h1>
+          <p class="page-subtitle">Manage upcoming technical interview rounds, video sync links, and formal internship job offers.</p>
+        </div>
+        <div class="header-actions">
+          <button class="btn-primary" style="width: auto; padding: 10px 18px;" onclick="window.openScheduleInterviewModal()">+ Schedule Interview</button>
+          <button class="btn-secondary" style="width: auto; padding: 10px 18px;" onclick="window.openExtendOfferModal()">+ Extend Job Offer</button>
+        </div>
+      </div>
+
+      <div class="subnav-tabs">
+        <button type="button" class="subnav-tab active" id="tabRecruiterInterviewsList" onclick="window.switchRecruiterCoordinationTab('interviews')">🗓️ Scheduled Interviews</button>
+        <button type="button" class="subnav-tab" id="tabRecruiterOffersList" onclick="window.switchRecruiterCoordinationTab('offers')">🎉 Extended Job Offers</button>
+      </div>
+
+      <!-- Tab 1: Scheduled Interviews -->
+      <div id="recruiterInterviewsSubTab">
+        <div class="section-card">
+          <div class="section-header">
+            <h3>Scheduled Candidate Video Interviews</h3>
+          </div>
+          <div class="data-table-wrap">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Candidate</th>
+                  <th>Target Role</th>
+                  <th>Interview Round</th>
+                  <th>Date &amp; Time</th>
+                  <th>Meeting Link</th>
+                  <th>Interviewer</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody id="recruiterInterviewsTableBody">
+                <!-- Dynamically populated -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tab 2: Extended Offers -->
+      <div id="recruiterOffersSubTab" style="display: none;">
+        <div class="section-card">
+          <div class="section-header">
+            <h3>Extended Internship Offers Tracker</h3>
+          </div>
+          <div class="data-table-wrap">
+            <table class="data-table">
+              <thead>
+                <tr>
+                  <th>Candidate</th>
+                  <th>Offered Role</th>
+                  <th>Offered Stipend</th>
+                  <th>Expected Joining Date</th>
+                  <th>Offer Terms</th>
+                  <th>Status</th>
+                </tr>
+              </thead>
+              <tbody id="recruiterOffersTableBody">
+                <!-- Dynamically populated -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- -----------------------------------------------------------------------
+         RECRUITER VIEW 4: RECRUITMENT ANALYTICS & FUNNEL REPORT
+         ----------------------------------------------------------------------- -->
+    <section class="view-section" id="view-recruiter-report">
+      <div class="dashboard-header">
+        <div>
+          <h1 class="page-title">Talent Acquisition Funnel &amp; Placement Analytics 📈</h1>
+          <p class="page-subtitle">Candidate conversion analytics, applicant volumes, and corporate recruitment reports.</p>
+        </div>
+        <div class="header-actions">
+          <button class="btn-primary" style="width: auto; padding: 10px 20px;" onclick="window.printReport('recruiter')">🖨️ Export Recruitment Report (PDF)</button>
+        </div>
+      </div>
+
+      <div class="section-card" style="border: 2px solid var(--slate-200); background: #ffffff; padding: 32px; border-radius: 12px;">
+        <div style="display: flex; justify-content: space-between; align-items: flex-start; padding-bottom: 20px; border-bottom: 2px solid #e2e8f0; margin-bottom: 24px;">
+          <div>
+            <div style="font-size: 11px; font-weight: 800; color: #4338ca; text-transform: uppercase; letter-spacing: 1.5px; margin-bottom: 4px;">
+              UNIVERSITY RELATIONS &bull; TALENT CONVERSION FUNNEL
+            </div>
+            <h2 style="font-size: 22px; font-weight: 800; color: #0f172a; margin: 0;">HyperScale AI &bull; 2026 Campus Hiring Report</h2>
+            <p style="font-size: 13px; color: #475569; margin: 4px 0 0;">Lead Talent Partner: Elena Vance &bull; Verified Partner Portal</p>
+          </div>
+          <span style="padding: 6px 14px; background: #ecfdf5; color: #065f46; border: 1px solid #a7f3d0; font-weight: 700; border-radius: 999px; font-size: 12px;">
+            HIRING ACTIVE
+          </span>
+        </div>
+
+        <div class="metrics-grid" style="margin-bottom: 28px;">
+          <div class="metric-card" style="background: #f8fafc;">
+            <div class="metric-info">
+              <h5>Funnel Conversion Rate</h5>
+              <div class="metric-num" style="color: #4338ca;">50.0%</div>
+              <div class="metric-trend trend-up">Interview to Offer</div>
+            </div>
+            <div class="metric-icon-box icon-blue">📊</div>
+          </div>
+
+          <div class="metric-card" style="background: #f8fafc;">
+            <div class="metric-info">
+              <h5>Avg Candidate ATS Score</h5>
+              <div class="metric-num" style="color: #10b981;">94.2%</div>
+              <div class="metric-trend trend-up">Elite Talent Quality</div>
+            </div>
+            <div class="metric-icon-box icon-green">🎯</div>
+          </div>
+
+          <div class="metric-card" style="background: #f8fafc;">
+            <div class="metric-info">
+              <h5>Avg Candidate CGPA</h5>
+              <div class="metric-num" style="color: #0284c7;">8.56 / 10</div>
+              <div class="metric-trend trend-up">Top Academic Bracket</div>
+            </div>
+            <div class="metric-icon-box icon-cyan">⭐</div>
+          </div>
+
+          <div class="metric-card" style="background: #f8fafc;">
+            <div class="metric-info">
+              <h5>Time to Screen</h5>
+              <div class="metric-num" style="color: #d97706;">24 Hours</div>
+              <div class="metric-trend trend-up">Fast Track Response</div>
+            </div>
+            <div class="metric-icon-box icon-amber">⚡</div>
+          </div>
+        </div>
+
+        <div style="margin-bottom: 24px;">
+          <h3 style="font-size: 15px; font-weight: 700; color: #1e293b; margin-bottom: 12px; border-bottom: 1px solid #f1f5f9; padding-bottom: 8px;">
+            Applicant Pipeline Funnel Distribution
+          </h3>
+          <div style="display: flex; flex-direction: column; gap: 12px;">
+            <div>
+              <div style="display: flex; justify-content: space-between; font-size: 13px; font-weight: 600; margin-bottom: 4px;">
+                <span>1. Total Applications Received</span>
+                <span>08 Candidates (100%)</span>
+              </div>
+              <div class="progress-bar-wrap"><div class="progress-bar-fill" style="width: 100%; background: #6366f1;"></div></div>
+            </div>
+            <div>
+              <div style="display: flex; justify-content: space-between; font-size: 13px; font-weight: 600; margin-bottom: 4px;">
+                <span>2. Technical Resume Screen Passed</span>
+                <span>07 Candidates (87.5%)</span>
+              </div>
+              <div class="progress-bar-wrap"><div class="progress-bar-fill" style="width: 87.5%; background: #0ea5e9;"></div></div>
+            </div>
+            <div>
+              <div style="display: flex; justify-content: space-between; font-size: 13px; font-weight: 600; margin-bottom: 4px;">
+                <span>3. Interviews Scheduled / Active</span>
+                <span>04 Candidates (50.0%)</span>
+              </div>
+              <div class="progress-bar-wrap"><div class="progress-bar-fill" style="width: 50%; background: #f59e0b;"></div></div>
+            </div>
+            <div>
+              <div style="display: flex; justify-content: space-between; font-size: 13px; font-weight: 600; margin-bottom: 4px;">
+                <span>4. Formal Offers Extended</span>
+                <span>01 Candidate (12.5%)</span>
+              </div>
+              <div class="progress-bar-wrap"><div class="progress-bar-fill" style="width: 12.5%; background: #10b981;"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div style="padding-top: 16px; border-top: 1px dashed #cbd5e1; display: flex; justify-content: space-between; font-size: 12px; color: #64748b;">
+          <div>Report Dispatched by: Elena Vance &bull; Head of University Talent Acquisition</div>
+          <div>Recruitment Cycle: Fall 2026 Batch</div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- =========================================================================
+       MODALS CONTAINER
+       ========================================================================= -->
+
+  <!-- 1. MODAL: ONE-CLICK APPLICATION (User Story 9) -->
+  <div class="modal-overlay" id="applyModal">
+    <div class="modal-box">
+      <div class="modal-header">
+        <div class="modal-title"><span>💼</span> Apply for Internship</div>
+        <button class="modal-close" onclick="window.closeModal('applyModal')">&times;</button>
+      </div>
+      <div id="applyModalRoleInfo" style="margin-bottom: 16px; padding: 12px; background: #f8fafc; border-radius: 8px; border: 1px solid #e2e8f0; font-size: 13px;"></div>
+
+      <div class="form-group">
+        <label class="form-label" style="display: flex; justify-content: space-between; align-items: center;">
+          <span>📄 Attach or Upload Resume *</span>
+          <span style="font-size: 11px; color: var(--primary); font-weight: 600;">PDF, DOC, DOCX up to 5MB</span>
+        </label>
+
+        <!-- Option A: File Upload Zone -->
+        <div class="resume-upload-zone" id="applyResumeDropZone" style="border: 2px dashed #cbd5e1; border-radius: 8px; padding: 14px 16px; text-align: center; background: #f8fafc; cursor: pointer; transition: all 0.2s ease; margin-bottom: 12px;" onclick="document.getElementById('applyResumeFileInput').click()">
+          <input type="file" id="applyResumeFileInput" accept=".pdf,.doc,.docx" style="display: none;" onchange="window.handleApplicationResumeUpload(event)">
+          <div style="font-size: 26px; margin-bottom: 4px;">📤</div>
+          <div style="font-size: 13px; font-weight: 600; color: #1e293b;" id="applyResumeUploadText">Click to browse &amp; upload a custom resume file</div>
+          <div style="font-size: 11px; color: #64748b;" id="applyResumeUploadSub">Supported formats: PDF, DOC, DOCX (Max 5MB)</div>
+        </div>
+
+        <!-- Option B: Default Verified Profile Resume -->
+        <label style="font-size: 12px; color: #475569; display: block; margin-bottom: 4px;">Or choose your verified institutional profile resume:</label>
+        <select id="applyResumeSelect" class="filter-select" style="width: 100%;" onchange="window.handleApplicationResumeSelect(event)">
+          <option value="profile">Default Profile: Srishti_Jain_Resume.pdf (ATS Match: 94%)</option>
+          <option value="custom" disabled id="applyResumeCustomOption">No custom file uploaded yet</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Brief Pitch / Cover Note</label>
+        <textarea id="applyCoverLetter" class="form-input" rows="4" placeholder="Briefly highlight your relevant projects, tech stack experience, and why you are excited for this role..."></textarea>
+      </div>
+
+      <div style="display: flex; gap: 10px; justify-content: flex-end; margin-top: 20px;">
+        <button class="btn-secondary" onclick="window.closeModal('applyModal')">Cancel</button>
+        <button class="btn-primary" style="width: auto;" onclick="window.submitInternshipApplication()">Confirm &amp; Submit Application &rarr;</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. MODAL: POST NEW INTERNSHIP (User Story 10) -->
+  <div class="modal-overlay" id="postJobModal">
+    <div class="modal-box modal-lg">
+      <div class="modal-header">
+        <div class="modal-title"><span>🏢</span> Publish New Internship Opportunity</div>
+        <button class="modal-close" onclick="window.closeModal('postJobModal')">&times;</button>
+      </div>
+
+      <form id="postJobForm" onsubmit="event.preventDefault(); window.submitNewJob();">
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Role Title *</label>
+            <input type="text" id="jobTitle" class="form-input" placeholder="e.g. AI Research Intern" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Company Name *</label>
+            <input type="text" id="jobCompany" class="form-input" placeholder="e.g. HyperScale AI" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Work Mode *</label>
+            <select id="jobType" class="filter-select" style="width: 100%;">
+              <option value="Remote">Remote</option>
+              <option value="Hybrid">Hybrid</option>
+              <option value="On-site">On-site</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Stipend *</label>
+            <input type="text" id="jobStipend" class="form-input" placeholder="e.g. ₹25,000/mo" required>
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Duration</label>
+            <input type="text" id="jobDuration" class="form-input" placeholder="e.g. 6 Months" value="6 Months">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Application Deadline</label>
+            <input type="text" id="jobDeadline" class="form-input" placeholder="e.g. In 14 days" value="In 14 days">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Required Skill Tags (comma separated) *</label>
+          <input type="text" id="jobTags" class="form-input" placeholder="e.g. Python, PyTorch, React, Docker" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Job Description *</label>
+          <textarea id="jobDesc" class="form-input" rows="3" placeholder="Outline the internship objectives, impact, and deliverables..." required></textarea>
+        </div>
+
+        <div style="display: flex; gap: 10px; justify-content: flex-end; margin-top: 20px;">
+          <button type="button" class="btn-secondary" onclick="window.closeModal('postJobModal')">Cancel</button>
+          <button type="submit" class="btn-primary" style="width: auto;">Publish to Student Board &rarr;</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- 3. MODAL: RECRUITER CANDIDATE EVALUATION & PIPELINE (User Story 11) -->
+  <div class="modal-overlay" id="candidateModal">
+    <div class="modal-box modal-lg">
+      <div class="modal-header">
+        <div class="modal-title"><span>👨‍🎓</span> Candidate Application Review</div>
+        <button class="modal-close" onclick="window.closeModal('candidateModal')">&times;</button>
+      </div>
+
+      <div id="candidateModalDetails" style="margin-bottom: 20px;"></div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Pipeline Stage</label>
+          <select id="candidateStageSelect" class="filter-select" style="width: 100%;">
+            <option value="Received">Received</option>
+            <option value="Under Review">Under Review</option>
+            <option value="Shortlisted">Shortlisted</option>
+            <option value="Interview Scheduled">Interview Scheduled</option>
+            <option value="Offer Extended">Offer Extended</option>
+            <option value="Rejected">Rejected</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Recruiter Notes</label>
+          <input type="text" id="candidateNotesInput" class="form-input" placeholder="Internal recruiter remarks...">
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 10px; justify-content: space-between; align-items: center; margin-top: 20px;">
+        <div style="display: flex; gap: 8px;">
+          <button type="button" class="btn-secondary" style="font-size: 12px; padding: 6px 12px;" onclick="window.openCandidateScheduleInterview()">🗓️ Schedule Interview</button>
+          <button type="button" class="btn-secondary" style="font-size: 12px; padding: 6px 12px; color: #065f46; border-color: #a7f3d0; background: #ecfdf5;" onclick="window.openCandidateExtendOffer()">🎉 Extend Offer</button>
+        </div>
+        <div style="display: flex; gap: 10px;">
+          <button class="btn-secondary" onclick="window.closeModal('candidateModal')">Close</button>
+          <button class="btn-primary" style="width: auto;" onclick="window.saveCandidatePipelineDecision()">Update Stage &rarr;</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 4. MODAL: CREATE NEW PROJECT WORKSPACE (User Story 12) -->
+  <div class="modal-overlay" id="newProjectModal">
+    <div class="modal-box">
+      <div class="modal-header">
+        <div class="modal-title"><span>🚀</span> Create Capstone Project Workspace</div>
+        <button class="modal-close" onclick="window.closeModal('newProjectModal')">&times;</button>
+      </div>
+
+      <form id="newProjectForm" onsubmit="event.preventDefault(); window.submitNewProject();">
+        <div class="form-group">
+          <label class="form-label">Project Title *</label>
+          <input type="text" id="projTitleInput" class="form-input" placeholder="e.g. Autonomous Delivery Drone" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Short Tagline / Abstract</label>
+          <input type="text" id="projTaglineInput" class="form-input" placeholder="Brief 1-sentence synopsis">
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Tech Stack (comma separated) *</label>
+          <input type="text" id="projTechInput" class="form-input" placeholder="e.g. Python, ROS2, PyTorch" required>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Repository URL</label>
+          <input type="url" id="projRepoInput" class="form-input" placeholder="https://github.com/..." value="https://github.com/team-project">
+        </div>
+
+        <div style="display: flex; gap: 10px; justify-content: flex-end; margin-top: 20px;">
+          <button type="button" class="btn-secondary" onclick="window.closeModal('newProjectModal')">Cancel</button>
+          <button type="submit" class="btn-primary" style="width: auto;">Initialize Workspace &rarr;</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- 5. MODAL: REQUEST TO JOIN PROJECT (User Story 13) -->
+  <div class="modal-overlay" id="joinProjectModal">
+    <div class="modal-box">
+      <div class="modal-header">
+        <div class="modal-title"><span>🤝</span> Request to Join Project Team</div>
+        <button class="modal-close" onclick="window.closeModal('joinProjectModal')">&times;</button>
+      </div>
+
+      <p id="joinModalProjectInfo" style="font-size: 13px; color: #475569; margin-bottom: 16px;"></p>
+
+      <div class="form-group">
+        <label class="form-label">Pitch / Relevant Skills for Team Lead</label>
+        <textarea id="joinPitchInput" class="form-input" rows="3" placeholder="Tell the project lead how your skills and background can contribute to this sprint..." required></textarea>
+      </div>
+
+      <div style="display: flex; gap: 10px; justify-content: flex-end; margin-top: 20px;">
+        <button class="btn-secondary" onclick="window.closeModal('joinProjectModal')">Cancel</button>
+        <button class="btn-primary" style="width: auto;" onclick="window.submitJoinRequest()">Send Join Request &rarr;</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 6. MODAL: ADD KANBAN SPRINT TASK -->
+  <div class="modal-overlay" id="addTaskModal">
+    <div class="modal-box">
+      <div class="modal-header">
+        <div class="modal-title"><span>📝</span> Add Kanban Sprint Task</div>
+        <button class="modal-close" onclick="window.closeModal('addTaskModal')">&times;</button>
+      </div>
+
+      <form id="addTaskForm" onsubmit="event.preventDefault(); window.submitNewTask();">
+        <div class="form-group">
+          <label class="form-label">Task Title *</label>
+          <input type="text" id="taskTitleInput" class="form-input" placeholder="e.g. Implement vector similarity search" required>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Sprint Column</label>
+            <select id="taskColumnSelect" class="filter-select" style="width: 100%;">
+              <option value="todo">To Do</option>
+              <option value="in-progress">In Progress</option>
+              <option value="review">Under Review</option>
+              <option value="done">Completed (Done)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Priority</label>
+            <select id="taskPrioritySelect" class="filter-select" style="width: 100%;">
+              <option value="High">High</option>
+              <option value="Medium">Medium</option>
+              <option value="Low">Low</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Assignee</label>
+          <input type="text" id="taskAssigneeInput" class="form-input" placeholder="e.g. Srishti Jain" value="Srishti Jain">
+        </div>
+
+        <div style="display: flex; gap: 10px; justify-content: flex-end; margin-top: 20px;">
+          <button type="button" class="btn-secondary" onclick="window.closeModal('addTaskModal')">Cancel</button>
+          <button type="submit" class="btn-primary" style="width: auto;">Create Task &rarr;</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- 7. MODAL: SUBMIT MILESTONE FOR FACULTY EVALUATION -->
+  <div class="modal-overlay" id="submitMilestoneModal">
+    <div class="modal-box">
+      <div class="modal-header">
+        <div class="modal-title"><span>🏆</span> Submit Milestone to Faculty</div>
+        <button class="modal-close" onclick="window.closeModal('submitMilestoneModal')">&times;</button>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Select Milestone</label>
+        <select id="submitMilestoneSelect" class="filter-select" style="width: 100%;">
+          <option value="m_3">Milestone 3: Semantic Embeddings Model &amp; Matching API</option>
+          <option value="m_4">Milestone 4: End-to-End Dockerized Testing &amp; CI/CD</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Code Repository / Release Tag URL</label>
+        <input type="url" id="submitMilestoneRepo" class="form-input" value="https://github.com/meetsrishti14/ai-resume-analyzer/releases/tag/v0.3.0">
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Deliverables &amp; Test Summary</label>
+        <textarea id="submitMilestoneDeliverables" class="form-input" rows="3" placeholder="Summary of endpoints, tests, and documentation completed..."></textarea>
+      </div>
+
+      <div style="display: flex; gap: 10px; justify-content: flex-end; margin-top: 20px;">
+        <button class="btn-secondary" onclick="window.closeModal('submitMilestoneModal')">Cancel</button>
+        <button class="btn-primary" style="width: auto;" onclick="window.submitMilestoneToFaculty()">Submit for Evaluation &rarr;</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 8. MODAL: FACULTY MILESTONE RUBRIC EVALUATION -->
+  <div class="modal-overlay" id="reviewModal">
+    <div class="modal-box">
+      <div class="modal-header">
+        <div class="modal-title"><span>🎓</span> Evaluate Project Milestone</div>
+        <button class="modal-close" onclick="window.closeModal('reviewModal')">&times;</button>
+      </div>
+      <p id="reviewModalDetails" style="font-size: 13px; color: #475569; margin-bottom: 20px; line-height: 1.6; background: #f8fafc; padding: 12px; border-radius: 8px; border: 1px solid #e2e8f0;"></p>
+      
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Grade / Score</label>
+          <input type="text" id="facultyGradeInput" class="form-input" placeholder="e.g. 9.5/10" value="9.5/10">
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Faculty Feedback / Rubric Notes</label>
+        <textarea id="facultyFeedbackInput" class="form-input" rows="3" placeholder="Enter evaluation remarks, code quality feedback, or next milestone instructions..."></textarea>
+      </div>
+
+      <div style="display: flex; gap: 10px; justify-content: flex-end; margin-top: 20px;">
+        <button class="btn-secondary" onclick="window.closeModal('reviewModal')">Cancel</button>
+        <button class="btn-secondary" style="background: #fef2f2; color: #991b1b; border-color: #fecaca;" onclick="window.submitFacultyDecision('Needs Revision')">Request Revision</button>
+        <button class="btn-primary" style="width: auto;" onclick="window.submitFacultyDecision('Approved')">Approve Milestone</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 9. MODAL: EDIT STUDENT PROFILE (User Stories 4 & 5) -->
+  <div class="modal-overlay" id="editProfileModal">
+    <div class="modal-box modal-lg">
+      <div class="modal-header">
+        <div class="modal-title"><span>👤</span> Edit Student Profile &amp; Skills</div>
+        <button class="modal-close" onclick="window.closeModal('editProfileModal')">&times;</button>
+      </div>
+
+      <form id="editProfileForm" onsubmit="event.preventDefault(); window.saveStudentProfile();">
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Full Name</label>
+            <input type="text" id="editProfileName" class="form-input" value="Srishti Jain">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Degree Program</label>
+            <input type="text" id="editProfileProgram" class="form-input" value="B.Tech Computer Science & Engineering (AI & Robotics)">
+          </div>
+        </div>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">CGPA</label>
+            <input type="text" id="editProfileCgpa" class="form-input" value="8.42 / 10.0">
+          </div>
+          <div class="form-group">
+            <label class="form-label">Graduation Year</label>
+            <input type="text" id="editProfileGrad" class="form-input" value="2028">
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Bio / Career Objective</label>
+          <textarea id="editProfileBio" class="form-input" rows="2">Third-year engineering student passionate about artificial intelligence, full-stack microservices, and autonomous robotics perception systems.</textarea>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">Verified Skills (comma separated tags)</label>
+          <input type="text" id="editProfileSkills" class="form-input" value="Python, FastAPI, React, PyTorch, Docker, PostgreSQL, Figma UI/UX, Git">
+        </div>
+
+        <div style="display: flex; gap: 10px; justify-content: flex-end; margin-top: 20px;">
+          <button type="button" class="btn-secondary" onclick="window.closeModal('editProfileModal')">Cancel</button>
+          <button type="submit" class="btn-primary" style="width: auto;">Save Profile Changes &rarr;</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- 10. MODAL: ATS RESUME PREVIEW (User Story 6) -->
+  <div class="modal-overlay" id="resumePreviewModal">
+    <div class="modal-box">
+      <div class="modal-header">
+        <div class="modal-title"><span>📄</span> Verified ATS Resume Preview</div>
+        <button class="modal-close" onclick="window.closeModal('resumePreviewModal')">&times;</button>
+      </div>
+
+      <div style="border: 1px solid var(--slate-200); border-radius: 8px; padding: 18px; background: #fafafa; font-size: 13px; line-height: 1.6;">
+        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #e2e8f0; padding-bottom: 10px; margin-bottom: 12px;">
+          <div>
+            <strong style="font-size: 15px; color: #0f172a;" id="resumePreviewName">Srishti_Jain_Resume.pdf</strong><br>
+            <span style="font-size: 11px; color: #64748b;">Uploaded Oct 12, 2026 &bull; 1.4 MB</span>
+          </div>
+          <span style="background: #ecfdf5; color: #065f46; font-weight: 700; padding: 4px 10px; border-radius: 999px; font-size: 12px;">94% ATS Match</span>
+        </div>
+
+        <p><strong>Primary Skills:</strong> Python, React, FastAPI, PyTorch, Docker, PostgreSQL</p>
+        <p><strong>Education:</strong> B.Tech CSE (AI &amp; Robotics) &bull; CGPA: 8.42/10.0</p>
+        <p><strong>Projects:</strong> AI Resume Analyzer &amp; ATS Scoring, Autonomous Indoor Navigation Drone</p>
+      </div>
+
+      <div style="display: flex; gap: 10px; justify-content: flex-end; margin-top: 20px;">
+        <button class="btn-secondary" onclick="window.closeModal('resumePreviewModal')">Close</button>
+        <button class="btn-primary" style="width: auto;" onclick="window.simulateResumeUpload()">Upload Updated PDF</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 11. MODAL: RECRUITER SCHEDULE CANDIDATE INTERVIEW -->
+  <div class="modal-overlay" id="scheduleInterviewModal">
+    <div class="modal-box">
+      <div class="modal-header">
+        <div class="modal-title"><span>🗓️</span> Schedule Candidate Interview</div>
+        <button class="modal-close" onclick="window.closeModal('scheduleInterviewModal')">&times;</button>
+      </div>
+
+      <div style="background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 8px; padding: 12px 16px; margin-bottom: 16px;">
+        <div style="font-weight: 700; color: #0f172a; font-size: 15px;" id="scheduleCandidateNameText">Candidate Name</div>
+        <div style="font-size: 13px; color: #64748b;" id="scheduleCandidateRoleText">Role Title &bull; Application ID</div>
+        <input type="hidden" id="scheduleCandidateAppId">
+        <input type="hidden" id="scheduleCandidateName">
+        <input type="hidden" id="scheduleCandidateRole">
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Interview Round *</label>
+          <select id="scheduleInterviewRound" class="filter-select" style="width: 100%;">
+            <option value="Technical Screening - Round 1">Technical Screening - Round 1</option>
+            <option value="System Design & Coding - Round 2">System Design & Coding - Round 2</option>
+            <option value="Engineering Manager & Culture Fit">Engineering Manager & Culture Fit</option>
+            <option value="Executive Final Round">Executive Final Round</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Date &amp; Time *</label>
+          <input type="datetime-local" id="scheduleInterviewDateTime" class="form-input" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Interviewer Panel / Host</label>
+        <input type="text" id="scheduleInterviewInterviewer" class="form-input" placeholder="e.g. Lead ML Engineer / Senior Architect" value="AI Platforms Engineering Lead">
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Meeting Room / Video Conference Link</label>
+        <input type="url" id="scheduleInterviewLink" class="form-input" value="https://meet.google.com/hyp-interview-board">
+      </div>
+
+      <div style="display: flex; gap: 10px; justify-content: flex-end; margin-top: 20px;">
+        <button class="btn-secondary" onclick="window.closeModal('scheduleInterviewModal')">Cancel</button>
+        <button class="btn-primary" style="width: auto;" onclick="window.submitScheduleInterview()">Confirm &amp; Notify Candidate &rarr;</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 12. MODAL: RECRUITER EXTEND FORMAL OFFER -->
+  <div class="modal-overlay" id="extendOfferModal">
+    <div class="modal-box">
+      <div class="modal-header">
+        <div class="modal-title"><span>🎉</span> Extend Formal Internship Offer</div>
+        <button class="modal-close" onclick="window.closeModal('extendOfferModal')">&times;</button>
+      </div>
+
+      <div style="background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 8px; padding: 12px 16px; margin-bottom: 16px;">
+        <div style="font-weight: 700; color: #14532d; font-size: 15px;" id="offerCandidateNameText">Candidate Name</div>
+        <div style="font-size: 13px; color: #166534;" id="offerCandidateRoleText">Role Title &bull; Formal Offer Letter Issuance</div>
+        <input type="hidden" id="offerCandidateAppId">
+        <input type="hidden" id="offerCandidateName">
+        <input type="hidden" id="offerCandidateRole">
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Monthly Stipend *</label>
+          <input type="text" id="offerStipendInput" class="form-input" value="₹45,000/mo" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Expected Joining Date *</label>
+          <input type="date" id="offerJoiningDateInput" class="form-input" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Duration &amp; Conversion Terms</label>
+        <input type="text" id="offerDurationInput" class="form-input" value="6 Months (Full-Time with Pre-Placement Offer [PPO] option)">
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Offer Letter Document / Verification URL</label>
+        <input type="url" id="offerLetterUrlInput" class="form-input" value="https://hyperscale.ai/careers/offers/OFFER-2026-VIT.pdf">
+      </div>
+
+      <div style="display: flex; gap: 10px; justify-content: flex-end; margin-top: 20px;">
+        <button class="btn-secondary" onclick="window.closeModal('extendOfferModal')">Cancel</button>
+        <button class="btn-primary" style="width: auto; background: #059669; border-color: #047857;" onclick="window.submitExtendOffer()">Issue Official Offer &rarr;</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 13. MODAL: FACULTY SCHEDULE VIVA DEFENSE -->
+  <div class="modal-overlay" id="scheduleVivaModal">
+    <div class="modal-box">
+      <div class="modal-header">
+        <div class="modal-title"><span>📅</span> Schedule Capstone Viva Defense</div>
+        <button class="modal-close" onclick="window.closeModal('scheduleVivaModal')">&times;</button>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Select Capstone Project &amp; Team *</label>
+        <select id="vivaProjectSelect" class="filter-select" style="width: 100%;" onchange="window.updateVivaTeamDetails(this.value)">
+          <option value="team_1|AI Resume Analyzer &amp; ATS Scoring System|Srishti Jain">AI Resume Analyzer &amp; ATS Scoring (Lead: Srishti Jain)</option>
+          <option value="team_2|Autonomous Indoor Navigation Drone|Aman Sharma">Autonomous Indoor Navigation Drone (Lead: Aman Sharma)</option>
+          <option value="team_3|Blockchain Academic Credential Verifier|Priya Sundaram">Blockchain Academic Credential Verifier (Lead: Priya Sundaram)</option>
+        </select>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Evaluation Type / Milestone *</label>
+          <select id="vivaTypeSelect" class="filter-select" style="width: 100%;">
+            <option value="Mid-Term Viva Defense">Mid-Term Viva Defense</option>
+            <option value="Milestone 3 Code &amp; API Review">Milestone 3 Code &amp; API Review</option>
+            <option value="Final Capstone Defense &amp; Demo">Final Capstone Defense &amp; Demo</option>
+            <option value="Mentorship &amp; Architecture Clinic">Mentorship &amp; Architecture Clinic</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Date &amp; Time *</label>
+          <input type="datetime-local" id="vivaDateTimeInput" class="form-input" required>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Venue / Video Sync Room Link</label>
+        <input type="text" id="vivaVenueInput" class="form-input" value="Lab 402, Technology Tower &bull; https://meet.google.com/vit-capstone-defense">
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Evaluation Panel Members</label>
+        <input type="text" id="vivaPanelInput" class="form-input" value="Dr. R. Ramanathan (Supervisor), Prof. S. Venkatesh (External)">
+      </div>
+
+      <div style="display: flex; gap: 10px; justify-content: flex-end; margin-top: 20px;">
+        <button class="btn-secondary" onclick="window.closeModal('scheduleVivaModal')">Cancel</button>
+        <button class="btn-primary" style="width: auto;" onclick="window.submitScheduleViva()">Confirm &amp; Add to Calendar &rarr;</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- Application Logic -->
+  <script src="app.js"></script>
 </body>
 </html>
